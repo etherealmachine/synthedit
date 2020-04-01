@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import styled from 'styled-components'
-import { Synth } from 'tone';
+import { Synth, PolySynth } from 'tone';
 
 const Container = styled.div`
   width: 100%;
@@ -52,7 +52,7 @@ interface State {
 
 export default class App extends React.Component<{}, State> {
 
-  synth: Synth = new Synth().toDestination()
+  synth: PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
   notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B']
   keybindings = {
     4: "zxcvbnm",
@@ -94,7 +94,7 @@ export default class App extends React.Component<{}, State> {
 
   startNote(note: string) {
     return (event: React.SyntheticEvent) => {
-      this.synth.triggerAttack(note);
+      this.synth.triggerAttack([note]);
       event.stopPropagation();
       this.state.keyPressed[note] = true;
       this.setState({
@@ -105,7 +105,7 @@ export default class App extends React.Component<{}, State> {
 
   stopNote(note: string) {
     return (event: React.SyntheticEvent) => {
-      this.synth.triggerRelease();
+      this.synth.triggerRelease([note]);
       event.stopPropagation();
       this.state.keyPressed[note] = false;
       this.setState({
