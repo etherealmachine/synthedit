@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { FaPlay } from 'react-icons/fa';
+import { FaPlay, FaPause, FaStop } from 'react-icons/fa';
 import update from 'immutability-helper';
 import styled from 'styled-components'
 import { Synth, PolySynth, Part, Transport } from 'tone';
@@ -95,6 +95,8 @@ const Note = styled.div`
 interface State {
   keyPressed: { [key: string]: boolean }
   history: Array<string>
+  playing: boolean
+  paused: boolean
 }
 
 export default class App extends React.Component<{}, State> {
@@ -112,7 +114,9 @@ export default class App extends React.Component<{}, State> {
     super(props);
     this.state = {
       keyPressed: {},
-      history: []
+      history: [],
+      playing: false,
+      paused: false,
     }
   }
 
@@ -168,15 +172,42 @@ export default class App extends React.Component<{}, State> {
   }
 
   onPlay() {
-    if (this.playback) {
-      this.playback.stop();
-      Transport.stop();
+    if (this.state.paused) {
+      Transport.start();
+    } else {
+      Transport.start();
+      this.playback = new Part((time, event) => {
+        this.synth.triggerAttackRelease(event.note, event.dur, time);
+        if (event.time === this.state.history.length - 1) {
+          this.onStop();
+        }
+      }, this.state.history.map((note, i) => {
+        return { time: i, note: note, dur: '4n' };
+      }));
+      this.playback.start(0);
     }
-    Transport.start();
-    this.playback = new Part((time, event) => {
-      this.synth.triggerAttackRelease(event.note, event.dur, time);
-    }, this.state.history.map((note, i) => { return { time: i, note: note, dur: '4n' }; }));
-    this.playback.start(0);
+    this.setState({
+      ...this.state,
+      playing: true,
+      paused: false,
+    });
+  }
+
+  onPause() {
+    Transport.pause();
+    this.setState({
+      ...this.state,
+      paused: true,
+    });
+  }
+
+  onStop() {
+    this.playback?.stop();
+    Transport.stop();
+    this.setState({
+      ...this.state,
+      playing: false,
+    });
   }
 
   render() {
@@ -188,7 +219,8 @@ export default class App extends React.Component<{}, State> {
     return (
       <Container onKeyDown={this.onKeyDown.bind(this)} onKeyUp={this.onKeyUp.bind(this)} tabIndex={-1}>
         <div>
-          <FaPlay onClick={this.onPlay.bind(this)} />
+          {(!this.state.playing || this.state.paused) ? <FaPlay onClick={this.onPlay.bind(this)} /> : <FaPause onClick={this.onPause.bind(this)} />}
+          {this.state.playing && <FaStop onClick={this.onStop.bind(this)} />}
         </div>
         <Staff>
           <Bar>
