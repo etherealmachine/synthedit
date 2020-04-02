@@ -83,13 +83,25 @@ const Space = styled.div`
   align-items: center;
 `
 
-const Note = styled.div`
+interface NoteProps {
+  sharp?: boolean;
+}
+
+const Note = styled.div<NoteProps>`
   height: 10px;
   width: 10px;
   background: black;
   border-radius: 5px;
   margin: 0 5px;
   z-index: 1;
+  display: flex;
+  flex-direction: row;
+  ::after {
+    content: ${props => props.sharp ? "'#'" : "''"};
+    position: relative;
+    left: 10px;
+    top: -5px;
+  }
 `
 
 interface State {
@@ -182,7 +194,7 @@ export default class App extends React.Component<{}, State> {
           this.onStop();
         }
       }, this.state.history.map((note, i) => {
-        return { time: i, note: note, dur: '4n' };
+        return { time: i * 0.25, note: note, dur: '16n' };
       }));
       this.playback.start(0);
     }
@@ -224,20 +236,13 @@ export default class App extends React.Component<{}, State> {
         </div>
         <Staff>
           <Bar>
-            {this.state.history.map((note, i) => <Beat key={i}>
-              <Line>{note === 'A5' && <Note />}</Line>
-              <Space>{note === 'G5' && <Note />}</Space>
-              <Line>{note === 'F5' && <Note />}</Line>
-              <Space>{note === 'E5' && <Note />}</Space>
-              <Line>{note === 'D5' && <Note />}</Line>
-              <Space>{note === 'C5' && <Note />}</Space>
-              <Line>{note === 'B4' && <Note />}</Line>
-              <Space>{note === 'A4' && <Note />}</Space>
-              <Line>{note === 'G4' && <Note />}</Line>
-              <Space>{note === 'F4' && <Note />}</Space>
-              <Line>{note === 'E4' && <Note />}</Line>
-              <Space>{note === 'D4' && <Note />}</Space>
-              <Line>{note === 'C4' && <Note />}</Line>
+            {this.state.history.map((active, i) => <Beat key={i}>
+              {octaves.flat().reverse().map((note, j) => {
+                if (j % 2 === 0) {
+                  return <Line key={j}>{note[0] === active[0] && note[note.length - 1] === active[active.length - 1] && <Note sharp={active.includes('#')} />}</Line>;
+                }
+                return <Space key={j}>{note[0] === active[0] && note[note.length - 1] === active[active.length - 1] && <Note sharp={active.includes('#')} />}</Space>;
+              })}
             </Beat>
             )}
           </Bar>
