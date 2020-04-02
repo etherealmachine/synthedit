@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 
+import update from 'immutability-helper';
 import styled from 'styled-components'
 import { Synth, PolySynth } from 'tone';
 
@@ -8,6 +9,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -48,6 +50,7 @@ const Blackkey = styled.div<ButtonProps>`
 
 interface State {
   keyPressed: { [key: string]: boolean }
+  history: Array<string>
 }
 
 export default class App extends React.Component<{}, State> {
@@ -63,7 +66,8 @@ export default class App extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
     this.state = {
-      keyPressed: {}
+      keyPressed: {},
+      history: []
     }
   }
 
@@ -81,6 +85,9 @@ export default class App extends React.Component<{}, State> {
   }
 
   onKeyUp(event: React.KeyboardEvent) {
+    if (event.key === 'Backspace') {
+      this.setState(update(this.state, { history: { $splice: [[this.state.history.length - 1, 1]] } }));
+    }
     for (let octave of Object.entries(this.keybindings)) {
       const i = octave[1].indexOf(event.key.toLowerCase());
       if (i >= 0) {
@@ -96,9 +103,10 @@ export default class App extends React.Component<{}, State> {
     return (event: React.SyntheticEvent) => {
       this.synth.triggerAttack([note]);
       event.stopPropagation();
-      this.state.keyPressed[note] = true;
       this.setState({
-        keyPressed: this.state.keyPressed,
+        ...this.state,
+        history: update(this.state.history, { $push: [note] }),
+        keyPressed: update(this.state.keyPressed, { [note]: { $set: true } }),
       });
     }
   }
@@ -107,15 +115,11 @@ export default class App extends React.Component<{}, State> {
     return (event: React.SyntheticEvent) => {
       this.synth.triggerRelease([note]);
       event.stopPropagation();
-      this.state.keyPressed[note] = false;
       this.setState({
-        keyPressed: this.state.keyPressed,
+        ...this.state,
+        keyPressed: update(this.state.keyPressed, { [note]: { $set: false } }),
       });
     }
-  }
-
-  classFor(note: string) {
-    return
   }
 
   render() {
@@ -126,6 +130,9 @@ export default class App extends React.Component<{}, State> {
     ];
     return (
       <Container onKeyDown={this.onKeyDown.bind(this)} onKeyUp={this.onKeyUp.bind(this)} tabIndex={-1}>
+        <p>
+          {this.state.history.join(' ')}
+        </p>
         <Keyboard>
           {octaves.map((notes, i) => <Octave key={i}>
             {notes.map((note, i) => {
