@@ -105,10 +105,19 @@ const Note = styled.div<NoteProps>`
 `
 
 interface State {
-  keyPressed: { [key: string]: boolean }
-  history: Array<string>
+  keyPressed: { [key: string]: Date }
+  parts: Array<Staff>
   playing: boolean
   paused: boolean
+}
+
+interface Staff {
+  beats: Array<Beat>
+}
+
+interface Beat {
+  notes: Array<String>
+  duration: number
 }
 
 export default class App extends React.Component<{}, State> {
@@ -126,7 +135,9 @@ export default class App extends React.Component<{}, State> {
     super(props);
     this.state = {
       keyPressed: {},
-      history: [],
+      parts: [{
+        beats: [],
+      }],
       playing: false,
       paused: false,
     }
@@ -147,7 +158,7 @@ export default class App extends React.Component<{}, State> {
 
   onKeyUp(event: React.KeyboardEvent) {
     if (event.key === 'Backspace') {
-      this.setState(update(this.state, { history: { $splice: [[this.state.history.length - 1, 1]] } }));
+      this.setState(update(this.state, { parts: { 0: { beats: { $splice: [[this.state.parts[0].beats.length - 1, 1]] } } } }));
     }
     for (let octave of Object.entries(this.keybindings)) {
       const i = octave[1].indexOf(event.key.toLowerCase());
@@ -166,8 +177,7 @@ export default class App extends React.Component<{}, State> {
       event.stopPropagation();
       this.setState({
         ...this.state,
-        history: update(this.state.history, { $push: [note] }),
-        keyPressed: update(this.state.keyPressed, { [note]: { $set: true } }),
+        keyPressed: update(this.state.keyPressed, { [note]: { $set: new Date() } }),
       });
     }
   }
@@ -175,10 +185,13 @@ export default class App extends React.Component<{}, State> {
   stopNote(note: string) {
     return (event: React.SyntheticEvent) => {
       this.synth.triggerRelease([note]);
+      const curr = new Date().getTime();
+      const duration = (curr - this.state.keyPressed[note].getTime()) / 1000.0;
       event.stopPropagation();
       this.setState({
         ...this.state,
-        keyPressed: update(this.state.keyPressed, { [note]: { $set: false } }),
+        parts: update(this.state.parts, { 0: { beats: { $push: [{ notes: [note], duration: duration }] } } }),
+        keyPressed: update(this.state.keyPressed, { $unset: [note] }),
       });
     }
   }
@@ -188,14 +201,17 @@ export default class App extends React.Component<{}, State> {
       Transport.start();
     } else {
       Transport.start();
-      this.playback = new Part((time, event) => {
-        this.synth.triggerAttackRelease(event.note, event.dur, time);
-        if (event.time === this.state.history.length - 1) {
-          this.onStop();
+      const notes = [];
+      let t = 0;
+      for (let beat of this.state.parts[0].beats) {
+        for (let note of beat.notes) {
+          notes.push({ time: t, note: note, dur: beat.duration });
+          t += beat.duration;
         }
-      }, this.state.history.map((note, i) => {
-        return { time: i * 0.25, note: note, dur: '16n' };
-      }));
+      }
+      this.playback = new Part((time, event) => {
+        this.synth.triggerAttackRelease(event.note.toString(), event.dur, time);
+      }, notes);
       this.playback.start(0);
     }
     this.setState({
@@ -219,6 +235,7 @@ export default class App extends React.Component<{}, State> {
     this.setState({
       ...this.state,
       playing: false,
+      paused: false,
     });
   }
 
@@ -234,28 +251,29 @@ export default class App extends React.Component<{}, State> {
           {(!this.state.playing || this.state.paused) ? <FaPlay onClick={this.onPlay.bind(this)} /> : <FaPause onClick={this.onPause.bind(this)} />}
           {this.state.playing && <FaStop onClick={this.onStop.bind(this)} />}
         </div>
-        <Staff>
+        {this.state.parts.map((part, i) => <Staff key={i}>
           <Bar>
-            {this.state.history.map((active, i) => <Beat key={i}>
-              {octaves.flat().reverse().map((note, j) => {
-                if (j % 2 === 0) {
-                  return <Line key={j}>{note[0] === active[0] && note[note.length - 1] === active[active.length - 1] && <Note sharp={active.includes('#')} />}</Line>;
+            {part.beats.map((beat, j) => <Beat key={j}>
+              {octaves.flat().reverse().map((note, k) => {
+                if (k % 2 === 0) {
+                  return <Line key={k}>{note[0] === beat.notes[0][0] && note[note.length - 1] === beat.notes[0][beat.notes[0].length - 1] && <Note sharp={beat.notes[0].includes('#')} />}</Line>;
                 }
-                return <Space key={j}>{note[0] === active[0] && note[note.length - 1] === active[active.length - 1] && <Note sharp={active.includes('#')} />}</Space>;
+                return <Space key={k}>{note[0] === beat.notes[0][0] && note[note.length - 1] === beat.notes[0][beat.notes[0].length - 1] && <Note sharp={beat.notes[0].includes('#')} />}</Space>;
               })}
             </Beat>
             )}
           </Bar>
         </Staff>
+        )}
         <Keyboard>
           {octaves.map((notes, i) => <Octave key={i}>
             {notes.map((note, i) => {
               let blackKey = null;
               if (note[0] !== 'E' && note[0] !== 'B') {
                 const sharp = note[0] + '#' + note[1];
-                blackKey = <Blackkey key={i} pressed={this.state.keyPressed[sharp]} onMouseDown={this.startNote(sharp)} onMouseUp={this.stopNote(sharp)} />;
+                blackKey = <Blackkey key={i} pressed={this.state.keyPressed[sharp] !== undefined} onMouseDown={this.startNote(sharp)} onMouseUp={this.stopNote(sharp)} />;
               }
-              return <Whitekey key={i} pressed={this.state.keyPressed[note]} onMouseDown={this.startNote(note)} onMouseUp={this.stopNote(note)}>
+              return <Whitekey key={i} pressed={this.state.keyPressed[note] !== undefined} onMouseDown={this.startNote(note)} onMouseUp={this.stopNote(note)}>
                 {blackKey}
               </Whitekey>;
             })}
