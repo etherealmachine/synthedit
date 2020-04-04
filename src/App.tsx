@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { FaPlay, FaPause, FaStop } from 'react-icons/fa';
-import update from 'immutability-helper';
+import produce from "immer"
 import styled from 'styled-components'
 import { Synth, PolySynth, Part, Transport } from 'tone';
 
@@ -62,7 +62,7 @@ const Bar = styled.div`
   align-items: flex-end;
 `
 
-const Beat = styled.div`
+const Chord = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -104,20 +104,33 @@ const Note = styled.div<NoteProps>`
   }
 `
 
+interface Staff {
+  chords: Chord[]
+}
+
+interface Chord {
+  notes: string[]
+  duration: number
+}
+
 interface State {
   keyPressed: { [key: string]: Date }
-  parts: Array<Staff>
+  parts: Staff[]
+  currentPart: number
   playing: boolean
   paused: boolean
 }
 
-interface Staff {
-  beats: Array<Beat>
+function chordContains(chord: Chord, baseNote: string): string | undefined {
+  const key = baseNote[0];
+  const octave = baseNote[1];
+  return chord.notes.find(note => {
+    return note[0] === key && note[note.length - 1] === octave;
+  })?.toString();
 }
 
-interface Beat {
-  notes: Array<String>
-  duration: number
+function isSharp(note: string): boolean {
+  return note.includes('#');
 }
 
 export default class App extends React.Component<{}, State> {
@@ -135,8 +148,9 @@ export default class App extends React.Component<{}, State> {
     super(props);
     this.state = {
       keyPressed: {},
+      currentPart: 0,
       parts: [{
-        beats: [],
+        chords: [],
       }],
       playing: false,
       paused: false,
@@ -158,7 +172,9 @@ export default class App extends React.Component<{}, State> {
 
   onKeyUp(event: React.KeyboardEvent) {
     if (event.key === 'Backspace') {
-      this.setState(update(this.state, { parts: { 0: { beats: { $splice: [[this.state.parts[0].beats.length - 1, 1]] } } } }));
+      this.setState(produce(this.state, state => {
+        state.parts[state.currentPart].chords.pop();
+      }));
     }
     for (let octave of Object.entries(this.keybindings)) {
       const i = octave[1].indexOf(event.key.toLowerCase());
@@ -175,24 +191,26 @@ export default class App extends React.Component<{}, State> {
     return (event: React.SyntheticEvent) => {
       this.synth.triggerAttack([note]);
       event.stopPropagation();
-      this.setState({
-        ...this.state,
-        keyPressed: update(this.state.keyPressed, { [note]: { $set: new Date() } }),
-      });
+      this.setState(produce(this.state, state => {
+        state.keyPressed[note] = new Date();
+      }));
     }
   }
 
   stopNote(note: string) {
     return (event: React.SyntheticEvent) => {
-      this.synth.triggerRelease([note]);
+      if (this.state.keyPressed[note] === undefined) return;
+      this.synth.triggerRelease(Object.keys(this.state.keyPressed));
       const curr = new Date().getTime();
       const duration = (curr - this.state.keyPressed[note].getTime()) / 1000.0;
       event.stopPropagation();
-      this.setState({
-        ...this.state,
-        parts: update(this.state.parts, { 0: { beats: { $push: [{ notes: [note], duration: duration }] } } }),
-        keyPressed: update(this.state.keyPressed, { $unset: [note] }),
-      });
+      this.setState(produce(this.state, state => {
+        state.parts[state.currentPart].chords.push({
+          notes: Object.keys(this.state.keyPressed),
+          duration: duration,
+        });
+        state.keyPressed = {};
+      }));
     }
   }
 
@@ -201,16 +219,16 @@ export default class App extends React.Component<{}, State> {
       Transport.start();
     } else {
       Transport.start();
-      const notes = [];
+      const chords = this.state.parts[this.state.currentPart].chords;
+      if (!chords) return;
       let t = 0;
-      for (let beat of this.state.parts[0].beats) {
-        for (let note of beat.notes) {
-          notes.push({ time: t, note: note, dur: beat.duration });
-          t += beat.duration;
-        }
+      const notes = [];
+      for (let chord of chords) {
+        notes.push({ time: t, notes: chord.notes, dur: chord.duration });
+        t += 2.0 * chord.duration;
       }
       this.playback = new Part((time, event) => {
-        this.synth.triggerAttackRelease(event.note.toString(), event.dur, time);
+        this.synth.triggerAttackRelease(event.notes, event.dur, time);
       }, notes);
       this.playback.start(0);
     }
@@ -253,14 +271,15 @@ export default class App extends React.Component<{}, State> {
         </div>
         {this.state.parts.map((part, i) => <Staff key={i}>
           <Bar>
-            {part.beats.map((beat, j) => <Beat key={j}>
-              {octaves.flat().reverse().map((note, k) => {
+            {part.chords.map((chord, j) => <Chord key={j}>
+              {octaves.flat().reverse().map((baseNote, k) => {
+                const n = chordContains(chord, baseNote);
                 if (k % 2 === 0) {
-                  return <Line key={k}>{note[0] === beat.notes[0][0] && note[note.length - 1] === beat.notes[0][beat.notes[0].length - 1] && <Note sharp={beat.notes[0].includes('#')} />}</Line>;
+                  return <Line key={k}>{n && <Note sharp={isSharp(n)} />}</Line>;
                 }
-                return <Space key={k}>{note[0] === beat.notes[0][0] && note[note.length - 1] === beat.notes[0][beat.notes[0].length - 1] && <Note sharp={beat.notes[0].includes('#')} />}</Space>;
+                return <Space key={k}>{n && <Note sharp={isSharp(n)} />}</Space>;
               })}
-            </Beat>
+            </Chord>
             )}
           </Bar>
         </Staff>
