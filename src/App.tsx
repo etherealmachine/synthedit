@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-
 import { FaPlay, FaPause, FaStop } from 'react-icons/fa';
 import produce from "immer"
 import styled from 'styled-components'
 import { Synth, PolySynth, Part, Transport } from 'tone';
+
+import { NoteElement, RestElement } from './Notation';
 
 const Container = styled.div`
   width: 100%;
@@ -83,27 +84,6 @@ const Space = styled.div`
   align-items: center;
 `
 
-interface NoteProps {
-  sharp?: boolean;
-}
-
-const Note = styled.div<NoteProps>`
-  height: 10px;
-  width: 10px;
-  background: black;
-  border-radius: 5px;
-  margin: 0 5px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: 10px;
-    top: -5px;
-  }
-`
-
 interface Staff {
   chords: Chord[]
 }
@@ -127,10 +107,6 @@ function chordContains(chord: Chord, baseNote: string): string | undefined {
   return chord.notes.find(note => {
     return note[0] === key && note[note.length - 1] === octave;
   })?.toString();
-}
-
-function isSharp(note: string): boolean {
-  return note.includes('#');
 }
 
 export default class App extends React.Component<{}, State> {
@@ -273,12 +249,13 @@ export default class App extends React.Component<{}, State> {
           <Bar>
             {part.chords.map((chord, j) => <Chord key={j}>
               {octaves.flat().reverse().map((baseNote, k) => {
-                const n = chordContains(chord, baseNote);
+                const note = chordContains(chord, baseNote);
                 if (k % 2 === 0) {
-                  return <Line key={k}>{n && <Note sharp={isSharp(n)} />}</Line>;
+                  return <Line key={k}>{note && <NoteElement note={note} duration={chord.duration} />}</Line>;
                 }
-                return <Space key={k}>{n && <Note sharp={isSharp(n)} />}</Space>;
+                return <Space key={k}>{note && <NoteElement note={note} duration={chord.duration} />}</Space>;
               })}
+              {chord.notes.length === 0 && <RestElement duration={chord.duration} />}
             </Chord>
             )}
           </Bar>
