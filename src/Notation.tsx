@@ -5,6 +5,8 @@ import { Time } from 'tone';
 
 interface NoteProps {
   sharp?: boolean;
+  dotted?: boolean;
+  triple?: boolean;
 }
 
 export const WholeNote = styled.div<NoteProps>`
@@ -107,6 +109,86 @@ export const SixteenthNote = styled.div<NoteProps>`
   }
 `
 
+export const ThirtySecondNote = styled.div<NoteProps>`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/ThirtySecondNote.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  ::after {
+    content: ${props => props.sharp ? "'#'" : "''"};
+    position: relative;
+    left: -10px;
+    bottom: -25px;
+  }
+`
+
+export const SixtyFourthNote = styled.div<NoteProps>`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/SixtyFourthNote.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  ::after {
+    content: ${props => props.sharp ? "'#'" : "''"};
+    position: relative;
+    left: -10px;
+    bottom: -25px;
+  }
+`
+
+export const HundredTwentyEighthNote = styled.div<NoteProps>`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/HundredTwentyEighthNote.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  ::after {
+    content: ${props => props.sharp ? "'#'" : "''"};
+    position: relative;
+    left: -10px;
+    bottom: -25px;
+  }
+`
+
+export const TwoHundredFiftySixthNote = styled.div<NoteProps>`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/TwoHundredFiftySixthNote.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  ::after {
+    content: ${props => props.sharp ? "'#'" : "''"};
+    position: relative;
+    left: -10px;
+    bottom: -25px;
+  }
+`
+
 export const WholeRest = styled.div`
 `
 
@@ -155,8 +237,76 @@ export const SixteenthRest = styled.div`
   flex-direction: row;
 `
 
+export const ThirtySecondRest = styled.div`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/ThirtySecondRest.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+`
+
+export const SixtyFourthRest = styled.div`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/SixtyFourthRest.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+`
+
+export const HundredTwentyEighthRest = styled.div`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/HundredTwentyEighthRest.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+`
+
+export const TwoHundredFiftySixthRest = styled.div`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  background: url(${process.env.PUBLIC_URL}/images/TwoHundredFiftySixthRest.svg);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  position: relative;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+`
+
 function isSharp(note: string): boolean {
   return note.includes('#');
+}
+
+const NotesBySubdivision: { [key: number]: any } = {
+  256: TwoHundredFiftySixthNote,
+  128: HundredTwentyEighthNote,
+  64: SixtyFourthNote,
+  32: ThirtySecondNote,
+  16: SixteenthNote,
+  8: EighthNote,
+  4: QuarterNote,
+  2: HalfNote,
+  1: WholeNote,
 }
 
 interface NoteElementProps {
@@ -165,71 +315,33 @@ interface NoteElementProps {
 }
 
 export function NoteElement(props: NoteElementProps): JSX.Element {
-  const sharp = isSharp(props.note);
-  switch (Time(props.duration).toNotation().toString()) {
-    case '256n':
-    case '256t':
-    case '256n.':
-    case '128n':
-    case '128t':
-    case '128n.':
-    case '64n':
-    case '64t':
-    case '64n.':
-    case '32n':
-    case '32n.':
-    case '16n':
-    case '16n.':
-    case '16t':
-      return <SixteenthNote sharp={sharp} />;
-    case '8n':
-    case '8t':
-    case '8n.':
-      return <EighthNote sharp={sharp} />;
-    case '4n':
-    case '4t':
-    case '4n.':
-      return <QuarterNote sharp={sharp} />;
-    case '2n':
-    case '2n.':
-      return <HalfNote sharp={sharp} />;
-    case '1n':
-    case '1n.':
-      return <WholeNote sharp={sharp} />;
-    default:
-      console.log(Time(props.duration).toNotation());
-      return <WholeNote sharp={sharp} />;
-  }
+  const subdivision = Time(props.duration).toNotation().toString();
+  const num = parseInt(subdivision);
+  return React.createElement(NotesBySubdivision[num], {
+    sharp: isSharp(props.note),
+    dotted: subdivision.includes('.'),
+    triple: subdivision.includes('t'),
+  });
 }
 
 interface RestElementProps {
   duration: number,
 }
 
+const RestsBySubdivision: { [key: number]: any } = {
+  256: TwoHundredFiftySixthRest,
+  128: HundredTwentyEighthRest,
+  64: SixtyFourthRest,
+  32: ThirtySecondRest,
+  16: SixteenthRest,
+  8: EighthRest,
+  4: QuarterRest,
+  2: HalfRest,
+  1: WholeRest,
+}
+
 export function RestElement(props: RestElementProps): JSX.Element {
-  switch (Time(props.duration).toNotation().toString()) {
-    case '64n':
-    case '64n.':
-    case '32n':
-    case '32n.':
-    case '16n':
-    case '16n.':
-    case '16t':
-      return <SixteenthRest />;
-    case '8n':
-    case '8t':
-    case '8n.':
-      return <EighthRest />;
-    case '4n':
-    case '4n.':
-      return <QuarterRest />;
-    case '2n':
-    case '2n.':
-      return <HalfRest />;
-    case '1n':
-    case '1n.':
-      return <WholeRest />;
-    default:
-      return <WholeRest />;
-  }
+  const subdivision = Time(props.duration).toNotation().toString();
+  const num = parseInt(subdivision);
+  return React.createElement(RestsBySubdivision[num]);
 }
