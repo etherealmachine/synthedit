@@ -9,288 +9,147 @@ interface NoteProps {
   triple?: boolean;
 }
 
-export const WholeNote = styled.div<NoteProps>`
-  height: 10px;
-  width: 20px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/WholeNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 10px;
-  position: relative;
-  bottom: 14px;
+const Note = styled.img<NoteProps>`
+  position: absolute;
+  left: 5px;
   z-index: 1;
-  display: flex;
-  flex-direction: row;
   ::after {
     content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
   }
 `
 
-export const HalfNote = styled.div<NoteProps>`
+const WholeNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/WholeNote.svg`
+})`
+  width: 15px;
+`
+
+const HalfNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/HalfNote.svg`
+})`
   height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/HalfNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
+  bottom: -2px;
 `
 
-export const QuarterNote = styled.div<NoteProps>`
+const QuarterNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/QuarterNote.svg`
+})`
   height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/QuarterNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
+  bottom: -2px;
 `
 
-export const EighthNote = styled.div<NoteProps>`
+const EighthNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/EighthNote.svg`
+})`
   height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/EighthNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
+  bottom: -2px;
 `
 
-export const SixteenthNote = styled.div<NoteProps>`
+const SixteenthNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/SixteenthNote.svg`
+})`
+  height: 42px;
+  bottom: -2px;
+`
+
+const ThirtySecondNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/ThirtySecondNote.svg`
+})`
+  height: 48px;
+  bottom: -2px;
+`
+
+const SixtyFourthNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/SixtyFourthNote.svg`
+})`
+  height: 58px;
+  bottom: -2px;
+`
+
+const HundredTwentyEighthNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/HundredTwentyEighthNote.svg`
+})`
+  height: 66px;
+  bottom: -2px;
+`
+
+const TwoHundredFiftySixthNote = styled(Note).attrs({
+  src: `${process.env.PUBLIC_URL}/images/TwoHundredFiftySixthNote.svg`
+})`
+  height: 74px;
+  bottom: -2px;
+`
+
+const Rest = styled.img`
+  position: absolute;
+  left: 5px;
+  z-index: 1;
+`
+
+const WholeRest = styled.span`
+ width: 15px;
+ height: 5px;
+ background: black;
+ position: absolute;
+ bottom: -3px;
+ z-index: 1;
+`
+
+const HalfRest = styled.span`
+ width: 15px;
+ height: 5px;
+ background: black;
+ position: absolute;
+ z-index: 1;
+`
+
+const QuarterRest = styled(Rest).attrs({
+  src: `${process.env.PUBLIC_URL}/images/QuarterRest.svg`
+})`
   height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/SixteenthNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
+  top: -15px;
 `
 
-export const ThirtySecondNote = styled.div<NoteProps>`
+const EighthRest = styled(Rest).attrs({
+  src: `${process.env.PUBLIC_URL}/images/EighthRest.svg`
+})`
+  height: 25px;
+  top: -8px;
+`
+
+const SixteenthRest = styled(Rest).attrs({
+  src: `${process.env.PUBLIC_URL}/images/SixteenthRest.svg`
+})`
+  height: 30px;
+  top: -10px;
+`
+
+const ThirtySecondRest = styled(Rest).attrs({
+  src: `${process.env.PUBLIC_URL}/images/ThirtySecondRest.svg`
+})`
   height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/ThirtySecondNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
+  top: -15px;
 `
 
-export const SixtyFourthNote = styled.div<NoteProps>`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/SixtyFourthNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
+const SixtyFourthRest = styled(Rest).attrs({
+  src: `${process.env.PUBLIC_URL}/images/SixtyFourthRest.svg`
+})`
+  height: 50px;
+  top: -18px;
 `
 
-export const HundredTwentyEighthNote = styled.div<NoteProps>`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/HundredTwentyEighthNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
+const HundredTwentyEighthRest = styled(Rest).attrs({
+  src: `${process.env.PUBLIC_URL}/images/HundredTwentyEighthRest.svg`
+})`
+  height: 60px;
+  top: -25px;
 `
 
-export const TwoHundredFiftySixthNote = styled.div<NoteProps>`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/TwoHundredFiftySixthNote.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-    position: relative;
-    left: -10px;
-    bottom: -25px;
-  }
-`
-
-export const WholeRest = styled.div`
-`
-
-export const HalfRest = styled.div`
-`
-
-export const QuarterRest = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/QuarterRest.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-`
-
-export const EighthRest = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/EighthRest.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-`
-
-export const SixteenthRest = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/SixteenthRest.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-`
-
-export const ThirtySecondRest = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/ThirtySecondRest.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-`
-
-export const SixtyFourthRest = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/SixtyFourthRest.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-`
-
-export const HundredTwentyEighthRest = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/HundredTwentyEighthRest.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-`
-
-export const TwoHundredFiftySixthRest = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 0 5px;
-  background: url(${process.env.PUBLIC_URL}/images/TwoHundredFiftySixthRest.svg);
-  background-repeat: no-repeat;
-  background-size: auto 40px;
-  position: relative;
-  bottom: 15px;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
+const TwoHundredFiftySixthRest = styled(Rest).attrs({
+  src: `${process.env.PUBLIC_URL}/images/TwoHundredFiftySixthRest.svg`
+})`
+  height: 70px;
+  top: -30px;
 `
 
 function isSharp(note: string): boolean {

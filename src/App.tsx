@@ -3,7 +3,7 @@ import './App.css';
 import { FaPlay, FaPause, FaStop } from 'react-icons/fa';
 import produce from "immer"
 import styled from 'styled-components'
-import { Synth, PolySynth, Part, Transport } from 'tone';
+import { Synth, PolySynth, Part, Transport, Time } from 'tone';
 
 import { NoteElement, RestElement } from './Notation';
 
@@ -69,19 +69,24 @@ const Chord = styled.div`
 `
 
 const Line = styled.div`
-  height: 2px;
-  background: black;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  width: 25px;
+  height: 8px;
+  position: relative;
+  ::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: black;
+    top: 4px;
+  }
 `
 
 const Space = styled.div`
-  height: 12px;
+  width: 8px;
+  height: 8px;
   background: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  position: relative;
 `
 
 interface Staff {
@@ -95,6 +100,8 @@ interface Chord {
 
 interface State {
   keyPressed: { [key: string]: Date }
+  lastRelease?: Date
+  restDuration: number
   parts: Staff[]
   currentPart: number
   playing: boolean
@@ -122,11 +129,24 @@ export default class App extends React.Component<{}, State> {
 
   constructor(props: any) {
     super(props);
+    const initialChords = [];
+    for (let subdivision of [1, 2, 4, 8, 16, 32, 64, 128, 256]) {
+      const duration = Time(subdivision.toString() + 'n').toSeconds();
+      initialChords.push({
+        notes: ['C4'],
+        duration: duration,
+      });
+      initialChords.push({
+        notes: [],
+        duration: duration,
+      });
+    }
     this.state = {
       keyPressed: {},
+      restDuration: 0,
       currentPart: 0,
       parts: [{
-        chords: [],
+        chords: initialChords,
       }],
       playing: false,
       paused: false,
@@ -150,6 +170,7 @@ export default class App extends React.Component<{}, State> {
     if (event.key === 'Backspace') {
       this.setState(produce(this.state, state => {
         state.parts[state.currentPart].chords.pop();
+        state.lastRelease = undefined;
       }));
     }
     for (let octave of Object.entries(this.keybindings)) {
@@ -169,6 +190,11 @@ export default class App extends React.Component<{}, State> {
       event.stopPropagation();
       this.setState(produce(this.state, state => {
         state.keyPressed[note] = new Date();
+        if (this.state.lastRelease) {
+          state.restDuration = (new Date().getTime() - this.state.lastRelease.getTime()) / 1000.0;
+        } else {
+          state.restDuration = 0;
+        }
       }));
     }
   }
@@ -177,15 +203,23 @@ export default class App extends React.Component<{}, State> {
     return (event: React.SyntheticEvent) => {
       if (this.state.keyPressed[note] === undefined) return;
       this.synth.triggerRelease(Object.keys(this.state.keyPressed));
-      const curr = new Date().getTime();
-      const duration = (curr - this.state.keyPressed[note].getTime()) / 1000.0;
+      const curr = new Date();
+      const duration = (curr.getTime() - this.state.keyPressed[note].getTime()) / 1000.0;
       event.stopPropagation();
       this.setState(produce(this.state, state => {
-        state.parts[state.currentPart].chords.push({
+        const chords = state.parts[state.currentPart].chords;
+        if (this.state.restDuration > 0 && chords.length > 0 && chords[chords.length - 1].notes.length > 0) {
+          chords.push({
+            notes: [],
+            duration: this.state.restDuration,
+          });
+        }
+        chords.push({
           notes: Object.keys(this.state.keyPressed),
           duration: duration,
         });
         state.keyPressed = {};
+        state.lastRelease = curr;
       }));
     }
   }
@@ -201,7 +235,7 @@ export default class App extends React.Component<{}, State> {
       const notes = [];
       for (let chord of chords) {
         notes.push({ time: t, notes: chord.notes, dur: chord.duration });
-        t += 2.0 * chord.duration;
+        t += chord.duration;
       }
       this.playback = new Part((time, event) => {
         this.synth.triggerAttackRelease(event.notes, event.dur, time);
@@ -251,11 +285,15 @@ export default class App extends React.Component<{}, State> {
               {octaves.flat().reverse().map((baseNote, k) => {
                 const note = chordContains(chord, baseNote);
                 if (k % 2 === 0) {
-                  return <Line key={k}>{note && <NoteElement note={note} duration={chord.duration} />}</Line>;
+                  return <Line key={k}>
+                    {(note && <NoteElement note={note} duration={chord.duration} />) ||
+                      (baseNote === 'F5' && chord.notes.length === 0 && <RestElement duration={chord.duration} />)
+                    }
+                  </Line>;
                 }
                 return <Space key={k}>{note && <NoteElement note={note} duration={chord.duration} />}</Space>;
               })}
-              {chord.notes.length === 0 && <RestElement duration={chord.duration} />}
+
             </Chord>
             )}
           </Bar>
