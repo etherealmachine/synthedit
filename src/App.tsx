@@ -63,9 +63,14 @@ const Bar = styled.div`
   align-items: flex-end;
 `
 
-const Chord = styled.div`
+interface ChordProps {
+  playing?: boolean
+}
+
+const Chord = styled.div<ChordProps>`
   display: flex;
   flex-direction: column;
+  background: ${props => props.playing ? '#ADD8E6' : ''};
 `
 
 const Line = styled.div`
@@ -85,7 +90,6 @@ const Line = styled.div`
 const Space = styled.div`
   width: 8px;
   height: 8px;
-  background: white;
   position: relative;
 `
 
@@ -96,6 +100,7 @@ interface Staff {
 interface Chord {
   notes: string[]
   duration: number
+  playing: boolean
 }
 
 interface State {
@@ -135,10 +140,12 @@ export default class App extends React.Component<{}, State> {
       initialChords.push({
         notes: ['C4'],
         duration: duration,
+        playing: false,
       });
       initialChords.push({
         notes: [],
         duration: duration,
+        playing: false,
       });
     }
     this.state = {
@@ -212,11 +219,13 @@ export default class App extends React.Component<{}, State> {
           chords.push({
             notes: [],
             duration: this.state.restDuration,
+            playing: false,
           });
         }
         chords.push({
           notes: Object.keys(this.state.keyPressed),
           duration: duration,
+          playing: false,
         });
         state.keyPressed = {};
         state.lastRelease = curr;
@@ -232,13 +241,23 @@ export default class App extends React.Component<{}, State> {
       const chords = this.state.parts[this.state.currentPart].chords;
       if (!chords) return;
       let t = 0;
-      const notes = [];
-      for (let chord of chords) {
-        notes.push({ time: t, notes: chord.notes, dur: chord.duration });
+      const notes: { time: number, index: number, notes: string[], dur: number }[] = [];
+      chords.forEach((chord, i) => {
+        notes.push({ time: t, index: i, notes: chord.notes, dur: chord.duration });
         t += chord.duration;
-      }
+      });
       this.playback = new Part((time, event) => {
         this.synth.triggerAttackRelease(event.notes, event.dur, time);
+        if (event.index === notes.length - 1) {
+          this.onStop();
+        } else {
+          this.setState(produce(this.state, state => {
+            state.parts[state.currentPart].chords[event.index].playing = true;
+            if (event.index > 0) {
+              state.parts[state.currentPart].chords[event.index - 1].playing = false;
+            }
+          }));
+        }
       }, notes);
       this.playback.start(0);
     }
@@ -260,11 +279,13 @@ export default class App extends React.Component<{}, State> {
   onStop() {
     this.playback?.stop();
     Transport.stop();
-    this.setState({
-      ...this.state,
-      playing: false,
-      paused: false,
-    });
+    this.setState(produce(this.state, state => {
+      state.playing = false;
+      state.paused = false;
+      state.parts[state.currentPart].chords.forEach(chord => {
+        chord.playing = false;
+      });
+    }));
   }
 
   render() {
@@ -281,7 +302,7 @@ export default class App extends React.Component<{}, State> {
         </div>
         {this.state.parts.map((part, i) => <Staff key={i}>
           <Bar>
-            {part.chords.map((chord, j) => <Chord key={j}>
+            {part.chords.map((chord, j) => <Chord key={j} playing={chord.playing}>
               {octaves.flat().reverse().map((baseNote, k) => {
                 const note = chordContains(chord, baseNote);
                 if (k % 2 === 0) {

@@ -92,6 +92,7 @@ const WholeRest = styled.span`
  background: black;
  position: absolute;
  bottom: -3px;
+ left: 5px;
  z-index: 1;
 `
 
@@ -100,6 +101,7 @@ const HalfRest = styled.span`
  height: 5px;
  background: black;
  position: absolute;
+ left: 5px;
  z-index: 1;
 `
 
