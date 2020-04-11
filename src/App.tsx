@@ -111,6 +111,7 @@ interface State {
   currentPart: number
   playing: boolean
   paused: boolean
+  record: boolean
 }
 
 function chordContains(chord: Chord, baseNote: string): string | undefined {
@@ -148,19 +149,32 @@ export default class App extends React.Component<{}, State> {
         playing: false,
       });
     }
+    const parts = JSON.parse(window.localStorage.getItem('parts') || 'false') as any;
     this.state = {
       keyPressed: {},
       restDuration: 0,
       currentPart: 0,
-      parts: [{
+      parts: parts || [{
         chords: initialChords,
       }],
       playing: false,
       paused: false,
+      record: true,
     }
   }
 
+  componentDidUpdate(props: {}, state: State) {
+    window.localStorage.setItem('parts', JSON.stringify(state.parts));
+  }
+
   onKeyDown(event: React.KeyboardEvent) {
+    if (event.key === ' ') {
+      this.setState({
+        ...this.state,
+        record: false,
+      });
+      return;
+    }
     for (let octave of Object.entries(this.keybindings)) {
       const i = octave[1].indexOf(event.key.toLowerCase());
       if (i >= 0) {
@@ -174,6 +188,13 @@ export default class App extends React.Component<{}, State> {
   }
 
   onKeyUp(event: React.KeyboardEvent) {
+    if (event.key === ' ') {
+      this.setState({
+        ...this.state,
+        record: true,
+      });
+      return;
+    }
     if (event.key === 'Backspace') {
       this.setState(produce(this.state, state => {
         state.parts[state.currentPart].chords.pop();
@@ -214,19 +235,21 @@ export default class App extends React.Component<{}, State> {
       const duration = (curr.getTime() - this.state.keyPressed[note].getTime()) / 1000.0;
       event.stopPropagation();
       this.setState(produce(this.state, state => {
-        const chords = state.parts[state.currentPart].chords;
-        if (this.state.restDuration > 0 && chords.length > 0 && chords[chords.length - 1].notes.length > 0) {
+        if (this.state.record) {
+          const chords = state.parts[state.currentPart].chords;
+          if (this.state.restDuration > 0 && chords.length > 0 && chords[chords.length - 1].notes.length > 0) {
+            chords.push({
+              notes: [],
+              duration: this.state.restDuration,
+              playing: false,
+            });
+          }
           chords.push({
-            notes: [],
-            duration: this.state.restDuration,
+            notes: Object.keys(this.state.keyPressed),
+            duration: duration,
             playing: false,
           });
         }
-        chords.push({
-          notes: Object.keys(this.state.keyPressed),
-          duration: duration,
-          playing: false,
-        });
         state.keyPressed = {};
         state.lastRelease = curr;
       }));

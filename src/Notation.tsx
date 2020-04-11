@@ -3,19 +3,10 @@ import styled from 'styled-components'
 
 import { Time } from 'tone';
 
-interface NoteProps {
-  sharp?: boolean;
-  dotted?: boolean;
-  triple?: boolean;
-}
-
-const Note = styled.img<NoteProps>`
+const Note = styled.img`
   position: absolute;
   left: 5px;
   z-index: 1;
-  ::after {
-    content: ${props => props.sharp ? "'#'" : "''"};
-  }
 `
 
 const WholeNote = styled(Note).attrs({
@@ -154,10 +145,6 @@ const TwoHundredFiftySixthRest = styled(Rest).attrs({
   top: -30px;
 `
 
-function isSharp(note: string): boolean {
-  return note.includes('#');
-}
-
 const NotesBySubdivision: { [key: number]: any } = {
   256: TwoHundredFiftySixthNote,
   128: HundredTwentyEighthNote,
@@ -170,19 +157,25 @@ const NotesBySubdivision: { [key: number]: any } = {
   1: WholeNote,
 }
 
+const Modification = styled.span`
+  position: relative;
+  top: -5px;
+  left: 20px;
+`;
+
 interface NoteElementProps {
   note: string,
   duration: number,
 }
 
 export function NoteElement(props: NoteElementProps): JSX.Element {
+  console.log(props);
   const subdivision = Time(props.duration).toNotation().toString();
-  const num = parseInt(subdivision);
-  return React.createElement(NotesBySubdivision[num], {
-    sharp: isSharp(props.note),
-    dotted: subdivision.includes('.'),
-    triple: subdivision.includes('t'),
-  });
+  return <div>
+    {React.createElement(NotesBySubdivision[parseInt(subdivision)], {})}
+    {props.note.includes('#') && <Modification>#</Modification>}
+    {props.note.includes('.') && <Modification>.</Modification>}
+  </div>
 }
 
 interface RestElementProps {
