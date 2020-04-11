@@ -169,7 +169,6 @@ interface NoteElementProps {
 }
 
 export function NoteElement(props: NoteElementProps): JSX.Element {
-  console.log(props);
   const subdivision = Time(props.duration).toNotation().toString();
   return <div>
     {React.createElement(NotesBySubdivision[parseInt(subdivision)], {})}
