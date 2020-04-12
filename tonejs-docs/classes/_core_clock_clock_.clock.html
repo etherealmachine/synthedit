@@ -1,0 +1,1720 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Clock | tone</title>
+	<meta name="description" content="Documentation for tone">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">tone</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_core_clock_clock_.html">&quot;core/clock/Clock&quot;</a>
+				</li>
+				<li>
+					<a href="_core_clock_clock_.clock.html">Clock</a>
+				</li>
+			</ul>
+			<h1>Class Clock&lt;TypeName&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A sample accurate clock which provides a callback at the given rate.
+							While the callback is not sample-accurate (it is still susceptible to
+							loose JS timing), the time passed in as the argument to the callback
+							is precise. For most applications, it is better to use Tone.Transport
+						instead of the Clock by itself since you can synchronize multiple callbacks.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><p>import { Clock } from &quot;tone&quot;;
+								// the callback will be invoked approximately once a second
+								// and will print the time exactly once a second apart.
+								const clock = new Clock(time =&gt; {
+								console.log(time);
+								}, 1);
+							clock.start();</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>TypeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"bpm"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"hertz"</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_core_context_tonewithcontext_.tonewithcontext.html" class="tsd-signature-type">ToneWithContext</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Clock</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="_core_util_emitter_.emitter.html" class="tsd-signature-type">Emitter</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_core_clock_clock_.clock.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_core_clock_clock_.clock.html#_boundloop" class="tsd-kind-icon">_bound<wbr>Loop</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_core_clock_clock_.clock.html#_lastupdate" class="tsd-kind-icon">_last<wbr>Update</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_core_clock_clock_.clock.html#_state" class="tsd-kind-icon">_state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_core_clock_clock_.clock.html#_ticksource" class="tsd-kind-icon">_tick<wbr>Source</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#callback" class="tsd-kind-icon">callback</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#debug" class="tsd-kind-icon">debug</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#emit" class="tsd-kind-icon">emit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#frequency" class="tsd-kind-icon">frequency</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_core_clock_clock_.clock.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#off" class="tsd-kind-icon">off</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#once" class="tsd-kind-icon">once</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_core_clock_clock_.clock.html#version" class="tsd-kind-icon">version</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#disposed" class="tsd-kind-icon">disposed</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#seconds" class="tsd-kind-icon">seconds</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#state" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#ticks" class="tsd-kind-icon">ticks</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_core_clock_clock_.clock.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_core_clock_clock_.clock.html#_loop" class="tsd-kind-icon">_loop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_core_clock_clock_.clock.html#assert" class="tsd-kind-icon">assert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_core_clock_clock_.clock.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#getsecondsattime" class="tsd-kind-icon">get<wbr>Seconds<wbr>AtTime</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#getstateattime" class="tsd-kind-icon">get<wbr>State<wbr>AtTime</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#getticksattime" class="tsd-kind-icon">get<wbr>Ticks<wbr>AtTime</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#gettimeoftick" class="tsd-kind-icon">get<wbr>Time<wbr>OfTick</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#immediate" class="tsd-kind-icon">immediate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_core_clock_clock_.clock.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#nextticktime" class="tsd-kind-icon">next<wbr>Tick<wbr>Time</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#now" class="tsd-kind-icon">now</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#pause" class="tsd-kind-icon">pause</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#setticksattime" class="tsd-kind-icon">set<wbr>Ticks<wbr>AtTime</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#start" class="tsd-kind-icon">start</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_core_clock_clock_.clock.html#stop" class="tsd-kind-icon">stop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_core_clock_clock_.clock.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="_core_clock_clock_.clock.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Clock<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_clock_clock_.html#clockcallback" class="tsd-signature-type">ClockCallback</a>, frequency<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_core_clock_clock_.clock.html" class="tsd-signature-type">Clock</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Clock<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_core_clock_clock_.clock.html" class="tsd-signature-type">Clock</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:71</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <a href="../modules/_core_clock_clock_.html#clockcallback" class="tsd-signature-type">ClockCallback</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The callback to be invoked with the time of the audio event</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> frequency: <a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The rate of the callback</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_core_clock_clock_.clock.html" class="tsd-signature-type">Clock</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:77</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_core_clock_clock_.clock.html" class="tsd-signature-type">Clock</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_boundloop" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _bound<wbr>Loop</h3>
+					<div class="tsd-signature tsd-kind-icon">_bound<wbr>Loop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> = this._loop.bind(this)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:66</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Context bound reference to the _loop method
+							This is necessary to remove the event in the end.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_lastupdate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _last<wbr>Update</h3>
+					<div class="tsd-signature tsd-kind-icon">_last<wbr>Update<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:55</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The last time the loop callback was invoked</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_state" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _state</h3>
+					<div class="tsd-signature tsd-kind-icon">_state<span class="tsd-signature-symbol">:</span> <a href="_core_util_statetimeline_.statetimeline.html" class="tsd-signature-type">StateTimeline</a><span class="tsd-signature-symbol"> = new StateTimeline(&quot;stopped&quot;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:60</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Keep track of the playback state</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_ticksource" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _tick<wbr>Source</h3>
+					<div class="tsd-signature tsd-kind-icon">_tick<wbr>Source<span class="tsd-signature-symbol">:</span> <a href="_core_clock_ticksource_.ticksource.html" class="tsd-signature-type">TickSource</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:50</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The tick counter</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="callback" class="tsd-anchor"></a>
+					<h3>callback</h3>
+					<div class="tsd-signature tsd-kind-icon">callback<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_clock_clock_.html#clockcallback" class="tsd-signature-type">ClockCallback</a><span class="tsd-signature-symbol"> = noOp</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:45</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The callback function to invoke at the scheduled tick.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="_core_context_basecontext_.basecontext.html" class="tsd-signature-type">BaseContext</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#context">context</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/context/ToneWithContext.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The context belonging to the node.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="debug" class="tsd-anchor"></a>
+					<h3>debug</h3>
+					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#debug">debug</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:48</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set this debug flag to log all events that happen in this class.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="emit" class="tsd-anchor"></a>
+					<h3>emit</h3>
+					<div class="tsd-signature tsd-kind-icon">emit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">this</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:317</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>event: <span class="tsd-signature-type">any</span></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="frequency" class="tsd-anchor"></a>
+					<h3>frequency</h3>
+					<div class="tsd-signature tsd-kind-icon">frequency<span class="tsd-signature-symbol">:</span> <a href="_core_clock_ticksignal_.ticksignal.html" class="tsd-signature-type">TickSignal</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TypeName</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:71</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The rate the callback function should be invoked.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Clock&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#name">name</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:40</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="off" class="tsd-anchor"></a>
+					<h3>off</h3>
+					<div class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">this</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:316</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>event: <a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<div class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">this</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:314</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>event: <a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a></h5>
+											</li>
+											<li>
+												<h5>callback: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-signature">
+														<ul class="tsd-signatures tsd-kind-type-literal">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-parameters-title">Parameters</h4>
+																<ul class="tsd-parameters">
+																	<li>
+																		<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+																	</li>
+																</ul>
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="once" class="tsd-anchor"></a>
+					<h3>once</h3>
+					<div class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">this</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/core/clock/Clock.ts:315</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>event: <a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-signature-type">ClockEvent</a></h5>
+											</li>
+											<li>
+												<h5>callback: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-signature">
+														<ul class="tsd-signatures tsd-kind-type-literal">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-parameters-title">Parameters</h4>
+																<ul class="tsd-parameters">
+																	<li>
+																		<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+																	</li>
+																</ul>
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = version</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#version">version</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The version number semver</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="blocktime" class="tsd-anchor"></a>
+					<h3>block<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> blockTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#blocktime">blockTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:81</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of seconds of 1 processing block (128 samples)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="disposed" class="tsd-anchor"></a>
+					<h3>disposed</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> disposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#disposed">disposed</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates if the instance was disposed. &#39;Disposing&#39; an
+										instance means that all of the Web Audio nodes that were
+									created for the instance are disconnected and freed for garbage collection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="sampletime" class="tsd-anchor"></a>
+					<h3>sample<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sampleTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#sampletime">sampleTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:74</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The duration in seconds of one sample.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="seconds" class="tsd-anchor"></a>
+					<h3>seconds</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> seconds<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> seconds<span class="tsd-signature-symbol">(</span>s<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:192</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The time since ticks=0 that the Clock has been running. Accounts for tempo curves</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:195</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The time since ticks=0 that the Clock has been running. Accounts for tempo curves</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>s: <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="state" class="tsd-anchor"></a>
+					<h3>state</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> state<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_statetimeline_.html#playbackstate" class="tsd-signature-type">PlaybackState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:112</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the playback state of the source, either &quot;started&quot;, &quot;stopped&quot; or &quot;paused&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_util_statetimeline_.html#playbackstate" class="tsd-signature-type">PlaybackState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="ticks" class="tsd-anchor"></a>
+					<h3>ticks</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> ticks<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> ticks<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:182</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of times the callback was invoked. Starts counting at 0
+									and increments after the callback was invoked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:185</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of times the callback was invoked. Starts counting at 0
+									and increments after the callback was invoked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>t: <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_getpartialproperties" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _get<wbr>Partial<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Partial<wbr>Properties<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#_getpartialproperties">_getPartialProperties</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a subset of the properties which are in the partial props</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_loop" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _loop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_loop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:252</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The scheduling loop.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="assert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> assert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">assert<span class="tsd-signature-symbol">(</span>statement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#assert">assert</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:76</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assert that the statement is true, otherwise invoke the error.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>statement: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>error: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message which is passed into an Error</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#dispose">dispose</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:302</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clean up</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#get">get</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:132</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the object&#39;s attributes.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											console.log(osc.get());
+										// returns {&quot;type&quot; : &quot;sine&quot;, &quot;frequency&quot; : 440, ...etc}</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getsecondsattime" class="tsd-anchor"></a>
+					<h3>get<wbr>Seconds<wbr>AtTime</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Seconds<wbr>AtTime<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:204</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the elapsed seconds at the given time.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When to get the elapsed seconds</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+							<p>The number of elapsed seconds</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getstateattime" class="tsd-anchor"></a>
+					<h3>get<wbr>State<wbr>AtTime</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>State<wbr>AtTime<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_statetimeline_.html#playbackstate" class="tsd-signature-type">PlaybackState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:294</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the scheduled state at the given time.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Clock } from &quot;tone&quot;;
+											const clock = new Clock();
+											clock.start(&quot;+0.1&quot;);
+										clock.getStateAtTime(&quot;+0.1&quot;); // returns &quot;started&quot;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time to query.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_util_statetimeline_.html#playbackstate" class="tsd-signature-type">PlaybackState</a></h4>
+							<p>The name of the state input in setStateAtTime.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getticksattime" class="tsd-anchor"></a>
+					<h3>get<wbr>Ticks<wbr>AtTime</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Ticks<wbr>AtTime<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:235</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the clock&#39;s ticks at the given time.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When to get the tick value</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+							<p>The tick value at the given time.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettimeoftick" class="tsd-anchor"></a>
+					<h3>get<wbr>Time<wbr>OfTick</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Time<wbr>OfTick<span class="tsd-signature-symbol">(</span>tick<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a>, before<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:226</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the time of the given tick. The second argument
+										is when to test before. Since ticks can be set (with setTicksAtTime)
+									there may be multiple times for a given tick value.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tick: <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The tick number.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> before: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = this.now()</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When to measure the tick value from.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+							<p>The time of the tick</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="immediate" class="tsd-anchor"></a>
+					<h3>immediate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">immediate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#immediate">immediate</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:67</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock without any lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#log">log</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:63</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Prints the outputs to the console log for debugging purposes.
+										Prints the contents only if either the object has a property
+										called <code>debug</code> set to true, or a variable called TONE_DEBUG_CLASS
+									is set to the name of the class.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											// prints all logs originating from this oscillator
+											osc.debug = true;
+											// calls to start/stop will print in the console
+										osc.start();</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="nextticktime" class="tsd-anchor"></a>
+					<h3>next<wbr>Tick<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">next<wbr>Tick<wbr>Time<span class="tsd-signature-symbol">(</span>offset<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a>, when<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:243</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the time of the next tick</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>offset: <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The tick number.</p>
+									</div>
+								</li>
+								<li>
+									<h5>when: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="now" class="tsd-anchor"></a>
+					<h3>now</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">now<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#now">now</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:60</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock plus the lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="pause" class="tsd-anchor"></a>
+					<h3>pause</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:166</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Pause the clock. Pausing does not reset the tick counter.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time when the clock should stop.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="set" class="tsd-anchor"></a>
+					<h3>set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#set">set</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:165</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set multiple properties at once with an object.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Filter } from &quot;tone&quot;;
+											const filter = new Filter();
+											// set values using an object
+											filter.set({
+											frequency: 300,
+											type: &quot;highpass&quot;
+										});</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setticksattime" class="tsd-anchor"></a>
+					<h3>set<wbr>Ticks<wbr>AtTime</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Ticks<wbr>AtTime<span class="tsd-signature-symbol">(</span>ticks<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a>, time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:213</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the clock&#39;s ticks at the given time.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ticks: <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The tick value to set</p>
+									</div>
+								</li>
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When to set the tick value</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="start" class="tsd-anchor"></a>
+					<h3>start</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a>, offset<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:122</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Start the clock at the given time. Optionally pass in an offset
+									of where to start the tick counter from.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time the clock should start</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> offset: <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Where the tick counter starts counting from.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="stop" class="tsd-anchor"></a>
+					<h3>stop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:150</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stop the clock. Stopping the clock resets the tick counter to 0.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Clock } from &quot;tone&quot;;
+											const clock = new Clock(time =&gt; {
+											console.log(time);
+											}, 1);
+											clock.start();
+											// stop the clock after 10 seconds
+										clock.stop(&quot;+10&quot;);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time when the clock should stop.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tofrequency" class="tsd-anchor"></a>
+					<h3>to<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Frequency<span class="tsd-signature-symbol">(</span>freq<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#tofrequency">toFrequency</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:95</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input to a frequency number</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>freq: <a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toseconds" class="tsd-anchor"></a>
+					<h3>to<wbr>Seconds</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Seconds<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toseconds">toSeconds</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:88</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the incoming time to seconds</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#tostring">toString</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the class to a string</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+										console.log(osc.toString());</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toticks" class="tsd-anchor"></a>
+					<h3>to<wbr>Ticks</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Ticks<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toticks">toTicks</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input time into ticks</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+					<a name="getdefaults" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Defaults<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#getdefaults">getDefaults</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/clock/Clock.ts:101</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-signature-type">ClockOptions</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_core_clock_clock_.html">&quot;core/clock/<wbr>Clock&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_core_clock_clock_.clock.html" class="tsd-kind-icon">Clock</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_core_clock_clock_.clock.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_core_clock_clock_.clock.html#_boundloop" class="tsd-kind-icon">_bound<wbr>Loop</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_core_clock_clock_.clock.html#_lastupdate" class="tsd-kind-icon">_last<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_core_clock_clock_.clock.html#_state" class="tsd-kind-icon">_state</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_core_clock_clock_.clock.html#_ticksource" class="tsd-kind-icon">_tick<wbr>Source</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#callback" class="tsd-kind-icon">callback</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#debug" class="tsd-kind-icon">debug</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#emit" class="tsd-kind-icon">emit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#frequency" class="tsd-kind-icon">frequency</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_core_clock_clock_.clock.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#off" class="tsd-kind-icon">off</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#on" class="tsd-kind-icon">on</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#once" class="tsd-kind-icon">once</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="_core_clock_clock_.clock.html#version" class="tsd-kind-icon">version</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#disposed" class="tsd-kind-icon">disposed</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#seconds" class="tsd-kind-icon">seconds</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#state" class="tsd-kind-icon">state</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#ticks" class="tsd-kind-icon">ticks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_core_clock_clock_.clock.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_core_clock_clock_.clock.html#_loop" class="tsd-kind-icon">_loop</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_core_clock_clock_.clock.html#assert" class="tsd-kind-icon">assert</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_core_clock_clock_.clock.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#getsecondsattime" class="tsd-kind-icon">get<wbr>Seconds<wbr>AtTime</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#getstateattime" class="tsd-kind-icon">get<wbr>State<wbr>AtTime</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#getticksattime" class="tsd-kind-icon">get<wbr>Ticks<wbr>AtTime</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#gettimeoftick" class="tsd-kind-icon">get<wbr>Time<wbr>OfTick</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#immediate" class="tsd-kind-icon">immediate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_core_clock_clock_.clock.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#nextticktime" class="tsd-kind-icon">next<wbr>Tick<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#now" class="tsd-kind-icon">now</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#pause" class="tsd-kind-icon">pause</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#set" class="tsd-kind-icon">set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#setticksattime" class="tsd-kind-icon">set<wbr>Ticks<wbr>AtTime</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#start" class="tsd-kind-icon">start</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_core_clock_clock_.clock.html#stop" class="tsd-kind-icon">stop</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_core_clock_clock_.clock.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="_core_clock_clock_.clock.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_core_clock_clock_.clockoptions.html" class="tsd-kind-icon">Clock<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_core_clock_clock_.html#clockcallback" class="tsd-kind-icon">Clock<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_core_clock_clock_.html#clockevent" class="tsd-kind-icon">Clock<wbr>Event</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

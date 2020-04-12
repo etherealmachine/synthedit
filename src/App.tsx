@@ -77,13 +77,13 @@ const Chord = styled.div<ChordProps>`
 `
 
 const Line = styled.div`
-  width: 25px;
+  width: 30px;
   height: 8px;
   position: relative;
   ::after {
     content: '';
     position: absolute;
-    width: 25px;
+    width: 30px;
     height: 2px;
     background: black;
     top: 4px;
@@ -123,19 +123,42 @@ function chordContains(chord: Chord, baseNote: string): string | undefined {
   })?.toString();
 }
 
-function prevDuration(duration: number): number {
+// 1n, 2.n, 2n, 4.n, ...
+function shorter(duration: number): number {
   const d = Time(duration).toNotation();
   const t = parseInt(d);
-  return Time((t * 2).toString() + 'n').toSeconds();
+  if (d.includes('.')) {
+    return Time(t.toString() + 'n').toSeconds();
+  }
+  return Time((t * 2).toString() + 'n.').toSeconds();
 }
 
-function nextDuration(duration: number): number {
+// 8n, 8.n, 4n, 4.n, 2n, 2.n, ...
+function longer(duration: number): number {
   const d = Time(duration).toNotation();
   const t = parseInt(d);
-  return Time((t / 2).toString() + 'n').toSeconds();
+  if (d.includes('.')) {
+    return Time((t / 2).toString() + 'n').toSeconds();
+  }
+  return Time(t.toString() + 'n.').toSeconds();
 }
 
 export default class App extends React.Component<{}, State> {
+
+  TestSynthConfig = {
+    oscillator: {
+      type: 'fmsine' as const,
+      modulationType: 'sawtooth' as const,
+      modulationIndex: 3,
+      harmonicity: 3.4
+    },
+    envelope: {
+      attack: 0.001,
+      decay: 0.1,
+      sustain: 0.1,
+      release: 0.1
+    }
+  }
 
   synth: PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
   playback?: Part
@@ -188,7 +211,7 @@ export default class App extends React.Component<{}, State> {
     if (event.key === ' ') {
       this.setState({
         ...this.state,
-        record: true,
+        record: false,
       });
       return;
     }
@@ -197,9 +220,9 @@ export default class App extends React.Component<{}, State> {
         if (this.hoverI === undefined || this.hoverJ === undefined) return;
         const duration = state.parts[this.hoverI].chords[this.hoverJ].duration;
         if (event.key === 'ArrowLeft') {
-          state.parts[this.hoverI].chords[this.hoverJ].duration = prevDuration(duration);
+          state.parts[this.hoverI].chords[this.hoverJ].duration = shorter(duration);
         } else if (event.key === 'ArrowRight') {
-          state.parts[this.hoverI].chords[this.hoverJ].duration = nextDuration(duration);
+          state.parts[this.hoverI].chords[this.hoverJ].duration = longer(duration);
         }
       }));
     }
@@ -334,15 +357,14 @@ export default class App extends React.Component<{}, State> {
       this.playback = new Part((time, event) => {
         this.synth.triggerAttackRelease(event.notes, event.dur, time);
         if (event.index === notes.length - 1) {
-          this.onStop();
-        } else {
-          this.setState(produce(this.state, state => {
-            state.parts[state.currentPart].chords[event.index].playing = true;
-            if (event.index > 0) {
-              state.parts[state.currentPart].chords[event.index - 1].playing = false;
-            }
-          }));
+          Transport.scheduleOnce(this.onStop.bind(this), time);
         }
+        this.setState(produce(this.state, state => {
+          state.parts[state.currentPart].chords[event.index].playing = true;
+          if (event.index > 0) {
+            state.parts[state.currentPart].chords[event.index - 1].playing = false;
+          }
+        }));
       }, notes);
       this.playback.start(0);
     }

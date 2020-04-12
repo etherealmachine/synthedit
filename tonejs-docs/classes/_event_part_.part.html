@@ -1,0 +1,2133 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Part | tone</title>
+	<meta name="description" content="Documentation for tone">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">tone</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_event_part_.html">&quot;event/Part&quot;</a>
+				</li>
+				<li>
+					<a href="_event_part_.part.html">Part</a>
+				</li>
+			</ul>
+			<h1>Class Part&lt;ValueType&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Part is a collection ToneEvents which can be started/stopped and looped as a single unit.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><p>import { Part, Synth } from &quot;tone&quot;;
+								const synth = new Synth().toDestination();
+								const part = new Part(((time, note) =&gt; {
+								// the notes given as the second element in the array
+								// will be passed in as the second argument
+								synth.triggerAttackRelease(note, &quot;8n&quot;, time);
+							}), [[0, &quot;C2&quot;], [&quot;0:2&quot;, &quot;C3&quot;], [&quot;0:3:2&quot;, &quot;G2&quot;]]);</p>
+						</dd>
+						<dt>example</dt>
+						<dd><p>import { Part, Synth } from &quot;tone&quot;;
+								const synth = new Synth().toDestination();
+								// use an array of objects as long as the object has a &quot;time&quot; attribute
+								const part = new Part(((time, value) =&gt; {
+								// the value is an object which contains both the note and the velocity
+								synth.triggerAttackRelease(value.note, &quot;8n&quot;, time, value.velocity);
+								}), [{ time: 0, note: &quot;C3&quot;, velocity: 0.9 },
+								{ time: &quot;0:2&quot;, note: &quot;C4&quot;, velocity: 0.5 }
+							]).start(0);</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>ValueType</h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Part</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_event_part_.part.html#_events" class="tsd-kind-icon">_events</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_humanize" class="tsd-kind-icon">_humanize</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_loop" class="tsd-kind-icon">_loop</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_loopend" class="tsd-kind-icon">_loop<wbr>End</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_loopstart" class="tsd-kind-icon">_loop<wbr>Start</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_playbackrate" class="tsd-kind-icon">_playback<wbr>Rate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_probability" class="tsd-kind-icon">_probability</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_startoffset" class="tsd-kind-icon">_start<wbr>Offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_event_part_.part.html#_state" class="tsd-kind-icon">_state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#callback" class="tsd-kind-icon">callback</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#debug" class="tsd-kind-icon">debug</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#mute" class="tsd-kind-icon">mute</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_event_part_.part.html#version" class="tsd-kind-icon">version</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#disposed" class="tsd-kind-icon">disposed</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#humanize" class="tsd-kind-icon">humanize</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_event_part_.part.html#length" class="tsd-kind-icon">length</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#loop" class="tsd-kind-icon">loop</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#loopend" class="tsd-kind-icon">loop<wbr>End</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#loopstart" class="tsd-kind-icon">loop<wbr>Start</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#playbackrate" class="tsd-kind-icon">playback<wbr>Rate</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#probability" class="tsd-kind-icon">probability</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#progress" class="tsd-kind-icon">progress</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#startoffset" class="tsd-kind-icon">start<wbr>Offset</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#state" class="tsd-kind-icon">state</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_event_part_.part.html#_foreach" class="tsd-kind-icon">_for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_getloopduration" class="tsd-kind-icon">_get<wbr>Loop<wbr>Duration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_event_part_.part.html#_restartevent" class="tsd-kind-icon">_restart<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_event_part_.part.html#_setall" class="tsd-kind-icon">_set<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_event_part_.part.html#_startnote" class="tsd-kind-icon">_start<wbr>Note</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_event_part_.part.html#_testloopboundries" class="tsd-kind-icon">_test<wbr>Loop<wbr>Boundries</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_event_part_.part.html#_tick" class="tsd-kind-icon">_tick</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_event_part_.part.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#assert" class="tsd-kind-icon">assert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_event_part_.part.html#at" class="tsd-kind-icon">at</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#cancel" class="tsd-kind-icon">cancel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_event_part_.part.html#clear" class="tsd-kind-icon">clear</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#immediate" class="tsd-kind-icon">immediate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_event_part_.part.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#now" class="tsd-kind-icon">now</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_event_part_.part.html#remove" class="tsd-kind-icon">remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#start" class="tsd-kind-icon">start</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_event_part_.part.html#stop" class="tsd-kind-icon">stop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_event_part_.part.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="_event_part_.part.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Part<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">?: </span><a href="../modules/_event_toneevent_.html#toneeventcallback" class="tsd-signature-type">ToneEventCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_event_part_.html#callbacktype" class="tsd-signature-type">CallbackType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_event_part_.part.html" class="tsd-signature-type">Part</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Part<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_event_part_.partoptions.html" class="tsd-signature-type">PartOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_event_part_.part.html" class="tsd-signature-type">Part</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:59</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <a href="../modules/_event_toneevent_.html#toneeventcallback" class="tsd-signature-type">ToneEventCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_event_part_.html#callbacktype" class="tsd-signature-type">CallbackType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The callback to invoke on each event</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_event_part_.part.html" class="tsd-signature-type">Part</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:65</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_event_part_.partoptions.html" class="tsd-signature-type">PartOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_event_part_.part.html" class="tsd-signature-type">Part</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_events" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _events</h3>
+					<div class="tsd-signature tsd-kind-icon">_events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Set()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/event/Part.ts:59</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The events that belong to this part</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_humanize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _humanize</h3>
+					<div class="tsd-signature tsd-kind-icon">_humanize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_humanize">_humanize</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:101</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the amount of variation from the given time.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_loop" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _loop</h3>
+					<div class="tsd-signature tsd-kind-icon">_loop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_loop">_loop</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:52</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Loop value</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_loopend" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _loop<wbr>End</h3>
+					<div class="tsd-signature tsd-kind-icon">_loop<wbr>End<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_loopend">_loopEnd</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:73</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When the note is scheduled to start.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_loopstart" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _loop<wbr>Start</h3>
+					<div class="tsd-signature tsd-kind-icon">_loop<wbr>Start<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_loopstart">_loopStart</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:68</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When the note is scheduled to start.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_playbackrate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _playback<wbr>Rate</h3>
+					<div class="tsd-signature tsd-kind-icon">_playback<wbr>Rate<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_type_units_.html#positive" class="tsd-signature-type">Positive</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_playbackrate">_playbackRate</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:86</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The playback speed of the note. A speed of 1
+							is no change.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_probability" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _probability</h3>
+					<div class="tsd-signature tsd-kind-icon">_probability<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_type_units_.html#normalrange" class="tsd-signature-type">NormalRange</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_probability">_probability</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:96</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>private holder of probability value</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_startoffset" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _start<wbr>Offset</h3>
+					<div class="tsd-signature tsd-kind-icon">_start<wbr>Offset<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a><span class="tsd-signature-symbol"> = 0</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_startoffset">_startOffset</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:91</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A delay time from when the event is scheduled to start</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="_state" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _state</h3>
+					<div class="tsd-signature tsd-kind-icon">_state<span class="tsd-signature-symbol">:</span> <a href="_core_util_statetimeline_.statetimeline.html" class="tsd-signature-type">StateTimeline</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new StateTimeline(&quot;stopped&quot;)</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_state">_state</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/Part.ts:51</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Tracks the scheduled events</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="callback" class="tsd-anchor"></a>
+					<h3>callback</h3>
+					<div class="tsd-signature tsd-kind-icon">callback<span class="tsd-signature-symbol">:</span> <a href="../modules/_event_toneevent_.html#toneeventcallback" class="tsd-signature-type">ToneEventCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#callback">callback</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:57</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The callback to invoke.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="_core_context_basecontext_.basecontext.html" class="tsd-signature-type">BaseContext</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#context">context</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/context/ToneWithContext.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The context belonging to the node.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="debug" class="tsd-anchor"></a>
+					<h3>debug</h3>
+					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#debug">debug</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:48</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set this debug flag to log all events that happen in this class.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="mute" class="tsd-anchor"></a>
+					<h3>mute</h3>
+					<div class="tsd-signature tsd-kind-icon">mute<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#mute">mute</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:106</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If mute is true, the callback won&#39;t be invoked.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Part&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#name">name</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/Part.ts:46</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ValueType</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#value">value</a></p>
+						<ul>
+							<li>Defined in tone/Tone/event/ToneEvent.ts:63</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The value which is passed to the
+							callback function.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = version</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#version">version</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The version number semver</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="blocktime" class="tsd-anchor"></a>
+					<h3>block<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> blockTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#blocktime">blockTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:81</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of seconds of 1 processing block (128 samples)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="disposed" class="tsd-anchor"></a>
+					<h3>disposed</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> disposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#disposed">disposed</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates if the instance was disposed. &#39;Disposing&#39; an
+										instance means that all of the Web Audio nodes that were
+									created for the instance are disconnected and freed for garbage collection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="humanize" class="tsd-anchor"></a>
+					<h3>humanize</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> humanize<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> humanize<span class="tsd-signature-symbol">(</span>variation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#humanize">humanize</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:383</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#humanize">humanize</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:386</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>variation: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="length" class="tsd-anchor"></a>
+					<h3>length</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> length<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:467</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of scheduled notes in the part.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="loop" class="tsd-anchor"></a>
+					<h3>loop</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> loop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> loop<span class="tsd-signature-symbol">(</span>loop<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#loop">loop</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:406</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the part should loop or not
+										between Part.loopStart and
+										Part.loopEnd. If set to true,
+										the part will loop indefinitely,
+										if set to a number greater than 1
+										it will play a specific number of
+										times, if set to false, 0 or 1, the
+									part will only play once.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Part } from &quot;tone&quot;;
+											const part = new Part();
+											// loop the part 8 times
+										part.loop = 8;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#loop">loop</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:409</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the part should loop or not
+										between Part.loopStart and
+										Part.loopEnd. If set to true,
+										the part will loop indefinitely,
+										if set to a number greater than 1
+										it will play a specific number of
+										times, if set to false, 0 or 1, the
+									part will only play once.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Part } from &quot;tone&quot;;
+											const part = new Part();
+											// loop the part 8 times
+										part.loop = 8;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>loop: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="loopend" class="tsd-anchor"></a>
+					<h3>loop<wbr>End</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> loopEnd<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> loopEnd<span class="tsd-signature-symbol">(</span>loopEnd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#loopend">loopEnd</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:423</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The loopEnd point determines when it will
+									loop if Part.loop is true.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#loopend">loopEnd</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:426</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The loopEnd point determines when it will
+									loop if Part.loop is true.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>loopEnd: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="loopstart" class="tsd-anchor"></a>
+					<h3>loop<wbr>Start</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> loopStart<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> loopStart<span class="tsd-signature-symbol">(</span>loopStart<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#loopstart">loopStart</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:440</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The loopStart point determines when it will
+									loop if Part.loop is true.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#loopstart">loopStart</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:443</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The loopStart point determines when it will
+									loop if Part.loop is true.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>loopStart: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="playbackrate" class="tsd-anchor"></a>
+					<h3>playback<wbr>Rate</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> playbackRate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#positive" class="tsd-signature-type">Positive</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> playbackRate<span class="tsd-signature-symbol">(</span>rate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#playbackrate">playbackRate</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:456</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The playback rate of the part</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#positive" class="tsd-signature-type">Positive</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#playbackrate">playbackRate</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:459</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The playback rate of the part</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rate: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="probability" class="tsd-anchor"></a>
+					<h3>probability</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> probability<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#normalrange" class="tsd-signature-type">NormalRange</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> probability<span class="tsd-signature-symbol">(</span>prob<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#probability">probability</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:375</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#normalrange" class="tsd-signature-type">NormalRange</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#probability">probability</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:378</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>prob: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="progress" class="tsd-anchor"></a>
+					<h3>progress</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> progress<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#normalrange" class="tsd-signature-type">NormalRange</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#progress">progress</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/ToneEvent.ts:376</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The current progress of the loop interval.
+										Returns 0 if the event is not started yet or
+									it is not set to loop.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#normalrange" class="tsd-signature-type">NormalRange</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="sampletime" class="tsd-anchor"></a>
+					<h3>sample<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sampleTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#sampletime">sampleTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:74</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The duration in seconds of one sample.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="startoffset" class="tsd-anchor"></a>
+					<h3>start<wbr>Offset</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> startOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> startOffset<span class="tsd-signature-symbol">(</span>offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#startoffset">startOffset</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:144</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#startoffset">startOffset</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:147</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>offset: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="state" class="tsd-anchor"></a>
+					<h3>state</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> state<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_statetimeline_.html#basicplaybackstate" class="tsd-signature-type">BasicPlaybackState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#state">state</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/ToneEvent.ts:189</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the playback state of the note, either &quot;started&quot; or &quot;stopped&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_util_statetimeline_.html#basicplaybackstate" class="tsd-signature-type">BasicPlaybackState</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_foreach" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _for<wbr>Each</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_for<wbr>Each<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:327</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Iterate over all of the events</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>event: <a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_getloopduration" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _get<wbr>Loop<wbr>Duration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Loop<wbr>Duration<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_getloopduration">_getLoopDuration</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/ToneEvent.ts:305</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the duration of the loop.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_getpartialproperties" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _get<wbr>Partial<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Partial<wbr>Properties<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#_getpartialproperties">_getPartialProperties</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a subset of the properties which are in the partial props</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_restartevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _restart<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_restart<wbr>Event<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:265</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Restart the given event</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_setall" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _set<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_set<wbr>All<span class="tsd-signature-symbol">(</span>attr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:345</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the attribute of all of the events</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attr: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the attribute to set</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value to set it to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_startnote" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _start<wbr>Note</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_start<wbr>Note<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a>, ticks<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a>, offset<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:126</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Start the event in the given event at the correct time given
+									the ticks and offset and looping.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a></h5>
+								</li>
+								<li>
+									<h5>ticks: <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h5>
+								</li>
+								<li>
+									<h5>offset: <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_testloopboundries" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _test<wbr>Loop<wbr>Boundries</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_test<wbr>Loop<wbr>Boundries<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:366</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Determine if the event should be currently looping
+									given the loop boundries of this Part.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The event to test</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="_tick" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _tick</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_tick<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a>, value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#_tick">_tick</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:355</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Internal tick method</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time of the event in seconds</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="add" class="tsd-anchor"></a>
+					<h3>add</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a>, value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:219</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a an event to the part.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Part } from &quot;tone&quot;;
+											const part = new Part();
+										part.add(&quot;1m&quot;, &quot;C#+11&quot;);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-symbol">{ </span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:223</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="assert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> assert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">assert<span class="tsd-signature-symbol">(</span>statement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#assert">assert</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:76</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assert that the statement is true, otherwise invoke the error.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>statement: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>error: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message which is passed into an Error</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="at" class="tsd-anchor"></a>
+					<h3>at</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">at<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a>, value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:183</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get/Set an Event&#39;s value at the given time.
+										If a value is passed in and no event exists at
+										the given time, one will be created with that value.
+										If two events are at the same time, the first one will
+									be returned.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Part } from &quot;tone&quot;;
+											const part = new Part();
+											part.at(&quot;1m&quot;); // returns the part at the first measure
+											part.at(&quot;2m&quot;, &quot;C2&quot;); // set the value at &quot;2m&quot; to C2.
+										// if an event didn&#39;t exist at that time, it will be created.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time of the event to get or set.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If a value is passed in, the value of the event at the given time will be set to it.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_event_toneevent_.toneevent.html" class="tsd-signature-type">ToneEvent</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="cancel" class="tsd-anchor"></a>
+					<h3>cancel</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">cancel<span class="tsd-signature-symbol">(</span>after<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#transporttime" class="tsd-signature-type">TransportTime</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_transporttime_.transporttimeclass.html" class="tsd-signature-type">TransportTimeClass</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#cancel">cancel</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:318</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Cancel scheduled state change events: i.e. &quot;start&quot; and &quot;stop&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> after: <a href="../modules/_core_type_units_.html#transporttime" class="tsd-signature-type">TransportTime</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_transporttime_.transporttimeclass.html" class="tsd-signature-type">TransportTimeClass</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time after which to cancel the scheduled events.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clear" class="tsd-anchor"></a>
+					<h3>clear</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:308</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove all of the notes from the group.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#dispose">dispose</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:471</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#get">get</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:132</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the object&#39;s attributes.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											console.log(osc.get());
+										// returns {&quot;type&quot; : &quot;sine&quot;, &quot;frequency&quot; : 440, ...etc}</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="immediate" class="tsd-anchor"></a>
+					<h3>immediate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">immediate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#immediate">immediate</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:67</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock without any lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#log">log</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:63</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Prints the outputs to the console log for debugging purposes.
+										Prints the contents only if either the object has a property
+										called <code>debug</code> set to true, or a variable called TONE_DEBUG_CLASS
+									is set to the name of the class.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											// prints all logs originating from this oscillator
+											osc.debug = true;
+											// calls to start/stop will print in the console
+										osc.start();</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="now" class="tsd-anchor"></a>
+					<h3>now</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">now<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#now">now</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:60</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock plus the lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="remove" class="tsd-anchor"></a>
+					<h3>remove</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a>, value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:282</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove an event from the part. If the event at that time is a Part,
+									it will remove the entire part.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-symbol">{ </span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:286</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="set" class="tsd-anchor"></a>
+					<h3>set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#set">set</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:165</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set multiple properties at once with an object.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Filter } from &quot;tone&quot;;
+											const filter = new Filter();
+											// set values using an object
+											filter.set({
+											frequency: 300,
+											type: &quot;highpass&quot;
+										});</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_event_toneevent_.toneeventoptions.html" class="tsd-signature-type">ToneEventOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ValueType</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="start" class="tsd-anchor"></a>
+					<h3>start</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#transporttime" class="tsd-signature-type">TransportTime</a>, offset<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#start">start</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:96</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Start the part at the given time.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#transporttime" class="tsd-signature-type">TransportTime</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When to start the part.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> offset: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The offset from the start of the part to begin playing at.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="stop" class="tsd-anchor"></a>
+					<h3>stop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#transporttime" class="tsd-signature-type">TransportTime</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#stop">stop</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:158</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stop the part at the given time.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#transporttime" class="tsd-signature-type">TransportTime</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When to stop the part.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tofrequency" class="tsd-anchor"></a>
+					<h3>to<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Frequency<span class="tsd-signature-symbol">(</span>freq<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#tofrequency">toFrequency</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:95</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input to a frequency number</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>freq: <a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toseconds" class="tsd-anchor"></a>
+					<h3>to<wbr>Seconds</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Seconds<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toseconds">toSeconds</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:88</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the incoming time to seconds</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#tostring">toString</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the class to a string</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+										console.log(osc.toString());</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toticks" class="tsd-anchor"></a>
+					<h3>to<wbr>Ticks</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Ticks<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toticks">toTicks</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input time into ticks</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+					<a name="getdefaults" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Defaults<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_event_part_.partoptions.html" class="tsd-signature-type">PartOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_event_toneevent_.toneevent.html">ToneEvent</a>.<a href="_event_toneevent_.toneevent.html#getdefaults">getDefaults</a></p>
+								<ul>
+									<li>Defined in tone/Tone/event/Part.ts:85</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_event_part_.partoptions.html" class="tsd-signature-type">PartOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_event_part_.html">&quot;event/<wbr>Part&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_event_part_.part.html" class="tsd-kind-icon">Part</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_event_part_.part.html#_events" class="tsd-kind-icon">_events</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_humanize" class="tsd-kind-icon">_humanize</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_loop" class="tsd-kind-icon">_loop</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_loopend" class="tsd-kind-icon">_loop<wbr>End</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_loopstart" class="tsd-kind-icon">_loop<wbr>Start</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_playbackrate" class="tsd-kind-icon">_playback<wbr>Rate</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_probability" class="tsd-kind-icon">_probability</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_startoffset" class="tsd-kind-icon">_start<wbr>Offset</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="_event_part_.part.html#_state" class="tsd-kind-icon">_state</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#callback" class="tsd-kind-icon">callback</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#debug" class="tsd-kind-icon">debug</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#mute" class="tsd-kind-icon">mute</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#value" class="tsd-kind-icon">value</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="_event_part_.part.html#version" class="tsd-kind-icon">version</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#disposed" class="tsd-kind-icon">disposed</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#humanize" class="tsd-kind-icon">humanize</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_event_part_.part.html#length" class="tsd-kind-icon">length</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#loop" class="tsd-kind-icon">loop</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#loopend" class="tsd-kind-icon">loop<wbr>End</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#loopstart" class="tsd-kind-icon">loop<wbr>Start</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#playbackrate" class="tsd-kind-icon">playback<wbr>Rate</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#probability" class="tsd-kind-icon">probability</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#progress" class="tsd-kind-icon">progress</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#startoffset" class="tsd-kind-icon">start<wbr>Offset</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#state" class="tsd-kind-icon">state</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_event_part_.part.html#_foreach" class="tsd-kind-icon">_for<wbr>Each</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_getloopduration" class="tsd-kind-icon">_get<wbr>Loop<wbr>Duration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_event_part_.part.html#_restartevent" class="tsd-kind-icon">_restart<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_event_part_.part.html#_setall" class="tsd-kind-icon">_set<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_event_part_.part.html#_startnote" class="tsd-kind-icon">_start<wbr>Note</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_event_part_.part.html#_testloopboundries" class="tsd-kind-icon">_test<wbr>Loop<wbr>Boundries</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="_event_part_.part.html#_tick" class="tsd-kind-icon">_tick</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_event_part_.part.html#add" class="tsd-kind-icon">add</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#assert" class="tsd-kind-icon">assert</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_event_part_.part.html#at" class="tsd-kind-icon">at</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#cancel" class="tsd-kind-icon">cancel</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_event_part_.part.html#clear" class="tsd-kind-icon">clear</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#immediate" class="tsd-kind-icon">immediate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_event_part_.part.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#now" class="tsd-kind-icon">now</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_event_part_.part.html#remove" class="tsd-kind-icon">remove</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#set" class="tsd-kind-icon">set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#start" class="tsd-kind-icon">start</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_event_part_.part.html#stop" class="tsd-kind-icon">stop</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_event_part_.part.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="_event_part_.part.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../interfaces/_event_part_.partoptions.html" class="tsd-kind-icon">Part<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../modules/_event_part_.html#callbacktype" class="tsd-kind-icon">Callback<wbr>Type</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

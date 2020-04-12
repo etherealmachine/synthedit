@@ -1,0 +1,2381 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>FatOscillator | tone</title>
+	<meta name="description" content="Documentation for tone">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">tone</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_source_oscillator_fatoscillator_.html">&quot;source/oscillator/FatOscillator&quot;</a>
+				</li>
+				<li>
+					<a href="_source_oscillator_fatoscillator_.fatoscillator.html">FatOscillator</a>
+				</li>
+			</ul>
+			<h1>Class FatOscillator</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>FatOscillator is an array of oscillators with detune spread between the oscillators</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><p>import { FatOscillator } from &quot;tone&quot;;
+							const fatOsc = new FatOscillator(&quot;Ab3&quot;, &quot;sawtooth&quot;, 40).toDestination().start();</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_source_source_.source.html" class="tsd-signature-type">Source</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">FatOscillator</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/_source_oscillator_oscillatorinterface_.toneoscillatorinterface.html" class="tsd-signature-type">ToneOscillatorInterface</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_internalchannels" class="tsd-kind-icon">_internal<wbr>Channels</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_oscillators" class="tsd-kind-icon">_oscillators</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_partialcount" class="tsd-kind-icon">_partial<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_partials" class="tsd-kind-icon">_partials</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_phase" class="tsd-kind-icon">_phase</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_spread" class="tsd-kind-icon">_spread</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_state" class="tsd-kind-icon">_state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_synced" class="tsd-kind-icon">_synced</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_type" class="tsd-kind-icon">_type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#debug" class="tsd-kind-icon">debug</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#detune" class="tsd-kind-icon">detune</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#frequency" class="tsd-kind-icon">frequency</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#input" class="tsd-kind-icon">input</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#onstop" class="tsd-kind-icon">onstop</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#output" class="tsd-kind-icon">output</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#volume" class="tsd-kind-icon">volume</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#version" class="tsd-kind-icon">version</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#basetype" class="tsd-kind-icon">base<wbr>Type</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#channelcount" class="tsd-kind-icon">channel<wbr>Count</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#channelcountmode" class="tsd-kind-icon">channel<wbr>Count<wbr>Mode</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#channelinterpretation" class="tsd-kind-icon">channel<wbr>Interpretation</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#count" class="tsd-kind-icon">count</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#disposed" class="tsd-kind-icon">disposed</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#mute" class="tsd-kind-icon">mute</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#numberofinputs" class="tsd-kind-icon">number<wbr>OfInputs</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#numberofoutputs" class="tsd-kind-icon">number<wbr>OfOutputs</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#partialcount" class="tsd-kind-icon">partial<wbr>Count</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#partials" class="tsd-kind-icon">partials</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#phase" class="tsd-kind-icon">phase</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#spread" class="tsd-kind-icon">spread</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#state" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#type" class="tsd-kind-icon">type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_foreach" class="tsd-kind-icon">_for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_start" class="tsd-kind-icon">_start</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#_stop" class="tsd-kind-icon">_stop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#asarray" class="tsd-kind-icon">as<wbr>Array</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#assert" class="tsd-kind-icon">assert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#chain" class="tsd-kind-icon">chain</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#fan" class="tsd-kind-icon">fan</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#immediate" class="tsd-kind-icon">immediate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#now" class="tsd-kind-icon">now</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#restart" class="tsd-kind-icon">restart</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#start" class="tsd-kind-icon">start</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#stop" class="tsd-kind-icon">stop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#sync" class="tsd-kind-icon">sync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#todestination" class="tsd-kind-icon">to<wbr>Destination</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#tomaster" class="tsd-kind-icon">to<wbr>Master</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#unsync" class="tsd-kind-icon">unsync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="_source_oscillator_fatoscillator_.fatoscillator.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Fat<wbr>Oscillator<span class="tsd-signature-symbol">(</span>frequency<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a>, type<span class="tsd-signature-symbol">?: </span><a href="../modules/_source_oscillator_oscillatorinterface_.html#toneoscillatortype" class="tsd-signature-type">ToneOscillatorType</a>, spread<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#cents" class="tsd-signature-type">Cents</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_source_oscillator_fatoscillator_.fatoscillator.html" class="tsd-signature-type">FatOscillator</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Fat<wbr>Oscillator<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_source_oscillator_oscillatorinterface_.html#fatconstructoroptions" class="tsd-signature-type">FatConstructorOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_source_oscillator_fatoscillator_.fatoscillator.html" class="tsd-signature-type">FatOscillator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:55</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> frequency: <a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The oscillator&#39;s frequency.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> type: <a href="../modules/_source_oscillator_oscillatorinterface_.html#toneoscillatortype" class="tsd-signature-type">ToneOscillatorType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The type of the oscillator.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> spread: <a href="../modules/_core_type_units_.html#cents" class="tsd-signature-type">Cents</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The detune spread between the oscillators.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_source_oscillator_fatoscillator_.fatoscillator.html" class="tsd-signature-type">FatOscillator</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:62</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_source_oscillator_oscillatorinterface_.html#fatconstructoroptions" class="tsd-signature-type">FatConstructorOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_source_oscillator_fatoscillator_.fatoscillator.html" class="tsd-signature-type">FatOscillator</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_internalchannels" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _internal<wbr>Channels</h3>
+					<div class="tsd-signature tsd-kind-icon">_internal<wbr>Channels<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_context_toneaudionode_.html#outputnode" class="tsd-signature-type">OutputNode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#_internalchannels">_internalChannels</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:75</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>List all of the node that must be set to match the ChannelProperties</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_oscillators" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _oscillators</h3>
+					<div class="tsd-signature tsd-kind-icon">_oscillators<span class="tsd-signature-symbol">:</span> <a href="_source_oscillator_oscillator_.oscillator.html" class="tsd-signature-type">Oscillator</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:30</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The array of oscillators</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_partialcount" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _partial<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">_partial<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:55</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The number of partials to use</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_partials" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _partials</h3>
+					<div class="tsd-signature tsd-kind-icon">_partials<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:50</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The partials array</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_phase" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _phase</h3>
+					<div class="tsd-signature tsd-kind-icon">_phase<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_type_units_.html#degrees" class="tsd-signature-type">Degrees</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:45</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The phase of the oscillators</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_spread" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _spread</h3>
+					<div class="tsd-signature tsd-kind-icon">_spread<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_type_units_.html#cents" class="tsd-signature-type">Cents</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:35</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The total spread of the oscillators</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_state" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _state</h3>
+					<div class="tsd-signature tsd-kind-icon">_state<span class="tsd-signature-symbol">:</span> <a href="_core_util_statetimeline_.statetimeline.html" class="tsd-signature-type">StateTimeline</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>duration<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a><span class="tsd-signature-symbol">; </span>implicitEnd<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>offset<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new StateTimeline(&quot;stopped&quot;)</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#_state">_state</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/Source.ts:72</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Keep track of the scheduled state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_synced" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _synced</h3>
+					<div class="tsd-signature tsd-kind-icon">_synced<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#_synced">_synced</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/Source.ts:85</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The synced <code>start</code> callback function from the transport</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_type" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _type</h3>
+					<div class="tsd-signature tsd-kind-icon">_type<span class="tsd-signature-symbol">:</span> <a href="../modules/_source_oscillator_oscillatorinterface_.html#toneoscillatortype" class="tsd-signature-type">ToneOscillatorType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:40</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The type of the oscillator</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="_core_context_basecontext_.basecontext.html" class="tsd-signature-type">BaseContext</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#context">context</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/context/ToneWithContext.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The context belonging to the node.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="debug" class="tsd-anchor"></a>
+					<h3>debug</h3>
+					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#debug">debug</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:48</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set this debug flag to log all events that happen in this class.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="detune" class="tsd-anchor"></a>
+					<h3>detune</h3>
+					<div class="tsd-signature tsd-kind-icon">detune<span class="tsd-signature-symbol">:</span> <a href="_signal_signal_.signal.html" class="tsd-signature-type">Signal</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"cents"</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_source_oscillator_oscillatorinterface_.toneoscillatorinterface.html">ToneOscillatorInterface</a>.<a href="../interfaces/_source_oscillator_oscillatorinterface_.toneoscillatorinterface.html#detune">detune</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:25</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="frequency" class="tsd-anchor"></a>
+					<h3>frequency</h3>
+					<div class="tsd-signature tsd-kind-icon">frequency<span class="tsd-signature-symbol">:</span> <a href="_signal_signal_.signal.html" class="tsd-signature-type">Signal</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"frequency"</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_source_oscillator_oscillatorinterface_.toneoscillatorinterface.html">ToneOscillatorInterface</a>.<a href="../interfaces/_source_oscillator_oscillatorinterface_.toneoscillatorinterface.html#frequency">frequency</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:24</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="input" class="tsd-anchor"></a>
+					<h3>input</h3>
+					<div class="tsd-signature tsd-kind-icon">input<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> = undefined</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#input">input</a></p>
+						<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#input">input</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/Source.ts:53</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sources have no inputs</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;FatOscillator&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#name">name</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:22</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="onstop" class="tsd-anchor"></a>
+					<h3>onstop</h3>
+					<div class="tsd-signature tsd-kind-icon">onstop<span class="tsd-signature-symbol">:</span> <a href="../modules/_source_source_.html#onstopcallback" class="tsd-signature-type">onStopCallback</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#onstop">onstop</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/Source.ts:67</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The callback to invoke when the source is stopped.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="output" class="tsd-anchor"></a>
+					<h3>output</h3>
+					<div class="tsd-signature tsd-kind-icon">output<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_context_toneaudionode_.html#outputnode" class="tsd-signature-type">OutputNode</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#output">output</a></p>
+						<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#output">output</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/Source.ts:48</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The output note</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="volume" class="tsd-anchor"></a>
+					<h3>volume</h3>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <a href="_core_context_param_.param.html" class="tsd-signature-type">Param</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">"decibels"</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#volume">volume</a></p>
+						<ul>
+							<li>Defined in tone/Tone/source/Source.ts:62</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The volume of the output in decibels.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p>import { PWMOscillator } from &quot;tone&quot;;
+									const source = new PWMOscillator().toDestination();
+								source.volume.value = -6;</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = version</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#version">version</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The version number semver</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="basetype" class="tsd-anchor"></a>
+					<h3>base<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> baseType<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OscillatorType</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> baseType<span class="tsd-signature-symbol">(</span>baseType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OscillatorType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:218</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">OscillatorType</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:221</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>baseType: <span class="tsd-signature-type">OscillatorType</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="blocktime" class="tsd-anchor"></a>
+					<h3>block<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> blockTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#blocktime">blockTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:81</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of seconds of 1 processing block (128 samples)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="channelcount" class="tsd-anchor"></a>
+					<h3>channel<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> channelCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> channelCount<span class="tsd-signature-symbol">(</span>channelCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcount">channelCount</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:141</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCount is the number of channels used when up-mixing and down-mixing
+										connections to any inputs to the node. The default value is 2 except for
+									specific nodes where its value is specially determined.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcount">channelCount</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:144</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCount is the number of channels used when up-mixing and down-mixing
+										connections to any inputs to the node. The default value is 2 except for
+									specific nodes where its value is specially determined.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelCount: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="channelcountmode" class="tsd-anchor"></a>
+					<h3>channel<wbr>Count<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> channelCountMode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ChannelCountMode</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> channelCountMode<span class="tsd-signature-symbol">(</span>channelCountMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"clamped-max"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"explicit"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"max"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcountmode">channelCountMode</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:158</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCountMode determines how channels will be counted when up-mixing and
+										down-mixing connections to any inputs to the node.
+									The default value is &quot;max&quot;. This attribute has no effect for nodes with no inputs.</p>
+									<ul>
+										<li>&quot;max&quot; - computedNumberOfChannels is the maximum of the number of channels of all connections to an input. In this mode channelCount is ignored.</li>
+										<li>&quot;clamped-max&quot; - computedNumberOfChannels is determined as for &quot;max&quot; and then clamped to a maximum value of the given channelCount.</li>
+										<li>&quot;explicit&quot; - computedNumberOfChannels is the exact value as specified by the channelCount.</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ChannelCountMode</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcountmode">channelCountMode</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:161</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCountMode determines how channels will be counted when up-mixing and
+										down-mixing connections to any inputs to the node.
+									The default value is &quot;max&quot;. This attribute has no effect for nodes with no inputs.</p>
+									<ul>
+										<li>&quot;max&quot; - computedNumberOfChannels is the maximum of the number of channels of all connections to an input. In this mode channelCount is ignored.</li>
+										<li>&quot;clamped-max&quot; - computedNumberOfChannels is determined as for &quot;max&quot; and then clamped to a maximum value of the given channelCount.</li>
+										<li>&quot;explicit&quot; - computedNumberOfChannels is the exact value as specified by the channelCount.</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelCountMode: <span class="tsd-signature-type">"clamped-max"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"explicit"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"max"</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="channelinterpretation" class="tsd-anchor"></a>
+					<h3>channel<wbr>Interpretation</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> channelInterpretation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ChannelInterpretation</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> channelInterpretation<span class="tsd-signature-symbol">(</span>channelInterpretation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"discrete"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"speakers"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelinterpretation">channelInterpretation</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:172</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelInterpretation determines how individual channels will be treated
+										when up-mixing and down-mixing connections to any inputs to the node.
+									The default value is &quot;speakers&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ChannelInterpretation</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelinterpretation">channelInterpretation</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:175</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelInterpretation determines how individual channels will be treated
+										when up-mixing and down-mixing connections to any inputs to the node.
+									The default value is &quot;speakers&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelInterpretation: <span class="tsd-signature-type">"discrete"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"speakers"</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="count" class="tsd-anchor"></a>
+					<h3>count</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> count<span class="tsd-signature-symbol">(</span>count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:175</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of detuned oscillators. Must be an integer greater than 1.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { FatOscillator } from &quot;tone&quot;;
+											const fatOsc = new FatOscillator(&quot;C#3&quot;, &quot;sawtooth&quot;).toDestination().start();
+											// use 4 sawtooth oscillators
+										fatOsc.count = 4;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:178</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of detuned oscillators. Must be an integer greater than 1.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { FatOscillator } from &quot;tone&quot;;
+											const fatOsc = new FatOscillator(&quot;C#3&quot;, &quot;sawtooth&quot;).toDestination().start();
+											// use 4 sawtooth oscillators
+										fatOsc.count = 4;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>count: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="disposed" class="tsd-anchor"></a>
+					<h3>disposed</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> disposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#disposed">disposed</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates if the instance was disposed. &#39;Disposing&#39; an
+										instance means that all of the Web Audio nodes that were
+									created for the instance are disconnected and freed for garbage collection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="mute" class="tsd-anchor"></a>
+					<h3>mute</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> mute<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> mute<span class="tsd-signature-symbol">(</span>mute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#mute">mute</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/Source.ts:150</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Mute the output.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator().toDestination().start();
+											// mute the output
+										osc.mute = true;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#mute">mute</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/Source.ts:153</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Mute the output.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator().toDestination().start();
+											// mute the output
+										osc.mute = true;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mute: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="numberofinputs" class="tsd-anchor"></a>
+					<h3>number<wbr>OfInputs</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> numberOfInputs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#numberofinputs">numberOfInputs</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:49</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of inputs feeding into the AudioNode.
+									For source nodes, this will be 0.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="numberofoutputs" class="tsd-anchor"></a>
+					<h3>number<wbr>OfOutputs</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> numberOfOutputs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#numberofoutputs">numberOfOutputs</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:64</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of outputs of the AudioNode.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="partialcount" class="tsd-anchor"></a>
+					<h3>partial<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> partialCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> partialCount<span class="tsd-signature-symbol">(</span>partialCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:238</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:241</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>partialCount: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="partials" class="tsd-anchor"></a>
+					<h3>partials</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> partials<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> partials<span class="tsd-signature-symbol">(</span>partials<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:226</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:229</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>partials: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="phase" class="tsd-anchor"></a>
+					<h3>phase</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> phase<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#degrees" class="tsd-signature-type">Degrees</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> phase<span class="tsd-signature-symbol">(</span>phase<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#degrees" class="tsd-signature-type">Degrees</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:210</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#degrees" class="tsd-signature-type">Degrees</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:213</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>phase: <a href="../modules/_core_type_units_.html#degrees" class="tsd-signature-type">Degrees</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="sampletime" class="tsd-anchor"></a>
+					<h3>sample<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sampleTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#sampletime">sampleTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:74</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The duration in seconds of one sample.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="spread" class="tsd-anchor"></a>
+					<h3>spread</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> spread<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#cents" class="tsd-signature-type">Cents</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> spread<span class="tsd-signature-symbol">(</span>spread<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#cents" class="tsd-signature-type">Cents</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:155</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The detune spread between the oscillators. If &quot;count&quot; is
+										set to 3 oscillators and the &quot;spread&quot; is set to 40,
+										the three oscillators would be detuned like this: [-20, 0, 20]
+									for a total detune spread of 40 cents.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { FatOscillator } from &quot;tone&quot;;
+											const fatOsc = new FatOscillator().toDestination().start();
+										fatOsc.spread = 70;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#cents" class="tsd-signature-type">Cents</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:158</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The detune spread between the oscillators. If &quot;count&quot; is
+										set to 3 oscillators and the &quot;spread&quot; is set to 40,
+										the three oscillators would be detuned like this: [-20, 0, 20]
+									for a total detune spread of 40 cents.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { FatOscillator } from &quot;tone&quot;;
+											const fatOsc = new FatOscillator().toDestination().start();
+										fatOsc.spread = 70;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>spread: <a href="../modules/_core_type_units_.html#cents" class="tsd-signature-type">Cents</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="state" class="tsd-anchor"></a>
+					<h3>state</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> state<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_statetimeline_.html#basicplaybackstate" class="tsd-signature-type">BasicPlaybackState</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#state">state</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/Source.ts:130</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the playback state of the source, either &quot;started&quot; or &quot;stopped&quot;.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Player } from &quot;tone&quot;;
+											const player = new Player(&quot;<a href="https://tonejs.github.io/examples/audio/FWDL.mp3&quot;">https://tonejs.github.io/examples/audio/FWDL.mp3&quot;</a>, () =&gt; {
+											player.start();
+											console.log(player.state);
+										}).toDestination();</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_util_statetimeline_.html#basicplaybackstate" class="tsd-signature-type">BasicPlaybackState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_source_oscillator_oscillatorinterface_.html#toneoscillatortype" class="tsd-signature-type">ToneOscillatorType</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> type<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../modules/_source_oscillator_oscillatorinterface_.html#toneoscillatortype" class="tsd-signature-type">ToneOscillatorType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:137</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The type of the oscillator</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_source_oscillator_oscillatorinterface_.html#toneoscillatortype" class="tsd-signature-type">ToneOscillatorType</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:140</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The type of the oscillator</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../modules/_source_oscillator_oscillatorinterface_.html#toneoscillatortype" class="tsd-signature-type">ToneOscillatorType</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_foreach" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _for<wbr>Each</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_for<wbr>Each<span class="tsd-signature-symbol">(</span>iterator<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>osc<span class="tsd-signature-symbol">: </span><a href="_source_oscillator_oscillator_.oscillator.html" class="tsd-signature-type">Oscillator</a>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:128</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Iterate over all of the oscillators</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>iterator: <span class="tsd-signature-symbol">(</span>osc<span class="tsd-signature-symbol">: </span><a href="_source_oscillator_oscillator_.oscillator.html" class="tsd-signature-type">Oscillator</a>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>osc<span class="tsd-signature-symbol">: </span><a href="_source_oscillator_oscillator_.oscillator.html" class="tsd-signature-type">Oscillator</a>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>osc: <a href="_source_oscillator_oscillator_.oscillator.html" class="tsd-signature-type">Oscillator</a></h5>
+														</li>
+														<li>
+															<h5>index: <span class="tsd-signature-type">number</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_getpartialproperties" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _get<wbr>Partial<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Partial<wbr>Properties<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#_getpartialproperties">_getPartialProperties</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a subset of the properties which are in the partial props</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="_start" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _start</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_start<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#_start">_start</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:103</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>start the oscillator</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="_stop" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _stop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_stop<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#_stop">_stop</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:111</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>stop the oscillator</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="asarray" class="tsd-anchor"></a>
+					<h3>as<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">as<wbr>Array<span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_source_oscillator_oscillatorinterface_.toneoscillatorinterface.html">ToneOscillatorInterface</a>.<a href="../interfaces/_source_oscillator_oscillatorinterface_.toneoscillatorinterface.html#asarray">asArray</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:247</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> length: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1024</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="assert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> assert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">assert<span class="tsd-signature-symbol">(</span>statement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#assert">assert</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:76</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assert that the statement is true, otherwise invoke the error.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>statement: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>error: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message which is passed into an Error</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="chain" class="tsd-anchor"></a>
+					<h3>chain</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">chain<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>nodes<span class="tsd-signature-symbol">: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#chain">chain</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:232</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect the output of this node to the rest of the nodes in series.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Destination, Filter, Oscillator, Volume } from &quot;tone&quot;;
+											const osc = new Oscillator().start();
+											const filter = new Filter();
+											const volume = new Volume(-8);
+											// connect a node to the filter, volume and then to the master output
+										osc.chain(filter, volume, Destination);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>nodes: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="connect" class="tsd-anchor"></a>
+					<h3>connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>destination<span class="tsd-signature-symbol">: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a>, outputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, inputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#connect">connect</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:191</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>connect the output of a ToneAudioNode to an AudioParam, AudioNode, or ToneAudioNode</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>destination: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The output to connect to</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> outputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The output to connect from</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> inputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The input to connect to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="disconnect" class="tsd-anchor"></a>
+					<h3>disconnect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">disconnect<span class="tsd-signature-symbol">(</span>destination<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a>, outputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, inputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#disconnect">disconnect</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:217</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>disconnect the output</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> destination: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> outputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> inputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#dispose">dispose</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:254</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clean up.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="fan" class="tsd-anchor"></a>
+					<h3>fan</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">fan<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>nodes<span class="tsd-signature-symbol">: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#fan">fan</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:240</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>connect the output of this node to the rest of the nodes in parallel.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>nodes: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#get">get</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:132</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the object&#39;s attributes.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											console.log(osc.get());
+										// returns {&quot;type&quot; : &quot;sine&quot;, &quot;frequency&quot; : 440, ...etc}</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="immediate" class="tsd-anchor"></a>
+					<h3>immediate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">immediate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#immediate">immediate</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:67</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock without any lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#log">log</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:63</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Prints the outputs to the console log for debugging purposes.
+										Prints the contents only if either the object has a property
+										called <code>debug</code> set to true, or a variable called TONE_DEBUG_CLASS
+									is set to the name of the class.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											// prints all logs originating from this oscillator
+											osc.debug = true;
+											// calls to start/stop will print in the console
+										osc.start();</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="now" class="tsd-anchor"></a>
+					<h3>now</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">now<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#now">now</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:60</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock plus the lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="restart" class="tsd-anchor"></a>
+					<h3>restart</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">restart<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#restart">restart</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:119</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>restart the oscillator</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="set" class="tsd-anchor"></a>
+					<h3>set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#set">set</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:165</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set multiple properties at once with an object.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Filter } from &quot;tone&quot;;
+											const filter = new Filter();
+											// set values using an object
+											filter.set({
+											frequency: 300,
+											type: &quot;highpass&quot;
+										});</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="start" class="tsd-anchor"></a>
+					<h3>start</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a>, offset<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a>, duration<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#start">start</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/Source.ts:183</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Start the source at the specified time. If no time is given,
+									start the source now.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const source = new Oscillator().toDestination();
+										source.start(&quot;+0.5&quot;); // starts the source 0.5 seconds from now</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When the source should be started.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> offset: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> duration: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="stop" class="tsd-anchor"></a>
+					<h3>stop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#stop">stop</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/Source.ts:229</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stop the source at the specified time. If no time is given,
+									stop the source now.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const source = new Oscillator().toDestination();
+											source.start();
+										source.stop(&quot;+0.5&quot;); // stops the source 0.5 seconds from now</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When the source should be stopped.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="sync" class="tsd-anchor"></a>
+					<h3>sync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">sync<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#sync">sync</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/Source.ts:260</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sync the source to the Transport so that all subsequent
+										calls to <code>start</code> and <code>stop</code> are synced to the TransportTime
+									instead of the AudioContext time.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator, Transport } from &quot;tone&quot;;
+											const osc = new Oscillator().toDestination();
+											// sync the source so that it plays between 0 and 0.3 on the Transport&#39;s timeline
+											osc.sync().start(0).stop(0.3);
+											// start the transport.
+											Transport.start();
+											// set it to loop once a second
+											Transport.loop = true;
+										Transport.loopEnd = 1;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="todestination" class="tsd-anchor"></a>
+					<h3>to<wbr>Destination</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Destination<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#todestination">toDestination</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:199</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect the output to the context&#39;s destination node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tofrequency" class="tsd-anchor"></a>
+					<h3>to<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Frequency<span class="tsd-signature-symbol">(</span>freq<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#tofrequency">toFrequency</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:95</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input to a frequency number</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>freq: <a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tomaster" class="tsd-anchor"></a>
+					<h3>to<wbr>Master</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Master<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#tomaster">toMaster</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:209</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect the output to the context&#39;s destination node.
+									See <a href="_source_oscillator_fatoscillator_.fatoscillator.html#todestination">toDestination</a></p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toseconds" class="tsd-anchor"></a>
+					<h3>to<wbr>Seconds</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Seconds<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toseconds">toSeconds</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:88</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the incoming time to seconds</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#tostring">toString</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the class to a string</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+										console.log(osc.toString());</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toticks" class="tsd-anchor"></a>
+					<h3>to<wbr>Ticks</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Ticks<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toticks">toTicks</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input time into ticks</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="unsync" class="tsd-anchor"></a>
+					<h3>unsync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">unsync<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#unsync">unsync</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/Source.ts:297</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Unsync the source to the Transport. See Source.sync</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+					<a name="getdefaults" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Defaults<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_source_source_.source.html">Source</a>.<a href="_source_source_.source.html#getdefaults">getDefaults</a></p>
+								<ul>
+									<li>Defined in tone/Tone/source/oscillator/FatOscillator.ts:92</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_source_oscillator_oscillatorinterface_.fatoscillatoroptions.html" class="tsd-signature-type">FatOscillatorOptions</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_source_oscillator_fatoscillator_.html">&quot;source/oscillator/<wbr>Fat<wbr>Oscillator&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-reference tsd-parent-kind-module">
+						<a href="../modules/_source_oscillator_fatoscillator_.html#fatoscillatoroptions" class="tsd-kind-icon">Fat<wbr>Oscillator<wbr>Options</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="_source_oscillator_fatoscillator_.fatoscillator.html" class="tsd-kind-icon">Fat<wbr>Oscillator</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_internalchannels" class="tsd-kind-icon">_internal<wbr>Channels</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_oscillators" class="tsd-kind-icon">_oscillators</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_partialcount" class="tsd-kind-icon">_partial<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_partials" class="tsd-kind-icon">_partials</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_phase" class="tsd-kind-icon">_phase</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_spread" class="tsd-kind-icon">_spread</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_state" class="tsd-kind-icon">_state</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_synced" class="tsd-kind-icon">_synced</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_type" class="tsd-kind-icon">_type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#debug" class="tsd-kind-icon">debug</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#detune" class="tsd-kind-icon">detune</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#frequency" class="tsd-kind-icon">frequency</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#input" class="tsd-kind-icon">input</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#onstop" class="tsd-kind-icon">onstop</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#output" class="tsd-kind-icon">output</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#volume" class="tsd-kind-icon">volume</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#version" class="tsd-kind-icon">version</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#basetype" class="tsd-kind-icon">base<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#channelcount" class="tsd-kind-icon">channel<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#channelcountmode" class="tsd-kind-icon">channel<wbr>Count<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#channelinterpretation" class="tsd-kind-icon">channel<wbr>Interpretation</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#count" class="tsd-kind-icon">count</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#disposed" class="tsd-kind-icon">disposed</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#mute" class="tsd-kind-icon">mute</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#numberofinputs" class="tsd-kind-icon">number<wbr>OfInputs</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#numberofoutputs" class="tsd-kind-icon">number<wbr>OfOutputs</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#partialcount" class="tsd-kind-icon">partial<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#partials" class="tsd-kind-icon">partials</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#phase" class="tsd-kind-icon">phase</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#spread" class="tsd-kind-icon">spread</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#state" class="tsd-kind-icon">state</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_foreach" class="tsd-kind-icon">_for<wbr>Each</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_start" class="tsd-kind-icon">_start</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#_stop" class="tsd-kind-icon">_stop</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#asarray" class="tsd-kind-icon">as<wbr>Array</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#assert" class="tsd-kind-icon">assert</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#chain" class="tsd-kind-icon">chain</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#connect" class="tsd-kind-icon">connect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#disconnect" class="tsd-kind-icon">disconnect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#fan" class="tsd-kind-icon">fan</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#immediate" class="tsd-kind-icon">immediate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#now" class="tsd-kind-icon">now</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#restart" class="tsd-kind-icon">restart</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#set" class="tsd-kind-icon">set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#start" class="tsd-kind-icon">start</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#stop" class="tsd-kind-icon">stop</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#sync" class="tsd-kind-icon">sync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#todestination" class="tsd-kind-icon">to<wbr>Destination</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#tomaster" class="tsd-kind-icon">to<wbr>Master</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#unsync" class="tsd-kind-icon">unsync</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
+								<a href="_source_oscillator_fatoscillator_.fatoscillator.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

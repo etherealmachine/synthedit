@@ -157,10 +157,25 @@ const NotesBySubdivision: { [key: number]: any } = {
   1: WholeNote,
 }
 
-const Modification = styled.span`
+const Sharp = styled.span`
   position: relative;
-  top: -5px;
+  top: -7px;
+  left: -7px;
+  font-size: 20px;
+  &:before {
+    content: '#';
+  }
+`;
+
+const Dot = styled.span`
+  display: block;
+  position: relative;
+  top: -2px;
   left: 20px;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: black;
 `;
 
 interface NoteElementProps {
@@ -172,8 +187,8 @@ export function NoteElement(props: NoteElementProps): JSX.Element {
   const subdivision = Time(props.duration).toNotation().toString();
   return <div>
     {React.createElement(NotesBySubdivision[parseInt(subdivision)], {})}
-    {props.note.includes('#') && <Modification>#</Modification>}
-    {props.note.includes('.') && <Modification>.</Modification>}
+    {props.note.includes('#') && <Sharp />}
+    {subdivision.includes('.') && <Dot />}
   </div>
 }
 

@@ -1,0 +1,1225 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>tone</title>
+	<meta name="description" content="Documentation for tone">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">tone</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>tone</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#tonejs" id="tonejs" style="color: inherit; text-decoration: none;">
+					<h1>Tone.js</h1>
+				</a>
+				<p><a href="https://travis-ci.org/Tonejs/Tone.js"><img src="https://travis-ci.org/Tonejs/Tone.js.svg?branch=dev" alt="Build Status"></a> <a href="https://codecov.io/gh/Tonejs/Tone.js"><img src="https://codecov.io/gh/Tonejs/Tone.js/branch/dev/graph/badge.svg" alt="codecov"></a></p>
+				<p>Tone.js is a Web Audio framework for creating interactive music in the browser. The architecture of Tone.js aims to be familiar to both musicians and audio programmers looking to create web-based audio applications. On the high-level, Tone offers common DAW (digital audio workstation) features like a global transport for scheduling events and prebuilt synths and effects. For signal-processing programmers (coming from languages like Max/MSP), Tone provides a wealth of high performance, low latency building blocks and DSP modules to build your own synthesizers, effects, and complex control signals.</p>
+				<p><a href="https://tonejs.github.io/docs/">API</a></p>
+				<p><a href="https://tonejs.github.io/examples/">Examples</a></p>
+				<p><a href="https://tonejs.github.io/demos">Demos</a></p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h1>Installation</h1>
+				</a>
+				<ul>
+					<li><a href="https://unpkg.com/tone">download</a></li>
+					<li><code>npm install tone</code></li>
+					<li>dev -&gt; <code>npm install tone@next</code></li>
+				</ul>
+				<a href="#importing" id="importing" style="color: inherit; text-decoration: none;">
+					<h2>importing</h2>
+				</a>
+				<p>You can import the entire library: </p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Tone <span class="hljs-keyword">from</span> <span class="hljs-string">"tone"</span>;</code></pre>
+				<p>or individual modules: </p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { Synth } <span class="hljs-keyword">from</span> <span class="hljs-string">"tone"</span>;</code></pre>
+				<a href="#hello-tone" id="hello-tone" style="color: inherit; text-decoration: none;">
+					<h1>Hello Tone</h1>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-comment">//create a synth and connect it to the master output (your speakers)</span>
+<span class="hljs-keyword">const</span> synth = <span class="hljs-keyword">new</span> Tone.Synth().toDestination();
+
+<span class="hljs-comment">//play a middle 'C' for the duration of an 8th note</span>
+synth.triggerAttackRelease(<span class="hljs-string">"C4"</span>, <span class="hljs-string">"8n"</span>);</code></pre>
+				<a href="#tonesynth" id="tonesynth" style="color: inherit; text-decoration: none;">
+					<h4>Tone.Synth</h4>
+				</a>
+				<p><a href="https://tonejs.github.io/docs/Synth">Tone.Synth</a> is a basic synthesizer with a single <a href="https://tonejs.github.io/docs/OmniOscillator">oscillator</a> and an <a href="https://tonejs.github.io/docs/Envelope">ADSR envelope</a>.</p>
+				<a href="#triggerattackrelease" id="triggerattackrelease" style="color: inherit; text-decoration: none;">
+					<h4>triggerAttackRelease</h4>
+				</a>
+				<p><code>triggerAttackRelease</code> is a combination of two methods: <code>triggerAttack</code> when the amplitude is rising (for example from a &#39;key down&#39; or &#39;note on&#39; event), and <code>triggerRelease</code> is when the amplitude is going back to 0 (&#39;key up&#39; / &#39;note off&#39;).</p>
+				<p>The first argument to <code>triggerAttackRelease</code> is the frequency which can either be a number (like <code>440</code>) or as &quot;pitch-octave&quot; notation (like <code>&quot;D#2&quot;</code>). The second argument is the duration that the note is held. This value can either be in seconds, or as a <a href="https://github.com/Tonejs/Tone.js/wiki/Time">tempo-relative value</a>. The third (optional) argument of <code>triggerAttackRelease</code> is <em>when</em> along the AudioContext time the note should play. It can be used to schedule events in the future.</p>
+				<a href="#time" id="time" style="color: inherit; text-decoration: none;">
+					<h4>Time</h4>
+				</a>
+				<p>Tone.js abstracts away the AudioContext time. Instead of defining all values in seconds, any method which takes time as an argument can accept a number or a string. For example <code>&quot;4n&quot;</code> is a quarter-note, <code>&quot;8t&quot;</code> is an eighth-note triplet, and <code>&quot;1m&quot;</code> is one measure. These values can even be composed into expressions.</p>
+				<p><a href="https://github.com/Tonejs/Tone.js/wiki/Time">Read about Time encodings</a>.</p>
+				<a href="#starting-audio" id="starting-audio" style="color: inherit; text-decoration: none;">
+					<h1>Starting Audio</h1>
+				</a>
+				<p>Browsers will not play <em>any</em> audio until a user clicks something (like a play button) and the AudioContext has had a chance to start. Execute the above example only after a users invokes <code>resume()</code> on Tone&#39;s context, or simply <code>Tone.start()</code>. </p>
+				<p><code>Tone.start</code> returns a promise, the audio will be ready only after that promise is resolved. Scheduling or playing audio before the AudioContext is running will result in silence or wrong scheduling.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">//attach a click listener to a play button</span>
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'button'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">await</span> Tone.start()
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'audio is ready'</span>)
+})</code></pre>
+				<a href="#scheduling" id="scheduling" style="color: inherit; text-decoration: none;">
+					<h1>Scheduling</h1>
+				</a>
+				<a href="#transport" id="transport" style="color: inherit; text-decoration: none;">
+					<h3>Transport</h3>
+				</a>
+				<p><a href="https://tonejs.github.io/docs/Transport">Tone.Transport</a> is the master timekeeper, allowing for application-wide synchronization and scheduling of sources, signals and events along a shared timeline. Time expressions (like the ones above) are evaluated against the Transport&#39;s BPM which can be set like this: <code>Tone.Transport.bpm.value = 120</code>.</p>
+				<a href="#loops" id="loops" style="color: inherit; text-decoration: none;">
+					<h3>Loops</h3>
+				</a>
+				<p>Tone.js provides higher-level abstractions for scheduling events. <a href="https://tonejs.github.io/docs/Loop">Tone.Loop</a> is a simple way to create a looped callback that can be scheduled to start and stop.</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> synth = <span class="hljs-keyword">new</span> Tone.Synth().toDestination();
+<span class="hljs-comment">//play a note every quarter-note</span>
+<span class="hljs-keyword">const</span> loop = <span class="hljs-keyword">new</span> Tone.Loop(<span class="hljs-function"><span class="hljs-params">time</span> =&gt;</span> {
+    synth.triggerAttackRelease(<span class="hljs-string">"C2"</span>, <span class="hljs-string">"8n"</span>, time);
+}, <span class="hljs-string">"4n"</span>);</code></pre>
+				<p>Since Javascript callbacks are <strong>not</strong> precisely timed, the sample-accurate time of the event is passed into the callback function. <strong>Use this time value to schedule the events</strong>.</p>
+				<p>You can then start and stop the loop along the Transport&#39;s timeline.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">//loop between the first and fourth measures of the Transport's timeline</span>
+loop.start(<span class="hljs-string">"1m"</span>).stop(<span class="hljs-string">"4m"</span>);</code></pre>
+				<p>Then start the Transport to hear the loop:</p>
+				<pre><code class="language-javascript">Tone.Transport.start();</code></pre>
+				<p><a href="https://github.com/Tonejs/Tone.js/wiki/Events">Read about Tone.js&#39; Event classes</a> and <a href="https://github.com/Tonejs/Tone.js/wiki/Transport">scheduling events with the Transport.</a></p>
+				<a href="#instruments" id="instruments" style="color: inherit; text-decoration: none;">
+					<h1>Instruments</h1>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-comment">//pass in some initial values for the filter and filter envelope</span>
+<span class="hljs-keyword">const</span> synth = <span class="hljs-keyword">new</span> Tone.Synth({
+    <span class="hljs-attr">oscillator</span> : {
+        <span class="hljs-attr">type</span> : <span class="hljs-string">"pwm"</span>,
+        <span class="hljs-attr">modulationFrequency</span> : <span class="hljs-number">0.2</span>
+    },
+    <span class="hljs-attr">envelope</span> : {
+        <span class="hljs-attr">attack</span> : <span class="hljs-number">0.02</span>,
+        <span class="hljs-attr">decay</span> : <span class="hljs-number">0.1</span>,
+        <span class="hljs-attr">sustain</span> : <span class="hljs-number">0.2</span>,
+        <span class="hljs-attr">release</span> : <span class="hljs-number">0.9</span>,
+    }
+}).toDestination();
+
+<span class="hljs-comment">//start the note "D3" one second from now</span>
+synth.triggerAttack(<span class="hljs-string">"D3"</span>, <span class="hljs-string">"+1"</span>);</code></pre>
+				<p>All instruments are monophonic (one voice) but can be made polyphonic when the constructor is passed in as the first argument to <a href="https://tonejs.github.io/docs/PolySynth">Tone.PolySynth</a>.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">//a 4 voice Synth</span>
+<span class="hljs-keyword">const</span> polySynth = <span class="hljs-keyword">new</span> Tone.PolySynth(Tone.Synth).toDestination();
+<span class="hljs-comment">//play a chord</span>
+polySynth.triggerAttackRelease([<span class="hljs-string">"C4"</span>, <span class="hljs-string">"E4"</span>, <span class="hljs-string">"G4"</span>, <span class="hljs-string">"B4"</span>], <span class="hljs-string">"2n"</span>);</code></pre>
+				<p><a href="https://github.com/Tonejs/Tone.js/wiki/Instruments">Read more about Instruments.</a></p>
+				<a href="#effects" id="effects" style="color: inherit; text-decoration: none;">
+					<h1>Effects</h1>
+				</a>
+				<p>In the above examples, the synthesizer was always connected directly to the <a href="https://tonejs.github.io/docs/Destination">speakers</a>, but the output of the synth could also be routed through one (or more) effects before going to the speakers.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">//create a distortion effect</span>
+<span class="hljs-keyword">const</span> distortion = <span class="hljs-keyword">new</span> Tone.Distortion(<span class="hljs-number">0.4</span>).toDestination();
+<span class="hljs-comment">//connect a synth to the distortion</span>
+synth.connect(distortion);</code></pre>
+				<p><a href="https://github.com/Tonejs/Tone.js/wiki/Effects">Read more about Effects</a></p>
+				<a href="#sources" id="sources" style="color: inherit; text-decoration: none;">
+					<h1>Sources</h1>
+				</a>
+				<p>Tone has a few basic audio sources like <a href="https://tonejs.github.io/docs/Oscillator">Tone.Oscillator</a> which has sine, square, triangle, and sawtooth waveforms, a buffer player (<a href="https://tonejs.github.io/docs/Player">Tone.Player</a>), a noise generator (<a href="https://tonejs.github.io/docs/Noise">Tone.Noise</a>), a few additional oscillator types (<a href="https://tonejs.github.io/docs/PWMOscillator">pwm</a>, <a href="https://tonejs.github.io/docs/PulseOscillator">pulse</a>, <a href="https://tonejs.github.io/docs/FatOscillator">fat</a>, <a href="https://tonejs.github.io/docs/FMOscillator">fm</a>) and <a href="https://tonejs.github.io/docs/UserMedia">external audio input</a> (when <a href="http://caniuse.com/#feat=stream">WebRTC is supported</a>).</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">//a pwm oscillator which is connected to the speaker and started right away</span>
+<span class="hljs-keyword">const</span> pwm = <span class="hljs-keyword">new</span> Tone.PWMOscillator(<span class="hljs-string">"Bb3"</span>).toDestination().start();</code></pre>
+				<p><a href="https://github.com/Tonejs/Tone.js/wiki/Sources">Read more</a></p>
+				<a href="#signals" id="signals" style="color: inherit; text-decoration: none;">
+					<h1>Signals</h1>
+				</a>
+				<p>Like the underlying Web Audio API, Tone.js is built with audio-rate signal control over nearly everything. This is a powerful feature which allows for sample-accurate synchronization and scheduling of parameters.</p>
+				<p><a href="https://github.com/Tonejs/Tone.js/wiki/Signals">Read more</a>.</p>
+				<a href="#audiocontext" id="audiocontext" style="color: inherit; text-decoration: none;">
+					<h1>AudioContext</h1>
+				</a>
+				<p>Tone.js creates an AudioContext when it loads and shims it for maximum browser compatibility. The AudioContext can be found at <code>Tone.context</code>. Or set your own AudioContext using <code>Tone.setContext(audioContext)</code>.</p>
+				<a href="#midi" id="midi" style="color: inherit; text-decoration: none;">
+					<h1>MIDI</h1>
+				</a>
+				<p>To use MIDI files, you&#39;ll first need to convert them into a JSON format which Tone.js can understand using <a href="https://tonejs.github.io/Midi/">Midi</a>.</p>
+				<a href="#performance" id="performance" style="color: inherit; text-decoration: none;">
+					<h1>Performance</h1>
+				</a>
+				<p>Tone.js makes extensive use of the native Web Audio Nodes such as the GainNode and WaveShaperNode for all signal processing, which enables Tone.js to work well on both desktop and mobile browsers. </p>
+				<p><a href="https://github.com/Tonejs/Tone.js/wiki/Performance">This wiki</a> article has some suggestions related to performance for best practices.</p>
+				<a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
+					<h1>Testing</h1>
+				</a>
+				<p>Tone.js runs an extensive test suite using <a href="https://mochajs.org/">mocha</a> and <a href="http://chaijs.com/">chai</a> with nearly 100% coverage. Each commit and pull request is run on <a href="https://travis-ci.org/Tonejs/Tone.js/">Travis-CI</a> across browsers and versions. Passing builds on the &#39;dev&#39; branch are published on npm as <code>tone@next</code>. </p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h1>Contributing</h1>
+				</a>
+				<p>There are many ways to contribute to Tone.js. Check out <a href="https://github.com/Tonejs/Tone.js/wiki/Contributing">this wiki</a> if you&#39;re interested.</p>
+				<p>If you have questions (or answers) that are not necessarily bugs/issues, please post them to the <a href="https://groups.google.com/forum/#!forum/tonejs">forum</a>.</p>
+				<a href="#references-and-inspiration" id="references-and-inspiration" style="color: inherit; text-decoration: none;">
+					<h1>References and Inspiration</h1>
+				</a>
+				<ul>
+					<li><a href="https://github.com/Dinahmoe/tuna">Tuna.js</a></li>
+					<li><a href="https://github.com/cwilso">Many of Chris Wilson&#39;s Repositories</a></li>
+					<li><a href="https://github.com/mohayonao">Many of Mohayonao&#39;s Repositories</a></li>
+					<li><a href="http://webaudio.github.io/web-audio-api/">The Spec</a></li>
+					<li><a href="http://www.soundonsound.com/sos/may99/articles/synthsec.htm">Sound on Sound - Synth Secrets</a></li>
+					<li><a href="http://msp.ucsd.edu/techniques.htm">Miller Puckette - Theory and Techniques of Electronic Music</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_classes_.html">&quot;classes&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_analyser_.html">&quot;component/analysis/<wbr>Analyser&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_analyser_test_.html">&quot;component/analysis/<wbr>Analyser.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_dcmeter_.html">&quot;component/analysis/DCMeter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_dcmeter_test_.html">&quot;component/analysis/DCMeter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_fft_.html">&quot;component/analysis/FFT&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_fft_test_.html">&quot;component/analysis/FFT.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_follower_.html">&quot;component/analysis/<wbr>Follower&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_follower_test_.html">&quot;component/analysis/<wbr>Follower.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_meter_.html">&quot;component/analysis/<wbr>Meter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_meter_test_.html">&quot;component/analysis/<wbr>Meter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_meterbase_.html">&quot;component/analysis/<wbr>Meter<wbr>Base&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_waveform_.html">&quot;component/analysis/<wbr>Waveform&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_analysis_waveform_test_.html">&quot;component/analysis/<wbr>Waveform.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_channel_.html">&quot;component/channel/<wbr>Channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_channel_test_.html">&quot;component/channel/<wbr>Channel.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_crossfade_.html">&quot;component/channel/<wbr>Cross<wbr>Fade&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_crossfade_test_.html">&quot;component/channel/<wbr>Cross<wbr>Fade.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_merge_.html">&quot;component/channel/<wbr>Merge&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_merge_test_.html">&quot;component/channel/<wbr>Merge.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_midsidemerge_.html">&quot;component/channel/<wbr>Mid<wbr>Side<wbr>Merge&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_midsidemerge_test_.html">&quot;component/channel/<wbr>Mid<wbr>Side<wbr>Merge.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_midsidesplit_.html">&quot;component/channel/<wbr>Mid<wbr>Side<wbr>Split&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_midsidesplit_test_.html">&quot;component/channel/<wbr>Mid<wbr>Side<wbr>Split.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_mono_.html">&quot;component/channel/<wbr>Mono&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_mono_test_.html">&quot;component/channel/<wbr>Mono.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_multibandsplit_.html">&quot;component/channel/<wbr>Multiband<wbr>Split&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_multibandsplit_test_.html">&quot;component/channel/<wbr>Multiband<wbr>Split.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_panvol_.html">&quot;component/channel/<wbr>Pan<wbr>Vol&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_panvol_test_.html">&quot;component/channel/<wbr>Pan<wbr>Vol.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_panner_.html">&quot;component/channel/<wbr>Panner&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_panner_test_.html">&quot;component/channel/<wbr>Panner.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_panner3d_.html">&quot;component/channel/<wbr>Panner3<wbr>D&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_panner3d_test_.html">&quot;component/channel/<wbr>Panner3<wbr>D.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_solo_.html">&quot;component/channel/<wbr>Solo&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_solo_test_.html">&quot;component/channel/<wbr>Solo.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_split_.html">&quot;component/channel/<wbr>Split&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_split_test_.html">&quot;component/channel/<wbr>Split.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_volume_.html">&quot;component/channel/<wbr>Volume&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_channel_volume_test_.html">&quot;component/channel/<wbr>Volume.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_compressor_.html">&quot;component/dynamics/<wbr>Compressor&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_compressor_test_.html">&quot;component/dynamics/<wbr>Compressor.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_gate_.html">&quot;component/dynamics/<wbr>Gate&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_gate_test_.html">&quot;component/dynamics/<wbr>Gate.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_limiter_.html">&quot;component/dynamics/<wbr>Limiter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_limiter_test_.html">&quot;component/dynamics/<wbr>Limiter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_midsidecompressor_.html">&quot;component/dynamics/<wbr>Mid<wbr>Side<wbr>Compressor&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_midsidecompressor_test_.html">&quot;component/dynamics/<wbr>Mid<wbr>Side<wbr>Compressor.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_multibandcompressor_.html">&quot;component/dynamics/<wbr>Multiband<wbr>Compressor&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_dynamics_multibandcompressor_test_.html">&quot;component/dynamics/<wbr>Multiband<wbr>Compressor.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_envelope_amplitudeenvelope_.html">&quot;component/envelope/<wbr>Amplitude<wbr>Envelope&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_envelope_amplitudeenvelope_test_.html">&quot;component/envelope/<wbr>Amplitude<wbr>Envelope.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_envelope_envelope_.html">&quot;component/envelope/<wbr>Envelope&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_envelope_envelope_test_.html">&quot;component/envelope/<wbr>Envelope.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_envelope_frequencyenvelope_.html">&quot;component/envelope/<wbr>Frequency<wbr>Envelope&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_envelope_frequencyenvelope_test_.html">&quot;component/envelope/<wbr>Frequency<wbr>Envelope.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_convolver_.html">&quot;component/filter/<wbr>Convolver&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_convolver_test_.html">&quot;component/filter/<wbr>Convolver.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_eq3_.html">&quot;component/filter/EQ3&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_eq3_test_.html">&quot;component/filter/EQ3.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_feedbackcombfilter_.html">&quot;component/filter/<wbr>Feedback<wbr>Comb<wbr>Filter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_feedbackcombfilter_test_.html">&quot;component/filter/<wbr>Feedback<wbr>Comb<wbr>Filter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_filter_.html">&quot;component/filter/<wbr>Filter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_filter_test_.html">&quot;component/filter/<wbr>Filter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_lowpasscombfilter_.html">&quot;component/filter/<wbr>Lowpass<wbr>Comb<wbr>Filter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_lowpasscombfilter_test_.html">&quot;component/filter/<wbr>Lowpass<wbr>Comb<wbr>Filter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_onepolefilter_.html">&quot;component/filter/<wbr>One<wbr>Pole<wbr>Filter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_onepolefilter_test_.html">&quot;component/filter/<wbr>One<wbr>Pole<wbr>Filter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_phaseshiftallpass_.html">&quot;component/filter/<wbr>Phase<wbr>Shift<wbr>Allpass&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_filter_phaseshiftallpass_test_.html">&quot;component/filter/<wbr>Phase<wbr>Shift<wbr>Allpass.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_component_index_.html">&quot;component/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_control_ctrlinterpolate_.html">&quot;control/<wbr>Ctrl<wbr>Interpolate&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_control_ctrlmarkov_.html">&quot;control/<wbr>Ctrl<wbr>Markov&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_control_ctrlpattern_.html">&quot;control/<wbr>Ctrl<wbr>Pattern&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_control_ctrlrandom_.html">&quot;control/<wbr>Ctrl<wbr>Random&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_connect_.html">&quot;core/<wbr>Connect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_connect_test_.html">&quot;core/<wbr>Connect.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_global_.html">&quot;core/<wbr>Global&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_tone_.html">&quot;core/<wbr>Tone&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_clock_.html">&quot;core/clock/<wbr>Clock&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_clock_test_.html">&quot;core/clock/<wbr>Clock.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_tickparam_.html">&quot;core/clock/<wbr>Tick<wbr>Param&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_tickparam_test_.html">&quot;core/clock/<wbr>Tick<wbr>Param.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_ticksignal_.html">&quot;core/clock/<wbr>Tick<wbr>Signal&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_ticksignal_test_.html">&quot;core/clock/<wbr>Tick<wbr>Signal.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_ticksource_.html">&quot;core/clock/<wbr>Tick<wbr>Source&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_ticksource_test_.html">&quot;core/clock/<wbr>Tick<wbr>Source.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_ticker_.html">&quot;core/clock/<wbr>Ticker&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_ticker_test_.html">&quot;core/clock/<wbr>Ticker.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_transport_.html">&quot;core/clock/<wbr>Transport&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_transport_test_.html">&quot;core/clock/<wbr>Transport.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_transportevent_.html">&quot;core/clock/<wbr>Transport<wbr>Event&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_transportevent_test_.html">&quot;core/clock/<wbr>Transport<wbr>Event.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_transportrepeatevent_.html">&quot;core/clock/<wbr>Transport<wbr>Repeat<wbr>Event&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_clock_transportrepeatevent_test_.html">&quot;core/clock/<wbr>Transport<wbr>Repeat<wbr>Event.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_abstractparam_.html">&quot;core/context/<wbr>Abstract<wbr>Param&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_audiocontext_.html">&quot;core/context/<wbr>Audio<wbr>Context&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_basecontext_.html">&quot;core/context/<wbr>Base<wbr>Context&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_context_.html">&quot;core/context/<wbr>Context&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_context_test_.html">&quot;core/context/<wbr>Context.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_contextinitialization_.html">&quot;core/context/<wbr>Context<wbr>Initialization&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_delay_.html">&quot;core/context/<wbr>Delay&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_delay_test_.html">&quot;core/context/<wbr>Delay.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_destination_.html">&quot;core/context/<wbr>Destination&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_destination_test_.html">&quot;core/context/<wbr>Destination.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_dummycontext_.html">&quot;core/context/<wbr>Dummy<wbr>Context&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_dummycontext_test_.html">&quot;core/context/<wbr>Dummy<wbr>Context.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_gain_.html">&quot;core/context/<wbr>Gain&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_gain_test_.html">&quot;core/context/<wbr>Gain.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_offline_.html">&quot;core/context/<wbr>Offline&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_offline_test_.html">&quot;core/context/<wbr>Offline.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_offlinecontext_.html">&quot;core/context/<wbr>Offline<wbr>Context&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_offlinecontext_test_.html">&quot;core/context/<wbr>Offline<wbr>Context.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_param_.html">&quot;core/context/<wbr>Param&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_param_test_.html">&quot;core/context/<wbr>Param.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudiobuffer_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Buffer&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudiobuffer_test_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Buffer.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudiobuffers_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Buffers&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudiobuffers_test_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Buffers.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudionode_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Node&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudionode_test_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Node.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudioworklet_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Worklet&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_toneaudioworklet_test_.html">&quot;core/context/<wbr>Tone<wbr>Audio<wbr>Worklet.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_context_tonewithcontext_.html">&quot;core/context/<wbr>Tone<wbr>With<wbr>Context&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_index_.html">&quot;core/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_conversions_.html">&quot;core/type/<wbr>Conversions&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_conversions_test_.html">&quot;core/type/<wbr>Conversions.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_frequency_.html">&quot;core/type/<wbr>Frequency&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_frequency_test_.html">&quot;core/type/<wbr>Frequency.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_midi_.html">&quot;core/type/<wbr>Midi&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_midi_test_.html">&quot;core/type/<wbr>Midi.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_noteunits_.html">&quot;core/type/<wbr>Note<wbr>Units&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_ticks_.html">&quot;core/type/<wbr>Ticks&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_ticks_test_.html">&quot;core/type/<wbr>Ticks.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_time_.html">&quot;core/type/<wbr>Time&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_time_test_.html">&quot;core/type/<wbr>Time.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_timebase_.html">&quot;core/type/<wbr>Time<wbr>Base&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_transporttime_.html">&quot;core/type/<wbr>Transport<wbr>Time&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_transporttime_test_.html">&quot;core/type/<wbr>Transport<wbr>Time.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_type_units_.html">&quot;core/type/<wbr>Units&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_advancedtypecheck_.html">&quot;core/util/<wbr>Advanced<wbr>Type<wbr>Check&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_debug_.html">&quot;core/util/<wbr>Debug&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_debug_test_.html">&quot;core/util/<wbr>Debug.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_defaults_.html">&quot;core/util/<wbr>Defaults&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_draw_.html">&quot;core/util/<wbr>Draw&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_draw_test_.html">&quot;core/util/<wbr>Draw.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_emitter_.html">&quot;core/util/<wbr>Emitter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_emitter_test_.html">&quot;core/util/<wbr>Emitter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_interface_.html">&quot;core/util/<wbr>Interface&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_intervaltimeline_.html">&quot;core/util/<wbr>Interval<wbr>Timeline&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_intervaltimeline_test_.html">&quot;core/util/<wbr>Interval<wbr>Timeline.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_math_.html">&quot;core/util/<wbr>Math&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_statetimeline_.html">&quot;core/util/<wbr>State<wbr>Timeline&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_statetimeline_test_.html">&quot;core/util/<wbr>State<wbr>Timeline.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_timeline_.html">&quot;core/util/<wbr>Timeline&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_timeline_test_.html">&quot;core/util/<wbr>Timeline.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_timelinevalue_.html">&quot;core/util/<wbr>Timeline<wbr>Value&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_timelinevalue_test_.html">&quot;core/util/<wbr>Timeline<wbr>Value.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_util_typecheck_.html">&quot;core/util/<wbr>Type<wbr>Check&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_autofilter_.html">&quot;effect/<wbr>Auto<wbr>Filter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_autofilter_test_.html">&quot;effect/<wbr>Auto<wbr>Filter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_autopanner_.html">&quot;effect/<wbr>Auto<wbr>Panner&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_autopanner_test_.html">&quot;effect/<wbr>Auto<wbr>Panner.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_autowah_.html">&quot;effect/<wbr>Auto<wbr>Wah&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_autowah_test_.html">&quot;effect/<wbr>Auto<wbr>Wah.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_bitcrusher_.html">&quot;effect/<wbr>Bit<wbr>Crusher&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_bitcrusher_test_.html">&quot;effect/<wbr>Bit<wbr>Crusher.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_chebyshev_.html">&quot;effect/<wbr>Chebyshev&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_chebyshev_test_.html">&quot;effect/<wbr>Chebyshev.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_chorus_.html">&quot;effect/<wbr>Chorus&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_chorus_test_.html">&quot;effect/<wbr>Chorus.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_distortion_.html">&quot;effect/<wbr>Distortion&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_distortion_test_.html">&quot;effect/<wbr>Distortion.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_effect_.html">&quot;effect/<wbr>Effect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_feedbackdelay_.html">&quot;effect/<wbr>Feedback<wbr>Delay&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_feedbackdelay_test_.html">&quot;effect/<wbr>Feedback<wbr>Delay.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_feedbackeffect_.html">&quot;effect/<wbr>Feedback<wbr>Effect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_freeverb_.html">&quot;effect/<wbr>Freeverb&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_freeverb_test_.html">&quot;effect/<wbr>Freeverb.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_frequencyshifter_.html">&quot;effect/<wbr>Frequency<wbr>Shifter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_frequencyshifter_test_.html">&quot;effect/<wbr>Frequency<wbr>Shifter.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_jcreverb_.html">&quot;effect/JCReverb&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_jcreverb_test_.html">&quot;effect/JCReverb.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_lfoeffect_.html">&quot;effect/LFOEffect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_midsideeffect_.html">&quot;effect/<wbr>Mid<wbr>Side<wbr>Effect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_phaser_.html">&quot;effect/<wbr>Phaser&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_phaser_test_.html">&quot;effect/<wbr>Phaser.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_pingpongdelay_.html">&quot;effect/<wbr>Ping<wbr>Pong<wbr>Delay&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_pingpongdelay_test_.html">&quot;effect/<wbr>Ping<wbr>Pong<wbr>Delay.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_pitchshift_.html">&quot;effect/<wbr>Pitch<wbr>Shift&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_pitchshift_test_.html">&quot;effect/<wbr>Pitch<wbr>Shift.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_reverb_.html">&quot;effect/<wbr>Reverb&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_reverb_test_.html">&quot;effect/<wbr>Reverb.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_stereoeffect_.html">&quot;effect/<wbr>Stereo<wbr>Effect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_stereofeedbackeffect_.html">&quot;effect/<wbr>Stereo<wbr>Feedback<wbr>Effect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_stereowidener_.html">&quot;effect/<wbr>Stereo<wbr>Widener&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_stereowidener_test_.html">&quot;effect/<wbr>Stereo<wbr>Widener.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_stereoxfeedbackeffect_.html">&quot;effect/<wbr>StereoXFeedback<wbr>Effect&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_tremolo_.html">&quot;effect/<wbr>Tremolo&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_tremolo_test_.html">&quot;effect/<wbr>Tremolo.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_vibrato_.html">&quot;effect/<wbr>Vibrato&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_vibrato_test_.html">&quot;effect/<wbr>Vibrato.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_effect_index_.html">&quot;effect/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_loop_.html">&quot;event/<wbr>Loop&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_loop_test_.html">&quot;event/<wbr>Loop.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_part_.html">&quot;event/<wbr>Part&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_part_test_.html">&quot;event/<wbr>Part.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_pattern_.html">&quot;event/<wbr>Pattern&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_pattern_test_.html">&quot;event/<wbr>Pattern.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_patterngenerator_.html">&quot;event/<wbr>Pattern<wbr>Generator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_patterngenerator_test_.html">&quot;event/<wbr>Pattern<wbr>Generator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_sequence_.html">&quot;event/<wbr>Sequence&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_sequence_test_.html">&quot;event/<wbr>Sequence.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_toneevent_.html">&quot;event/<wbr>Tone<wbr>Event&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_toneevent_test_.html">&quot;event/<wbr>Tone<wbr>Event.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_event_index_.html">&quot;event/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_fromcontext_.html">&quot;from<wbr>Context&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_fromcontext_test_.html">&quot;from<wbr>Context.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_test_.html">&quot;index.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_amsynth_.html">&quot;instrument/AMSynth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_amsynth_test_.html">&quot;instrument/AMSynth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_duosynth_.html">&quot;instrument/<wbr>Duo<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_duosynth_test_.html">&quot;instrument/<wbr>Duo<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_fmsynth_.html">&quot;instrument/FMSynth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_fmsynth_test_.html">&quot;instrument/FMSynth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_instrument_.html">&quot;instrument/<wbr>Instrument&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_membranesynth_.html">&quot;instrument/<wbr>Membrane<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_membranesynth_test_.html">&quot;instrument/<wbr>Membrane<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_metalsynth_.html">&quot;instrument/<wbr>Metal<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_metalsynth_test_.html">&quot;instrument/<wbr>Metal<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_modulationsynth_.html">&quot;instrument/<wbr>Modulation<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_monosynth_.html">&quot;instrument/<wbr>Mono<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_monosynth_test_.html">&quot;instrument/<wbr>Mono<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_monophonic_.html">&quot;instrument/<wbr>Monophonic&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_noisesynth_.html">&quot;instrument/<wbr>Noise<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_noisesynth_test_.html">&quot;instrument/<wbr>Noise<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_plucksynth_.html">&quot;instrument/<wbr>Pluck<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_plucksynth_test_.html">&quot;instrument/<wbr>Pluck<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_polysynth_.html">&quot;instrument/<wbr>Poly<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_polysynth_test_.html">&quot;instrument/<wbr>Poly<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_sampler_.html">&quot;instrument/<wbr>Sampler&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_sampler_test_.html">&quot;instrument/<wbr>Sampler.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_synth_.html">&quot;instrument/<wbr>Synth&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_synth_test_.html">&quot;instrument/<wbr>Synth.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_instrument_index_.html">&quot;instrument/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_abs_.html">&quot;signal/<wbr>Abs&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_abs_test_.html">&quot;signal/<wbr>Abs.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_add_.html">&quot;signal/<wbr>Add&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_add_test_.html">&quot;signal/<wbr>Add.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_audiotogain_.html">&quot;signal/<wbr>Audio<wbr>ToGain&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_audiotogain_test_.html">&quot;signal/<wbr>Audio<wbr>ToGain.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_gaintoaudio_.html">&quot;signal/<wbr>Gain<wbr>ToAudio&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_gaintoaudio_test_.html">&quot;signal/<wbr>Gain<wbr>ToAudio.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_greaterthan_.html">&quot;signal/<wbr>Greater<wbr>Than&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_greaterthan_test_.html">&quot;signal/<wbr>Greater<wbr>Than.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_greaterthanzero_.html">&quot;signal/<wbr>Greater<wbr>Than<wbr>Zero&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_greaterthanzero_test_.html">&quot;signal/<wbr>Greater<wbr>Than<wbr>Zero.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_multiply_.html">&quot;signal/<wbr>Multiply&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_multiply_test_.html">&quot;signal/<wbr>Multiply.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_negate_.html">&quot;signal/<wbr>Negate&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_negate_test_.html">&quot;signal/<wbr>Negate.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_pow_.html">&quot;signal/<wbr>Pow&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_pow_test_.html">&quot;signal/<wbr>Pow.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_scale_.html">&quot;signal/<wbr>Scale&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_scale_test_.html">&quot;signal/<wbr>Scale.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_scaleexp_.html">&quot;signal/<wbr>Scale<wbr>Exp&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_scaleexp_test_.html">&quot;signal/<wbr>Scale<wbr>Exp.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_signal_.html">&quot;signal/<wbr>Signal&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_signal_test_.html">&quot;signal/<wbr>Signal.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_signaloperator_.html">&quot;signal/<wbr>Signal<wbr>Operator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_subtract_.html">&quot;signal/<wbr>Subtract&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_subtract_test_.html">&quot;signal/<wbr>Subtract.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_syncedsignal_.html">&quot;signal/<wbr>Synced<wbr>Signal&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_syncedsignal_test_.html">&quot;signal/<wbr>Synced<wbr>Signal.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_toneconstantsource_.html">&quot;signal/<wbr>Tone<wbr>Constant<wbr>Source&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_toneconstantsource_test_.html">&quot;signal/<wbr>Tone<wbr>Constant<wbr>Source.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_waveshaper_.html">&quot;signal/<wbr>Wave<wbr>Shaper&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_waveshaper_test_.html">&quot;signal/<wbr>Wave<wbr>Shaper.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_zero_.html">&quot;signal/<wbr>Zero&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_zero_test_.html">&quot;signal/<wbr>Zero.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_signal_index_.html">&quot;signal/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_noise_.html">&quot;source/<wbr>Noise&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_noise_test_.html">&quot;source/<wbr>Noise.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oneshotsource_.html">&quot;source/<wbr>One<wbr>Shot<wbr>Source&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_source_.html">&quot;source/<wbr>Source&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_source_test_.html">&quot;source/<wbr>Source.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_usermedia_.html">&quot;source/<wbr>User<wbr>Media&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_usermedia_test_.html">&quot;source/<wbr>User<wbr>Media.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_grainplayer_.html">&quot;source/buffer/<wbr>Grain<wbr>Player&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_grainplayer_test_.html">&quot;source/buffer/<wbr>Grain<wbr>Player.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_player_.html">&quot;source/buffer/<wbr>Player&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_player_test_.html">&quot;source/buffer/<wbr>Player.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_players_.html">&quot;source/buffer/<wbr>Players&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_players_test_.html">&quot;source/buffer/<wbr>Players.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_tonebuffersource_.html">&quot;source/buffer/<wbr>Tone<wbr>Buffer<wbr>Source&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_buffer_tonebuffersource_test_.html">&quot;source/buffer/<wbr>Tone<wbr>Buffer<wbr>Source.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_index_.html">&quot;source/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_amoscillator_.html">&quot;source/oscillator/AMOscillator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_amoscillator_test_.html">&quot;source/oscillator/AMOscillator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_fmoscillator_.html">&quot;source/oscillator/FMOscillator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_fmoscillator_test_.html">&quot;source/oscillator/FMOscillator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_fatoscillator_.html">&quot;source/oscillator/<wbr>Fat<wbr>Oscillator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_fatoscillator_test_.html">&quot;source/oscillator/<wbr>Fat<wbr>Oscillator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_lfo_.html">&quot;source/oscillator/LFO&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_lfo_test_.html">&quot;source/oscillator/LFO.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_omnioscillator_.html">&quot;source/oscillator/<wbr>Omni<wbr>Oscillator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_omnioscillator_test_.html">&quot;source/oscillator/<wbr>Omni<wbr>Oscillator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_oscillator_.html">&quot;source/oscillator/<wbr>Oscillator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_oscillator_test_.html">&quot;source/oscillator/<wbr>Oscillator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_oscillatorinterface_.html">&quot;source/oscillator/<wbr>Oscillator<wbr>Interface&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_pwmoscillator_.html">&quot;source/oscillator/PWMOscillator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_pwmoscillator_test_.html">&quot;source/oscillator/PWMOscillator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_pulseoscillator_.html">&quot;source/oscillator/<wbr>Pulse<wbr>Oscillator&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_pulseoscillator_test_.html">&quot;source/oscillator/<wbr>Pulse<wbr>Oscillator.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_toneoscillatornode_.html">&quot;source/oscillator/<wbr>Tone<wbr>Oscillator<wbr>Node&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_source_oscillator_toneoscillatornode_test_.html">&quot;source/oscillator/<wbr>Tone<wbr>Oscillator<wbr>Node.test&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_version_.html">&quot;version&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

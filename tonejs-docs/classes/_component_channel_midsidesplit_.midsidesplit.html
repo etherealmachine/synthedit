@@ -1,0 +1,1414 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MidSideSplit | tone</title>
+	<meta name="description" content="Documentation for tone">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">tone</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_component_channel_midsidesplit_.html">&quot;component/channel/MidSideSplit&quot;</a>
+				</li>
+				<li>
+					<a href="_component_channel_midsidesplit_.midsidesplit.html">MidSideSplit</a>
+				</li>
+			</ul>
+			<h1>Class MidSideSplit</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Mid/Side processing separates the the &#39;mid&#39; signal (which comes out of both the left and the right channel)
+						and the &#39;side&#39; (which only comes out of the the side channels).</p>
+						<pre><code><span class="hljs-built_in">Mid</span> = (<span class="hljs-built_in">Left</span>+<span class="hljs-built_in">Right</span>)/<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>);   // obtain <span class="hljs-built_in">mid</span>-signal from <span class="hljs-built_in">left</span> <span class="hljs-built_in">and</span> <span class="hljs-built_in">right</span>
+Side = (<span class="hljs-built_in">Left</span>-<span class="hljs-built_in">Right</span>)/<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>);   // obtain side-signal from <span class="hljs-built_in">left</span> <span class="hljs-built_in">and</span> <span class="hljs-built_in">right</span></code></pre>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_core_context_toneaudionode_.toneaudionode.html" class="tsd-signature-type">ToneAudioNode</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">MidSideSplit</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_component_channel_midsidesplit_.midsidesplit.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_component_channel_midsidesplit_.midsidesplit.html#_internalchannels" class="tsd-kind-icon">_internal<wbr>Channels</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_component_channel_midsidesplit_.midsidesplit.html#_midadd" class="tsd-kind-icon">_mid<wbr>Add</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_component_channel_midsidesplit_.midsidesplit.html#_sidesubtract" class="tsd-kind-icon">_side<wbr>Subtract</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_component_channel_midsidesplit_.midsidesplit.html#_split" class="tsd-kind-icon">_split</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#debug" class="tsd-kind-icon">debug</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_component_channel_midsidesplit_.midsidesplit.html#input" class="tsd-kind-icon">input</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_component_channel_midsidesplit_.midsidesplit.html#mid" class="tsd-kind-icon">mid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_component_channel_midsidesplit_.midsidesplit.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_component_channel_midsidesplit_.midsidesplit.html#output" class="tsd-kind-icon">output</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_component_channel_midsidesplit_.midsidesplit.html#side" class="tsd-kind-icon">side</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_component_channel_midsidesplit_.midsidesplit.html#version" class="tsd-kind-icon">version</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#channelcount" class="tsd-kind-icon">channel<wbr>Count</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#channelcountmode" class="tsd-kind-icon">channel<wbr>Count<wbr>Mode</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#channelinterpretation" class="tsd-kind-icon">channel<wbr>Interpretation</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#disposed" class="tsd-kind-icon">disposed</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#numberofinputs" class="tsd-kind-icon">number<wbr>OfInputs</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#numberofoutputs" class="tsd-kind-icon">number<wbr>OfOutputs</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_component_channel_midsidesplit_.midsidesplit.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_component_channel_midsidesplit_.midsidesplit.html#assert" class="tsd-kind-icon">assert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#chain" class="tsd-kind-icon">chain</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_component_channel_midsidesplit_.midsidesplit.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#fan" class="tsd-kind-icon">fan</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#immediate" class="tsd-kind-icon">immediate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_component_channel_midsidesplit_.midsidesplit.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#now" class="tsd-kind-icon">now</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#todestination" class="tsd-kind-icon">to<wbr>Destination</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#tomaster" class="tsd-kind-icon">to<wbr>Master</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_component_channel_midsidesplit_.midsidesplit.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static"><a href="_component_channel_midsidesplit_.midsidesplit.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Mid<wbr>Side<wbr>Split<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_component_channel_midsidesplit_.midsidesplit.html" class="tsd-signature-type">MidSideSplit</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:51</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_component_channel_midsidesplit_.midsidesplit.html" class="tsd-signature-type">MidSideSplit</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_internalchannels" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _internal<wbr>Channels</h3>
+					<div class="tsd-signature tsd-kind-icon">_internal<wbr>Channels<span class="tsd-signature-symbol">:</span> <a href="../modules/_core_context_toneaudionode_.html#outputnode" class="tsd-signature-type">OutputNode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#_internalchannels">_internalChannels</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:75</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>List all of the node that must be set to match the ChannelProperties</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_midadd" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _mid<wbr>Add</h3>
+					<div class="tsd-signature tsd-kind-icon">_mid<wbr>Add<span class="tsd-signature-symbol">:</span> <a href="_signal_add_.add.html" class="tsd-signature-type">Add</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:36</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sums the left and right channels</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_sidesubtract" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _side<wbr>Subtract</h3>
+					<div class="tsd-signature tsd-kind-icon">_side<wbr>Subtract<span class="tsd-signature-symbol">:</span> <a href="_signal_subtract_.subtract.html" class="tsd-signature-type">Subtract</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:41</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Subtract left and right channels.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_split" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _split</h3>
+					<div class="tsd-signature tsd-kind-icon">_split<span class="tsd-signature-symbol">:</span> <a href="_component_channel_split_.split.html" class="tsd-signature-type">Split</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:31</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Split the incoming signal into left and right channels</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="_core_context_basecontext_.basecontext.html" class="tsd-signature-type">BaseContext</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#context">context</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/context/ToneWithContext.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The context belonging to the node.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="debug" class="tsd-anchor"></a>
+					<h3>debug</h3>
+					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#debug">debug</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:48</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set this debug flag to log all events that happen in this class.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="input" class="tsd-anchor"></a>
+					<h3>input</h3>
+					<div class="tsd-signature tsd-kind-icon">input<span class="tsd-signature-symbol">:</span> <a href="_component_channel_split_.split.html" class="tsd-signature-type">Split</a></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#input">input</a></p>
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:22</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mid" class="tsd-anchor"></a>
+					<h3>mid</h3>
+					<div class="tsd-signature tsd-kind-icon">mid<span class="tsd-signature-symbol">:</span> <a href="_core_context_toneaudionode_.toneaudionode.html" class="tsd-signature-type">ToneAudioNode</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:46</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &quot;mid&quot; output. <code>(Left+Right)/sqrt(2)</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;MidSideSplit&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#name">name</a></p>
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a name="output" class="tsd-anchor"></a>
+					<h3>output</h3>
+					<div class="tsd-signature tsd-kind-icon">output<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span></div>
+					<aside class="tsd-sources">
+						<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#output">output</a></p>
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>There is no output node, use either <a href="_component_channel_midsidesplit_.midsidesplit.html#mid">mid</a> or <a href="_component_channel_midsidesplit_.midsidesplit.html#side">side</a> outputs.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="side" class="tsd-anchor"></a>
+					<h3>side</h3>
+					<div class="tsd-signature tsd-kind-icon">side<span class="tsd-signature-symbol">:</span> <a href="_core_context_toneaudionode_.toneaudionode.html" class="tsd-signature-type">ToneAudioNode</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:51</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The &quot;side&quot; output. <code>(Left-Right)/sqrt(2)</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = version</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#version">version</a></p>
+						<ul>
+							<li>Defined in tone/Tone/core/Tone.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The version number semver</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="blocktime" class="tsd-anchor"></a>
+					<h3>block<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> blockTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#blocktime">blockTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:81</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of seconds of 1 processing block (128 samples)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="channelcount" class="tsd-anchor"></a>
+					<h3>channel<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> channelCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> channelCount<span class="tsd-signature-symbol">(</span>channelCount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcount">channelCount</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:141</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCount is the number of channels used when up-mixing and down-mixing
+										connections to any inputs to the node. The default value is 2 except for
+									specific nodes where its value is specially determined.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcount">channelCount</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:144</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCount is the number of channels used when up-mixing and down-mixing
+										connections to any inputs to the node. The default value is 2 except for
+									specific nodes where its value is specially determined.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelCount: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="channelcountmode" class="tsd-anchor"></a>
+					<h3>channel<wbr>Count<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> channelCountMode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ChannelCountMode</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> channelCountMode<span class="tsd-signature-symbol">(</span>channelCountMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"clamped-max"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"explicit"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"max"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcountmode">channelCountMode</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:158</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCountMode determines how channels will be counted when up-mixing and
+										down-mixing connections to any inputs to the node.
+									The default value is &quot;max&quot;. This attribute has no effect for nodes with no inputs.</p>
+									<ul>
+										<li>&quot;max&quot; - computedNumberOfChannels is the maximum of the number of channels of all connections to an input. In this mode channelCount is ignored.</li>
+										<li>&quot;clamped-max&quot; - computedNumberOfChannels is determined as for &quot;max&quot; and then clamped to a maximum value of the given channelCount.</li>
+										<li>&quot;explicit&quot; - computedNumberOfChannels is the exact value as specified by the channelCount.</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ChannelCountMode</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelcountmode">channelCountMode</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:161</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelCountMode determines how channels will be counted when up-mixing and
+										down-mixing connections to any inputs to the node.
+									The default value is &quot;max&quot;. This attribute has no effect for nodes with no inputs.</p>
+									<ul>
+										<li>&quot;max&quot; - computedNumberOfChannels is the maximum of the number of channels of all connections to an input. In this mode channelCount is ignored.</li>
+										<li>&quot;clamped-max&quot; - computedNumberOfChannels is determined as for &quot;max&quot; and then clamped to a maximum value of the given channelCount.</li>
+										<li>&quot;explicit&quot; - computedNumberOfChannels is the exact value as specified by the channelCount.</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelCountMode: <span class="tsd-signature-type">"clamped-max"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"explicit"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"max"</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="channelinterpretation" class="tsd-anchor"></a>
+					<h3>channel<wbr>Interpretation</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> channelInterpretation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ChannelInterpretation</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> channelInterpretation<span class="tsd-signature-symbol">(</span>channelInterpretation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"discrete"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"speakers"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelinterpretation">channelInterpretation</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:172</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelInterpretation determines how individual channels will be treated
+										when up-mixing and down-mixing connections to any inputs to the node.
+									The default value is &quot;speakers&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ChannelInterpretation</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#channelinterpretation">channelInterpretation</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:175</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>channelInterpretation determines how individual channels will be treated
+										when up-mixing and down-mixing connections to any inputs to the node.
+									The default value is &quot;speakers&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelInterpretation: <span class="tsd-signature-type">"discrete"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"speakers"</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="disposed" class="tsd-anchor"></a>
+					<h3>disposed</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> disposed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#disposed">disposed</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates if the instance was disposed. &#39;Disposing&#39; an
+										instance means that all of the Web Audio nodes that were
+									created for the instance are disconnected and freed for garbage collection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="numberofinputs" class="tsd-anchor"></a>
+					<h3>number<wbr>OfInputs</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> numberOfInputs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#numberofinputs">numberOfInputs</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:49</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of inputs feeding into the AudioNode.
+									For source nodes, this will be 0.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="numberofoutputs" class="tsd-anchor"></a>
+					<h3>number<wbr>OfOutputs</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> numberOfOutputs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#numberofoutputs">numberOfOutputs</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:64</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The number of outputs of the AudioNode.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="sampletime" class="tsd-anchor"></a>
+					<h3>sample<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> sampleTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#sampletime">sampleTime</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:74</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The duration in seconds of one sample.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_getpartialproperties" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _get<wbr>Partial<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Partial<wbr>Properties<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#_getpartialproperties">_getPartialProperties</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a subset of the properties which are in the partial props</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="assert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> assert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">assert<span class="tsd-signature-symbol">(</span>statement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#assert">assert</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:76</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assert that the statement is true, otherwise invoke the error.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>statement: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5>error: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message which is passed into an Error</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="chain" class="tsd-anchor"></a>
+					<h3>chain</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">chain<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>nodes<span class="tsd-signature-symbol">: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#chain">chain</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:232</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect the output of this node to the rest of the nodes in series.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Destination, Filter, Oscillator, Volume } from &quot;tone&quot;;
+											const osc = new Oscillator().start();
+											const filter = new Filter();
+											const volume = new Volume(-8);
+											// connect a node to the filter, volume and then to the master output
+										osc.chain(filter, volume, Destination);</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>nodes: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="connect" class="tsd-anchor"></a>
+					<h3>connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>destination<span class="tsd-signature-symbol">: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a>, outputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, inputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#connect">connect</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:191</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>connect the output of a ToneAudioNode to an AudioParam, AudioNode, or ToneAudioNode</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>destination: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The output to connect to</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> outputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The output to connect from</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> inputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The input to connect to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="disconnect" class="tsd-anchor"></a>
+					<h3>disconnect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">disconnect<span class="tsd-signature-symbol">(</span>destination<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a>, outputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, inputNum<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#disconnect">disconnect</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:217</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>disconnect the output</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> destination: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> outputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> inputNum: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#dispose">dispose</a></p>
+								<ul>
+									<li>Defined in tone/Tone/component/channel/MidSideSplit.ts:80</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="fan" class="tsd-anchor"></a>
+					<h3>fan</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">fan<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>nodes<span class="tsd-signature-symbol">: </span><a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#fan">fan</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:240</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>connect the output of this node to the rest of the nodes in parallel.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>nodes: <a href="../modules/_core_context_toneaudionode_.html#inputnode" class="tsd-signature-type">InputNode</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#get">get</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:132</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the object&#39;s attributes.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											console.log(osc.get());
+										// returns {&quot;type&quot; : &quot;sine&quot;, &quot;frequency&quot; : 440, ...etc}</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="immediate" class="tsd-anchor"></a>
+					<h3>immediate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">immediate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#immediate">immediate</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:67</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock without any lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> log</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#log">log</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:63</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Prints the outputs to the console log for debugging purposes.
+										Prints the contents only if either the object has a property
+										called <code>debug</code> set to true, or a variable called TONE_DEBUG_CLASS
+									is set to the name of the class.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+											// prints all logs originating from this oscillator
+											osc.debug = true;
+											// calls to start/stop will print in the console
+										osc.start();</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="now" class="tsd-anchor"></a>
+					<h3>now</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">now<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#now">now</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:60</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the current time of the Context clock plus the lookAhead.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="set" class="tsd-anchor"></a>
+					<h3>set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#set">set</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:165</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set multiple properties at once with an object.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Filter } from &quot;tone&quot;;
+											const filter = new Filter();
+											// set values using an object
+											filter.set({
+											frequency: 300,
+											type: &quot;highpass&quot;
+										});</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../modules/_core_util_interface_.html#recursivepartial" class="tsd-signature-type">RecursivePartial</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-signature-type">MidSideSplitOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="todestination" class="tsd-anchor"></a>
+					<h3>to<wbr>Destination</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Destination<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#todestination">toDestination</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:199</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect the output to the context&#39;s destination node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tofrequency" class="tsd-anchor"></a>
+					<h3>to<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Frequency<span class="tsd-signature-symbol">(</span>freq<span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#tofrequency">toFrequency</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:95</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input to a frequency number</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>freq: <a href="../modules/_core_type_units_.html#frequency" class="tsd-signature-type">Frequency</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#hertz" class="tsd-signature-type">Hertz</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tomaster" class="tsd-anchor"></a>
+					<h3>to<wbr>Master</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Master<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#tomaster">toMaster</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneAudioNode.ts:209</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect the output to the context&#39;s destination node.
+									See <a href="_component_channel_midsidesplit_.midsidesplit.html#todestination">toDestination</a></p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toseconds" class="tsd-anchor"></a>
+					<h3>to<wbr>Seconds</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Seconds<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toseconds">toSeconds</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:88</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the incoming time to seconds</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#seconds" class="tsd-signature-type">Seconds</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#tostring">toString</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/Tone.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the class to a string</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>import { Oscillator } from &quot;tone&quot;;
+											const osc = new Oscillator();
+										console.log(osc.toString());</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="toticks" class="tsd-anchor"></a>
+					<h3>to<wbr>Ticks</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Ticks<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_param_.param.html">Param</a>.<a href="_core_context_param_.param.html#toticks">toTicks</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:102</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert the input time into ticks</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="../modules/_core_type_units_.html#time" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> | </span><a href="_core_type_time_.timeclass.html" class="tsd-signature-type">TimeClass</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_core_type_units_.html#ticks" class="tsd-signature-type">Ticks</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static">
+					<a name="getdefaults" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Defaults<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_core_context_tonewithcontext_.tonewithcontextoptions.html" class="tsd-signature-type">ToneWithContextOptions</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_core_context_toneaudionode_.toneaudionode.html">ToneAudioNode</a>.<a href="_core_context_toneaudionode_.toneaudionode.html#getdefaults">getDefaults</a></p>
+								<p>Overrides <a href="_core_tone_.tone.html">Tone</a>.<a href="_core_tone_.tone.html#getdefaults">getDefaults</a></p>
+								<ul>
+									<li>Defined in tone/Tone/core/context/ToneWithContext.ts:51</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_core_context_tonewithcontext_.tonewithcontextoptions.html" class="tsd-signature-type">ToneWithContextOptions</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_component_channel_midsidesplit_.html">&quot;component/channel/<wbr>Mid<wbr>Side<wbr>Split&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="_component_channel_midsidesplit_.midsidesplit.html" class="tsd-kind-icon">Mid<wbr>Side<wbr>Split</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#_internalchannels" class="tsd-kind-icon">_internal<wbr>Channels</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#_midadd" class="tsd-kind-icon">_mid<wbr>Add</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#_sidesubtract" class="tsd-kind-icon">_side<wbr>Subtract</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#_split" class="tsd-kind-icon">_split</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#debug" class="tsd-kind-icon">debug</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#input" class="tsd-kind-icon">input</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#mid" class="tsd-kind-icon">mid</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#output" class="tsd-kind-icon">output</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#side" class="tsd-kind-icon">side</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#version" class="tsd-kind-icon">version</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#blocktime" class="tsd-kind-icon">block<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#channelcount" class="tsd-kind-icon">channel<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#channelcountmode" class="tsd-kind-icon">channel<wbr>Count<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#channelinterpretation" class="tsd-kind-icon">channel<wbr>Interpretation</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#disposed" class="tsd-kind-icon">disposed</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#numberofinputs" class="tsd-kind-icon">number<wbr>OfInputs</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#numberofoutputs" class="tsd-kind-icon">number<wbr>OfOutputs</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#sampletime" class="tsd-kind-icon">sample<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#_getpartialproperties" class="tsd-kind-icon">_get<wbr>Partial<wbr>Properties</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#assert" class="tsd-kind-icon">assert</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#chain" class="tsd-kind-icon">chain</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#connect" class="tsd-kind-icon">connect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#disconnect" class="tsd-kind-icon">disconnect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#fan" class="tsd-kind-icon">fan</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#immediate" class="tsd-kind-icon">immediate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#log" class="tsd-kind-icon">log</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#now" class="tsd-kind-icon">now</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#set" class="tsd-kind-icon">set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#todestination" class="tsd-kind-icon">to<wbr>Destination</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#tofrequency" class="tsd-kind-icon">to<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#tomaster" class="tsd-kind-icon">to<wbr>Master</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#toseconds" class="tsd-kind-icon">to<wbr>Seconds</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#toticks" class="tsd-kind-icon">to<wbr>Ticks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static">
+								<a href="_component_channel_midsidesplit_.midsidesplit.html#getdefaults" class="tsd-kind-icon">get<wbr>Defaults</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_component_channel_midsidesplit_.html#midsidesplitoptions" class="tsd-kind-icon">Mid<wbr>Side<wbr>Split<wbr>Options</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
