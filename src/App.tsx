@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import { FaPlay, FaPause, FaStop } from 'react-icons/fa';
 import produce from "immer"
 import styled from 'styled-components'
 import { Synth, PolySynth, Part, Transport, Time } from 'tone';
 
-import { NoteElement, RestElement } from './Notation';
+import PlayControls from './PlayControls';
+import PartElement, { Staff } from './Part';
+import Keyboard from './Keyboard';
 
 const Container = styled.div`
   width: 100%;
@@ -16,96 +17,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Keyboard = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 200px;
-  border: 5px solid black;
-`;
-
-const Octave = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-interface ButtonProps {
-  pressed?: boolean
-}
-
-const Whitekey = styled.div<ButtonProps>`
-  position: relative;
-  height: 100%;
-  width: 50px;
-  background: ${props => props.pressed ? '#CCC' : 'white'};
-  float: left;
-  border-right: 1px solid black;
-`;
-
-const Blackkey = styled.div<ButtonProps>`
-  position: absolute;
-  height: 65%;
-  width: 55%;
-  z-index: 1;
-  background: ${props => props.pressed ? '#CCC' : '#444'};
-  left: 68%;
-`;
-
-const Staff = styled.div`
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  margin: 16px;
-`
-
-const Bar = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-`
-
-interface ChordProps {
-  playing?: boolean
-}
-
-const Chord = styled.div<ChordProps>`
-  display: flex;
-  flex-direction: column;
-  background: ${props => props.playing ? '#ADD8E6' : ''};
-  :hover {
-    background: #ddd;
-  }
-`
-
-const Line = styled.div`
-  width: 30px;
-  height: 8px;
-  position: relative;
-  ::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    background: black;
-    top: 4px;
-  }
-`
-
-const Space = styled.div`
-  width: 8px;
-  height: 8px;
-  position: relative;
-`
-
-interface Staff {
-  chords: Chord[]
-}
-
-interface Chord {
-  notes: string[]
-  duration: number
-  playing: boolean
-}
-
 interface State {
   parts: Staff[]
   keyPressed: { [key: string]: Date }
@@ -113,14 +24,6 @@ interface State {
   playing: boolean
   paused: boolean
   record: boolean
-}
-
-function chordContains(chord: Chord, baseNote: string): string | undefined {
-  const key = baseNote[0];
-  const octave = baseNote[1];
-  return chord.notes.find(note => {
-    return note[0] === key && note[note.length - 1] === octave;
-  })?.toString();
 }
 
 // 1n, 2.n, 2n, 4.n, ...
@@ -410,44 +313,20 @@ export default class App extends React.Component<{}, State> {
         onMouseDown={this.onMouseDown.bind(this)}
         onMouseUp={this.onMouseUp.bind(this)}
       >
-        <div>
-          {(!this.state.playing || this.state.paused) ? <FaPlay onClick={this.onPlay.bind(this)} /> : <FaPause onClick={this.onPause.bind(this)} />}
-          {this.state.playing && <FaStop onClick={this.onStop.bind(this)} />}
-        </div>
-        {this.state.parts.map((part, i) => <Staff key={i}>
-          <Bar>
-            {part.chords.map((chord, j) => <Chord key={j} playing={chord.playing} onMouseEnter={this.onMouseEnter(i, j)} onMouseLeave={this.onMouseLeave(i, j)}>
-              {octaves.flat().reverse().map((baseNote, k) => {
-                const note = chordContains(chord, baseNote);
-                if (k % 2 === 0) {
-                  return <Line key={k}>
-                    {(note && <NoteElement note={note} duration={chord.duration} />) ||
-                      (baseNote === 'F5' && chord.notes.length === 0 && <RestElement duration={chord.duration} />)
-                    }
-                  </Line>;
-                }
-                return <Space key={k}>{note && <NoteElement note={note} duration={chord.duration} />}</Space>;
-              })}
-
-            </Chord>
-            )}
-          </Bar>
-        </Staff>
-        )}
-        <Keyboard>
-          {octaves.map((notes, i) => <Octave key={i}>
-            {notes.map((note, i) => {
-              let blackKey = null;
-              if (note[0] !== 'E' && note[0] !== 'B') {
-                const sharp = note[0] + '#' + note[1];
-                blackKey = <Blackkey key={i} pressed={this.state.keyPressed[sharp] !== undefined} onMouseDown={this.startNote(sharp)} onMouseUp={this.stopNote(sharp)} />;
-              }
-              return <Whitekey key={i} pressed={this.state.keyPressed[note] !== undefined} onMouseDown={this.startNote(note)} onMouseUp={this.stopNote(note)}>
-                {blackKey}
-              </Whitekey>;
-            })}
-          </Octave>)}
-        </Keyboard>
+        <PlayControls
+          playing={this.state.playing}
+          paused={this.state.paused}
+          onPlay={this.onPlay.bind(this)}
+          onPause={this.onPause.bind(this)}
+          onStop={this.onStop.bind(this)}
+        />
+        {this.state.parts.map((part, i) => <PartElement key={i} octaves={octaves} part={part} />)}
+        <Keyboard
+          octaves={octaves}
+          keyPressed={this.state.keyPressed}
+          startNote={this.startNote}
+          stopNote={this.stopNote}
+        />
       </Container>
     );
   }
