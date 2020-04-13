@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Part, Chord } from './App';
+import PlayControls from './PlayControls';
 import { NoteElement, RestElement } from './Notation';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+
 const Staff = styled.div`
-  width: 80%;
   display: flex;
   flex-direction: row;
   margin: 16px;
@@ -20,7 +27,7 @@ interface ChordProps {
   playing?: boolean
 }
 
-const Chord = styled.div<ChordProps>`
+const ChordElement = styled.div<ChordProps>`
   display: flex;
   flex-direction: column;
   background: ${props => props.playing ? '#ADD8E6' : ''};
@@ -57,40 +64,45 @@ function chordContains(chord: Chord, baseNote: string): string | undefined {
   })?.toString();
 }
 
-export interface Staff {
-  chords: Chord[]
-}
-
-export interface Chord {
-  notes: string[]
-  duration: number
-  playing: boolean
-}
-
 interface Props {
-  part: Staff
+  part: Part
   octaves: string[][]
+  onPlay(): void
+  onPause(): void
+  onStop(): void
+  toggleRecord(): void
 }
 
-export default function Part(props: Props) {
-  const { octaves, part } = props;
-  return <Staff>
-    <Bar>
-      {part.chords.map((chord, i) => <Chord key={i} playing={chord.playing}>
-        {octaves.flat().reverse().map((baseNote, j) => {
-          const note = chordContains(chord, baseNote);
-          if (j % 2 === 0) {
-            return <Line key={j}>
-              {(note && <NoteElement note={note} duration={chord.duration} />) ||
-                (baseNote === 'F5' && chord.notes.length === 0 && <RestElement duration={chord.duration} />)
-              }
-            </Line>;
-          }
-          return <Space key={j}>{note && <NoteElement note={note} duration={chord.duration} />}</Space>;
-        })}
-
-      </Chord>
-      )}
-    </Bar>
-  </Staff>;
+export default function PartElement(props: Props) {
+  const { octaves, part, onPlay, onPause, onStop, toggleRecord } = props;
+  const { chords, playingChord, paused, recording } = part;
+  return <Container>
+    <Staff>
+      <Bar>
+        {chords.map((chord, i) => <ChordElement key={i} playing={i === playingChord}>
+          {octaves.flat().reverse().map((baseNote, j) => {
+            const note = chordContains(chord, baseNote);
+            if (j % 2 === 0) {
+              return <Line key={j}>
+                {(note && <NoteElement note={note} duration={chord.duration} />) ||
+                  (baseNote === 'F5' && chord.notes.length === 0 && <RestElement duration={chord.duration} />)
+                }
+              </Line>;
+            }
+            return <Space key={j}>{note && <NoteElement note={note} duration={chord.duration} />}</Space>;
+          })}
+        </ChordElement>
+        )}
+      </Bar>
+    </Staff>
+    <PlayControls
+      playing={playingChord !== undefined}
+      paused={paused}
+      recording={recording}
+      onPlay={onPlay}
+      onPause={onPause}
+      onStop={onStop}
+      toggleRecord={toggleRecord}
+    />
+  </Container>;
 }

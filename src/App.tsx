@@ -2,10 +2,9 @@ import React from 'react';
 import './App.css';
 import produce from "immer"
 import styled from 'styled-components'
-import { Synth, PolySynth, Part, Transport, Time } from 'tone';
+import { Part as TonePart, PolySynth, Synth, Time, Transport } from 'tone';
 
-import PlayControls from './PlayControls';
-import PartElement, { Staff } from './Part';
+import PartElement from './Part';
 import Keyboard from './Keyboard';
 
 const Container = styled.div`
@@ -17,13 +16,22 @@ const Container = styled.div`
   align-items: center;
 `;
 
+export interface Part {
+  chords: Chord[]
+  playingChord?: number
+  paused: boolean
+  recording: boolean
+}
+
+export interface Chord {
+  notes: string[]
+  duration: number
+}
+
 interface State {
-  parts: Staff[]
+  parts: Part[]
   keyPressed: { [key: string]: Date }
   currentPart: number
-  playing: boolean
-  paused: boolean
-  record: boolean
 }
 
 // 1n, 2.n, 2n, 4.n, ...
@@ -64,7 +72,7 @@ export default class App extends React.Component<{}, State> {
   }
 
   synth: PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
-  playback?: Part
+  playback?: TonePart
   notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B']
   keybindings = {
     4: "zxcvbnm",
@@ -74,8 +82,8 @@ export default class App extends React.Component<{}, State> {
 
   lastRelease?: Date
   restDuration: number = 0
-  hoverI?: number
-  hoverJ?: number
+  hoverPartIndex?: number
+  hoverChordIndex?: number
 
   constructor(props: any) {
     super(props);
@@ -97,12 +105,11 @@ export default class App extends React.Component<{}, State> {
     this.state = {
       parts: parts || [{
         chords: initialChords,
+        paused: false,
+        recording: false,
       }],
       keyPressed: {},
       currentPart: 0,
-      playing: false,
-      paused: false,
-      record: true,
     }
   }
 
@@ -111,21 +118,14 @@ export default class App extends React.Component<{}, State> {
   }
 
   onKeyDown(event: React.KeyboardEvent) {
-    if (event.key === ' ') {
-      this.setState({
-        ...this.state,
-        record: false,
-      });
-      return;
-    }
     if (event.key.startsWith('Arrow')) {
       this.setState(produce(this.state, state => {
-        if (this.hoverI === undefined || this.hoverJ === undefined) return;
-        const duration = state.parts[this.hoverI].chords[this.hoverJ].duration;
+        if (this.hoverPartIndex === undefined || this.hoverChordIndex === undefined) return;
+        const duration = state.parts[this.hoverPartIndex].chords[this.hoverChordIndex].duration;
         if (event.key === 'ArrowLeft') {
-          state.parts[this.hoverI].chords[this.hoverJ].duration = shorter(duration);
+          state.parts[this.hoverPartIndex].chords[this.hoverChordIndex].duration = shorter(duration);
         } else if (event.key === 'ArrowRight') {
-          state.parts[this.hoverI].chords[this.hoverJ].duration = longer(duration);
+          state.parts[this.hoverPartIndex].chords[this.hoverChordIndex].duration = longer(duration);
         }
       }));
     }
@@ -142,17 +142,10 @@ export default class App extends React.Component<{}, State> {
   }
 
   onKeyUp(event: React.KeyboardEvent) {
-    if (event.key === ' ') {
-      this.setState({
-        ...this.state,
-        record: true,
-      });
-      return;
-    }
     if (event.key === 'Backspace') {
       this.setState(produce(this.state, state => {
-        const part = state.parts[this.hoverI || state.currentPart];
-        part.chords.splice(this.hoverJ || part.chords.length - 1, 1);
+        const part = state.parts[this.hoverPartIndex || state.currentPart];
+        part.chords.splice(this.hoverChordIndex || part.chords.length - 1, 1);
         this.lastRelease = undefined;
       }));
     }
@@ -168,35 +161,35 @@ export default class App extends React.Component<{}, State> {
   }
 
   onMouseDown(event: React.MouseEvent) {
-    if (this.hoverI !== undefined && this.hoverJ !== undefined) {
-      const part = this.state.parts[this.hoverI];
-      const chord = part.chords[this.hoverJ];
+    if (this.hoverPartIndex !== undefined && this.hoverChordIndex !== undefined) {
+      const part = this.state.parts[this.hoverPartIndex];
+      const chord = part.chords[this.hoverChordIndex];
       this.synth.triggerAttack(chord.notes);
     }
   }
 
   onMouseUp(event: React.MouseEvent) {
-    if (this.hoverI !== undefined && this.hoverJ !== undefined) {
-      const part = this.state.parts[this.hoverI];
-      const chord = part.chords[this.hoverJ];
+    if (this.hoverPartIndex !== undefined && this.hoverChordIndex !== undefined) {
+      const part = this.state.parts[this.hoverPartIndex];
+      const chord = part.chords[this.hoverChordIndex];
       this.synth.triggerRelease(chord.notes);
     }
   }
 
   onMouseEnter(i: number, j: number): (event: React.MouseEvent) => void {
     return (event: React.MouseEvent) => {
-      this.hoverI = i;
-      this.hoverJ = j;
+      this.hoverPartIndex = i;
+      this.hoverChordIndex = j;
     };
   }
 
   onMouseLeave(i: number, j: number): (event: React.MouseEvent) => void {
     return (event: React.MouseEvent) => {
-      const part = this.state.parts[this.hoverI || this.state.currentPart];
-      const chord = part.chords[this.hoverJ || part.chords.length - 1];
+      const part = this.state.parts[this.hoverPartIndex || this.state.currentPart];
+      const chord = part.chords[this.hoverChordIndex || part.chords.length - 1];
       this.synth.triggerRelease(chord.notes);
-      this.hoverI = undefined;
-      this.hoverJ = undefined;
+      this.hoverPartIndex = undefined;
+      this.hoverChordIndex = undefined;
     };
   }
 
@@ -223,19 +216,18 @@ export default class App extends React.Component<{}, State> {
       const duration = (curr.getTime() - this.state.keyPressed[note].getTime()) / 1000.0;
       event.stopPropagation();
       this.setState(produce(this.state, state => {
-        if (this.state.record) {
+        const part = this.state.parts[this.state.currentPart];
+        if (part.recording) {
           const chords = state.parts[state.currentPart].chords;
           if (this.restDuration > 0 && chords.length > 0 && chords[chords.length - 1].notes.length > 0) {
             chords.push({
               notes: [],
               duration: this.restDuration,
-              playing: false,
             });
           }
           chords.push({
             notes: Object.keys(this.state.keyPressed),
             duration: duration,
-            playing: false,
           });
         }
         state.keyPressed = {};
@@ -245,11 +237,12 @@ export default class App extends React.Component<{}, State> {
   }
 
   onPlay() {
-    if (this.state.paused) {
+    const part = this.state.parts[this.state.currentPart];
+    if (part.paused) {
       Transport.start();
     } else {
       Transport.start();
-      const chords = this.state.parts[this.state.currentPart].chords;
+      const chords = part.chords;
       if (!chords) return;
       let t = 0;
       const notes: { time: number, index: number, notes: string[], dur: number }[] = [];
@@ -257,46 +250,42 @@ export default class App extends React.Component<{}, State> {
         notes.push({ time: t, index: i, notes: chord.notes, dur: chord.duration });
         t += chord.duration;
       });
-      this.playback = new Part((time, event) => {
+      this.playback = new TonePart((time, event) => {
         this.synth.triggerAttackRelease(event.notes, event.dur, time);
         if (event.index === notes.length - 1) {
           Transport.scheduleOnce(this.onStop.bind(this), time);
         }
         this.setState(produce(this.state, state => {
-          state.parts[state.currentPart].chords[event.index].playing = true;
-          if (event.index > 0) {
-            state.parts[state.currentPart].chords[event.index - 1].playing = false;
-          }
+          state.parts[state.currentPart].playingChord = event.index;
         }));
       }, notes);
       this.playback.start(0);
     }
     this.setState(produce(this.state, state => {
-      state.playing = true;
-      state.paused = false;
-      state.parts[state.currentPart].chords.forEach(chord => {
-        chord.playing = false;
-      })
+      state.parts[state.currentPart].playingChord = 0;
+      state.parts[state.currentPart].paused = false;
     }));
   }
 
   onPause() {
     Transport.pause();
-    this.setState({
-      ...this.state,
-      paused: true,
-    });
+    this.setState(produce(this.state, state => {
+      state.parts[state.currentPart].paused = true;
+    }));
   }
 
   onStop() {
     this.playback?.stop();
     Transport.stop();
     this.setState(produce(this.state, state => {
-      state.playing = false;
-      state.paused = false;
-      state.parts[state.currentPart].chords.forEach(chord => {
-        chord.playing = false;
-      });
+      state.parts[state.currentPart].playingChord = undefined;
+      state.parts[state.currentPart].paused = false;
+    }));
+  }
+
+  toggleRecord() {
+    this.setState(produce(this.state, state => {
+      state.parts[state.currentPart].recording = !state.parts[state.currentPart].recording;
     }));
   }
 
@@ -313,14 +302,15 @@ export default class App extends React.Component<{}, State> {
         onMouseDown={this.onMouseDown.bind(this)}
         onMouseUp={this.onMouseUp.bind(this)}
       >
-        <PlayControls
-          playing={this.state.playing}
-          paused={this.state.paused}
+        {this.state.parts.map((part, i) => <PartElement
+          key={i}
+          octaves={octaves}
+          part={part}
           onPlay={this.onPlay.bind(this)}
           onPause={this.onPause.bind(this)}
           onStop={this.onStop.bind(this)}
-        />
-        {this.state.parts.map((part, i) => <PartElement key={i} octaves={octaves} part={part} />)}
+          toggleRecord={this.toggleRecord.bind(this)}
+        />)}
         <Keyboard
           octaves={octaves}
           keyPressed={this.state.keyPressed}
