@@ -71,15 +71,17 @@ interface Props {
   onPause(): void
   onStop(): void
   toggleRecord(): void
+  onMouseEnter(chordIndex: number): React.MouseEventHandler
+  onMouseLeave(chordIndex: number): React.MouseEventHandler
 }
 
 export default function PartElement(props: Props) {
-  const { octaves, part, onPlay, onPause, onStop, toggleRecord } = props;
+  const { octaves, part, onPlay, onPause, onStop, toggleRecord, onMouseEnter, onMouseLeave } = props;
   const { chords, playingChord, paused, recording } = part;
   return <Container>
     <Staff>
       <Bar>
-        {chords.map((chord, i) => <ChordElement key={i} playing={i === playingChord}>
+        {chords.map((chord, i) => <ChordElement key={i} playing={i === playingChord} onMouseEnter={onMouseEnter(i)} onMouseLeave={onMouseLeave(i)}>
           {octaves.flat().reverse().map((baseNote, j) => {
             const note = chordContains(chord, baseNote);
             if (j % 2 === 0) {
