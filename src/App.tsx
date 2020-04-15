@@ -172,7 +172,7 @@ export default class App extends React.Component<{}, State> {
     if (this.hoverPartIndex !== undefined && this.hoverChordIndex !== undefined) {
       const part = this.state.parts[this.hoverPartIndex];
       const chord = part.chords[this.hoverChordIndex];
-      this.synth.triggerRelease(chord.notes);
+      if (chord) this.synth.triggerRelease(chord.notes);
     }
   }
 
@@ -247,6 +247,7 @@ export default class App extends React.Component<{}, State> {
       if (partIndex === -1) {
         return;
       }
+      this.onStop(this.state.currentPart)();
       if (this.state.parts[partIndex].paused) {
         Transport.start();
       } else {
