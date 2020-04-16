@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import styled from 'styled-components';
 
-import State from './State';
+import State, { state, bindSetState } from './State';
 import PartElement from './Part';
 import Keyboard from './Keyboard';
 
@@ -18,7 +18,8 @@ const Container = styled.div`
 export default class App extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props);
-    this.state = new State(this.setState.bind(this));
+    this.state = state;
+    bindSetState(this.setState.bind(this));
   }
 
   render() {

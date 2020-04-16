@@ -9,18 +9,28 @@ export class Part {
   recording: boolean = false
 
   play = () => {
-    console.log('play');
+    this.playingChord = 0;
+    this.paused = false;
+    this.recording = false;
+    updateState();
   }
-  pause = () => {
 
+  pause = () => {
+    this.paused = true;
+    this.recording = false;
+    updateState();
   }
 
   stop = () => {
-
+    this.playingChord = undefined;
+    this.paused = false;
+    this.recording = false;
+    updateState();
   }
 
-  record = () => {
-
+  toggleRecord = () => {
+    this.recording = !this.recording;
+    updateState();
   }
 }
 
@@ -36,19 +46,16 @@ export default class State {
     new Part(),
   ]
   keyPressed: { [key: string]: Date } = {}
-  currentPart: number = -1
+  currentPart: number = 0
   lastRelease?: Date
   restDuration: number = 0
 
-  setState: (state: State) => void
-
-  constructor(setState: (state: State) => void) {
+  constructor() {
     this.octaves = [
       notes.map(note => note + 4),
       notes.map(note => note + 5),
       notes.map(note => note + 6),
     ];
-    this.setState = setState;
   }
 
   startNote = (note: string) => {
@@ -59,15 +66,44 @@ export default class State {
     } else {
       this.restDuration = 0;
     }
-    this.setState(this);
+    updateState();
   }
 
   stopNote = (note: string) => {
     if (this.keyPressed[note] === undefined) return;
     this.synth.triggerRelease(Object.keys(this.keyPressed));
+    const curr = new Date();
+    const duration = (curr.getTime() - this.keyPressed[note].getTime()) / 1000.0;
+    const part = this.parts[this.currentPart];
+    if (part.recording) {
+      const chords = this.parts[this.currentPart].chords;
+      if (this.restDuration > 0 && chords.length > 0 && chords[chords.length - 1].notes.length > 0) {
+        chords.push({
+          notes: [],
+          duration: this.restDuration,
+        });
+      }
+      chords.push({
+        notes: Object.keys(this.keyPressed),
+        duration: duration,
+      });
+    }
     this.keyPressed = {};
-    this.setState(this);
+    this.lastRelease = curr;
+    updateState();
   }
+}
+
+export const state = new State();
+
+let setState: (state: State) => void = state => { }
+
+export function bindSetState(fn: (state: State) => void) {
+  setState = fn;
+}
+
+function updateState() {
+  setState(state);
 }
 
 /*
@@ -186,21 +222,6 @@ onMouseLeave(partIndex: number) {
         this.hoverChordIndex = undefined;
       }
     };
-  }
-}
-
-startNote(note: string) {
-  return (event: React.SyntheticEvent) => {
-    this.synth.triggerAttack([note]);
-    event.stopPropagation();
-    this.setState(produce(this.state, state => {
-      state.keyPressed[note] = new Date();
-      if (this.lastRelease) {
-        this.restDuration = (new Date().getTime() - this.lastRelease.getTime()) / 1000.0;
-      } else {
-        this.restDuration = 0;
-      }
-    }));
   }
 }
 

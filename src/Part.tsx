@@ -98,7 +98,7 @@ export default function PartElement(props: Props) {
       onPlay={part.play}
       onPause={part.pause}
       onStop={part.stop}
-      toggleRecord={part.record}
+      toggleRecord={part.toggleRecord}
     />
   </Container>;
 }
