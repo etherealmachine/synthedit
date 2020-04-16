@@ -24,7 +24,7 @@ export default class App extends React.Component<{}, State> {
 
   render() {
     return (
-      <Container>
+      <Container onKeyDown={this.state.keyDown} onKeyUp={this.state.keyUp} tabIndex={-1}>
         {this.state.parts.map((part, i) => <PartElement key={i} part={part} octaves={this.state.octaves} />)}
         <Keyboard octaves={this.state.octaves} keyPressed={this.state.keyPressed} startNote={this.state.startNote} stopNote={this.state.stopNote} />
       </Container>
