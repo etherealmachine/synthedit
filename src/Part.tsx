@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Part, Chord } from './App';
+import { Part, Chord } from './State';
 import PlayControls from './PlayControls';
 import { NoteElement, RestElement } from './Notation';
 
@@ -67,21 +67,15 @@ function chordContains(chord: Chord, baseNote: string): string | undefined {
 interface Props {
   part: Part
   octaves: string[][]
-  onPlay(): void
-  onPause(): void
-  onStop(): void
-  toggleRecord(): void
-  onMouseEnter(chordIndex: number): React.MouseEventHandler
-  onMouseLeave(chordIndex: number): React.MouseEventHandler
 }
 
 export default function PartElement(props: Props) {
-  const { octaves, part, onPlay, onPause, onStop, toggleRecord, onMouseEnter, onMouseLeave } = props;
+  const { octaves, part } = props;
   const { chords, playingChord, paused, recording } = part;
   return <Container>
     <Staff>
       <Bar>
-        {chords.map((chord, i) => <ChordElement key={i} playing={i === playingChord} onMouseEnter={onMouseEnter(i)} onMouseLeave={onMouseLeave(i)}>
+        {chords.map((chord, i) => <ChordElement key={i} playing={i === playingChord}>
           {octaves.flat().reverse().map((baseNote, j) => {
             const note = chordContains(chord, baseNote);
             if (j % 2 === 0) {
@@ -101,10 +95,10 @@ export default function PartElement(props: Props) {
       playing={playingChord !== undefined}
       paused={paused}
       recording={recording}
-      onPlay={onPlay}
-      onPause={onPause}
-      onStop={onStop}
-      toggleRecord={toggleRecord}
+      onPlay={part.play}
+      onPause={part.pause}
+      onStop={part.stop}
+      toggleRecord={part.record}
     />
   </Container>;
 }

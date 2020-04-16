@@ -38,21 +38,38 @@ const Blackkey = styled.div<ButtonProps>`
 interface Props {
   octaves: string[][]
   keyPressed: { [key: string]: Date }
-  startNote(note: string): React.MouseEventHandler
-  stopNote(note: string): React.MouseEventHandler
+  startNote(note: string): void
+  stopNote(note: string): void
 }
 
 export default function Keyboard(props: Props) {
-  const { octaves, keyPressed, startNote, stopNote } = props;
+  const { octaves, keyPressed } = props;
+  const mouseDown = (note: string) => (event: React.SyntheticEvent) => {
+    event.stopPropagation();
+    props.startNote(note);
+  };
+  const mouseUp = (note: string) => (event: React.SyntheticEvent) => {
+    event.stopPropagation();
+    props.stopNote(note);
+  };
   return <KeyboardContainer>
     {octaves.map((notes, i) => <Octave key={i}>
       {notes.map((note, i) => {
         let blackKey = null;
         if (note[0] !== 'E' && note[0] !== 'B') {
           const sharp = note[0] + '#' + note[1];
-          blackKey = <Blackkey key={i} pressed={keyPressed[sharp] !== undefined} onMouseDown={startNote(sharp)} onMouseUp={stopNote(sharp)} />;
+          blackKey = <Blackkey
+            key={i}
+            pressed={keyPressed[sharp] !== undefined}
+            onMouseDown={mouseDown(sharp)}
+            onMouseUp={mouseUp(sharp)}
+          />;
         }
-        return <Whitekey key={i} pressed={keyPressed[note] !== undefined} onMouseDown={startNote(note)} onMouseUp={stopNote(note)}>
+        return <Whitekey
+          key={i}
+          pressed={keyPressed[note] !== undefined}
+          onMouseDown={mouseDown(note)}
+          onMouseUp={mouseUp(note)}>
           {blackKey}
         </Whitekey>;
       })}
