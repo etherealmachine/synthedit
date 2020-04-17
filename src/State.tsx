@@ -1,4 +1,6 @@
-import { PolySynth, Synth } from 'tone';
+import React from 'react';
+
+import { PolySynth, Synth, Transport, Part as TonePart } from 'tone';
 
 export const notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 
@@ -13,17 +15,42 @@ export class Part {
   playingChord?: number
   paused: boolean = false
   recording: boolean = false
+  synth: PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
+  playback?: TonePart
 
   play = () => {
-    this.playingChord = 0;
-    this.paused = false;
-    this.recording = false;
+    if (this.paused) {
+      Transport.start();
+      this.paused = false;
+    } else {
+      Transport.start();
+      if (!this.chords) return;
+      this.playingChord = 0;
+      let t = 0;
+      const notes: { time: number, index: number, notes: string[], dur: number }[] = [];
+      this.chords.forEach((chord, i) => {
+        notes.push({ time: t, index: i, notes: chord.notes, dur: chord.duration });
+        t += chord.duration;
+      });
+      this.playback = new TonePart((time, event) => {
+        this.synth.triggerAttackRelease(event.notes, event.dur, time);
+        this.playingChord = event.index;
+        if (event.index === notes.length - 1) {
+          Transport.scheduleOnce(this.stop, time);
+        }
+        updateState();
+      }, notes);
+      this.paused = false;
+      this.recording = false;
+      this.playback.start(0);
+    }
     updateState();
   }
 
   pause = () => {
     this.paused = true;
     this.recording = false;
+    Transport.pause();
     updateState();
   }
 
@@ -31,6 +58,8 @@ export class Part {
     this.playingChord = undefined;
     this.paused = false;
     this.recording = false;
+    this.playback?.stop();
+    Transport.stop();
     updateState();
   }
 
@@ -38,11 +67,28 @@ export class Part {
     this.recording = !this.recording;
     updateState();
   }
+
+  toJSON() {
+    return { chords: this.chords };
+  }
 }
 
 export class Chord {
-  notes: string[] = []
-  duration: number = 0
+  notes: string[]
+  duration: number
+  ref?: React.RefObject<HTMLDivElement | null>
+
+  constructor(notes: string[], duration: number) {
+    this.notes = notes;
+    this.duration = duration;
+  }
+
+  toJSON() {
+    return {
+      notes: this.notes,
+      duration: this.duration,
+    };
+  }
 }
 
 export default class State {
@@ -62,6 +108,16 @@ export default class State {
       notes.map(note => note + 5),
       notes.map(note => note + 6),
     ];
+    const parts = window.localStorage.getItem('parts');
+    if (parts) {
+      this.parts = [];
+      (JSON.parse(parts) as Part[]).forEach((part, i) => {
+        this.parts.push(new Part());
+        part.chords.forEach(chord => {
+          this.parts[i].chords.push(new Chord(chord.notes, chord.duration));
+        });
+      });
+    }
   }
 
   startNote = (note: string) => {
@@ -84,15 +140,9 @@ export default class State {
     if (part.recording) {
       const chords = this.parts[this.currentPart].chords;
       if (this.restDuration > 0 && chords.length > 0 && chords[chords.length - 1].notes.length > 0) {
-        chords.push({
-          notes: [],
-          duration: this.restDuration,
-        });
+        chords.push(new Chord([], this.restDuration));
       }
-      chords.push({
-        notes: Object.keys(this.keyPressed),
-        duration: duration,
-      });
+      chords.push(new Chord(Object.keys(this.keyPressed), duration));
     }
     this.keyPressed = {};
     this.lastRelease = curr;
@@ -100,7 +150,6 @@ export default class State {
   }
 
   keyDown = (event: React.KeyboardEvent) => {
-    console.log(event);
     for (let octave of Object.entries(keyBindings)) {
       const i = octave[1].indexOf(event.key.toLowerCase());
       if (i >= 0) {
@@ -138,6 +187,7 @@ export function bindSetState(fn: (state: State) => void) {
 }
 
 function updateState() {
+  window.localStorage.setItem('parts', JSON.stringify(state.parts));
   setState(state);
 }
 
@@ -162,101 +212,4 @@ function longer(duration: number): number {
   return Time(t.toString() + 'n.').toSeconds();
 }
 
-onPlay(partIndex: number) {
-  return () => {
-    if (partIndex === -1) {
-      return;
-    }
-    this.onStop(this.state.currentPart)();
-    if (this.state.parts[partIndex].paused) {
-      Transport.start();
-    } else {
-      Transport.start();
-      if (!this.state.parts[partIndex].chords) return;
-      let t = 0;
-      const notes: { time: number, index: number, notes: string[], dur: number }[] = [];
-      this.state.parts[partIndex].chords.forEach((chord, i) => {
-        notes.push({ time: t, index: i, notes: chord.notes, dur: chord.duration });
-        t += chord.duration;
-      });
-      this.playback = new TonePart((time, event) => {
-        this.synth.triggerAttackRelease(event.notes, event.dur, time);
-        this.setState(produce(this.state, state => {
-          state.parts[partIndex].playingChord = event.index;
-        }));
-        if (event.index === notes.length - 1) {
-          Transport.scheduleOnce(this.onStop.bind(this), time);
-        }
-      }, notes);
-      this.playback.start(0);
-    }
-    this.setState(produce(this.state, state => {
-      state.parts[partIndex].playingChord = 0;
-      state.parts[partIndex].paused = false;
-    }));
-  }
-}
-
-onPause(partIndex: number) {
-  return () => {
-    Transport.pause();
-    this.setState(produce(this.state, state => {
-      state.parts[partIndex].paused = true;
-    }));
-  }
-}
-
-onStop(partIndex: number) {
-  return () => {
-    this.playback?.stop();
-    Transport.stop();
-    this.setState(produce(this.state, state => {
-      state.parts[partIndex].playingChord = undefined;
-      state.parts[partIndex].paused = false;
-    }));
-  }
-}
-
-toggleRecord(partIndex: number) {
-  return () => {
-    this.setState(produce(this.state, state => {
-      if (partIndex === -1) {
-        state.parts.push({
-          chords: [],
-          playingChord: undefined,
-          paused: false,
-          recording: false,
-        });
-        partIndex = state.parts.length - 1;
-      }
-      state.currentPart = partIndex;
-      state.parts[state.currentPart].recording = !state.parts[state.currentPart].recording;
-    }));
-  }
-}
-
-    const initialChords = [];
-    for (let subdivision of [1, 2, 4, 8, 16, 32, 64, 128, 256]) {
-      const duration = Time(subdivision.toString() + 'n').toSeconds();
-      initialChords.push({
-        notes: ['C4'],
-        duration: duration,
-        playing: false,
-      });
-      initialChords.push({
-        notes: [],
-        duration: duration,
-        playing: false,
-      });
-    }
-    const parts = JSON.parse(window.localStorage.getItem('parts') || 'false') as any;
-    this.state = {
-      parts: parts || [{
-        chords: initialChords,
-        paused: false,
-        recording: false,
-      }],
-      keyPressed: {},
-      currentPart: 0,
-    }
 */
