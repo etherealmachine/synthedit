@@ -68,6 +68,14 @@ export class Part {
     updateState();
   }
 
+  toggleSelect = (chordIndex: number) => {
+    this.chords.forEach(chord => {
+      chord.selected = false;
+    });
+    this.chords[chordIndex].selected = !this.chords[chordIndex].selected;
+    updateState();
+  }
+
   toJSON() {
     return { chords: this.chords };
   }
@@ -76,6 +84,7 @@ export class Part {
 export class Chord {
   notes: string[]
   duration: number
+  selected?: boolean
   ref?: React.RefObject<HTMLDivElement | null>
 
   constructor(notes: string[], duration: number) {
@@ -109,13 +118,21 @@ export default class State {
       notes.map(note => note + 6),
     ];
     const parts = window.localStorage.getItem('parts');
+    this.inflate(parts);
+  }
+
+  inflate(parts: string | null) {
     if (parts) {
+      const oldParts = this.parts;
       this.parts = [];
       (JSON.parse(parts) as Part[]).forEach((part, i) => {
         this.parts.push(new Part());
         part.chords.forEach(chord => {
           this.parts[i].chords.push(new Chord(chord.notes, chord.duration));
         });
+        if (oldParts[i]) {
+          this.parts[i].recording = oldParts[i].recording;
+        }
       });
     }
   }
@@ -150,6 +167,20 @@ export default class State {
   }
 
   keyDown = (event: React.KeyboardEvent) => {
+    if (event.keyCode === 90 && event.metaKey && history.length >= 2) {
+      this.inflate(history[history.length - 2]);
+      history.splice(history.length - 1, 1);
+      updateState();
+      return;
+    }
+    if (event.key === 'Backspace') {
+      this.parts.forEach(part => {
+        const selected = part.chords.findIndex(chord => chord.selected);
+        part.chords.splice(selected, 1);
+      });
+      updateState();
+      return;
+    }
     for (let octave of Object.entries(keyBindings)) {
       const i = octave[1].indexOf(event.key.toLowerCase());
       if (i >= 0) {
@@ -175,7 +206,6 @@ export default class State {
     }
     updateState();
   }
-
 }
 
 export const state = new State();
@@ -186,8 +216,14 @@ export function bindSetState(fn: (state: State) => void) {
   setState = fn;
 }
 
+let history: string[] = [];
+
 function updateState() {
-  window.localStorage.setItem('parts', JSON.stringify(state.parts));
+  const s = JSON.stringify(state.parts);
+  window.localStorage.setItem('parts', s);
+  if (history.length === 0 || s !== history[history.length - 1]) {
+    history.push(s);
+  }
   setState(state);
 }
 

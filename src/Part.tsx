@@ -49,7 +49,14 @@ export default function PartElement(props: Props) {
   return <Container>
     <Staff>
       <Bar>
-        {chords.map((chord, i) => <ChordElement key={i} playing={i === playingChord} chord={chord} octaves={octaves} />)}
+        {chords.map((chord, i) => <ChordElement
+          key={i}
+          playing={i === playingChord}
+          chord={chord}
+          octaves={octaves}
+          index={i}
+          part={part}
+        />)}
       </Bar>
     </Staff>
     <PlayControls

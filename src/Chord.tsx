@@ -1,21 +1,29 @@
 import React, { useRef } from 'react';
+import classNames from 'classnames';
 import styled from 'styled-components';
 
 import { NoteElement, RestElement } from './Notation';
-import { Chord } from './State';
+import { Chord, Part } from './State';
 
 interface Props {
+  part: Part
+  index: number
   playing?: boolean
   chord: Chord
   octaves: string[][]
 }
 
-const Container = styled.div<{ playing?: boolean }>`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background: ${props => props.playing ? '#ADD8E6' : ''};
   :hover {
     background: #ddd;
+  }
+  &.playing {
+    background: #ADD8E6;
+  }
+  &.selected {
+    background: #bbb;
   }
 `
 
@@ -48,10 +56,18 @@ function chordContains(chord: Chord, baseNote: string): string | undefined {
 }
 
 export default function ChordElement(props: Props) {
-  const { playing, chord, octaves } = props;
+  const { playing, chord, octaves, part, index } = props;
   const ref = useRef(null);
   chord.ref = ref;
-  return <Container playing={playing} ref={ref}>
+  const mouseClick = (event: React.SyntheticEvent) => {
+    event.stopPropagation();
+    part.toggleSelect(index);
+  }
+  return <Container
+    className={classNames({ playing: playing, selected: chord.selected })}
+    ref={ref}
+    onClick={mouseClick}
+  >
     {octaves.flat().reverse().map((baseNote, j) => {
       const note = chordContains(chord, baseNote);
       if (j % 2 === 0) {
