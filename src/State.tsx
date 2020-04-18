@@ -10,61 +10,63 @@ export const keyBindings = {
   6: "qwertyu",
 }
 
+interface PartEvent {
+  time: number
+  index: number
+  notes: string[]
+  dur: number
+}
+
 export class Part {
   chords: Chord[] = []
-  playingChord?: number
-  paused: boolean = false
   recording: boolean = false
   synth: PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
-  playback?: TonePart
+  playback: TonePart = new TonePart<PartEvent>()
+  playingChordIndex?: number
 
   play = () => {
-    if (this.paused) {
+    if (Transport.state === 'paused') {
       Transport.start();
-      this.paused = false;
+      updateState();
     } else {
-      Transport.start();
+      this.playback.stop();
       if (!this.chords) return;
-      this.playingChord = 0;
       let t = 0;
-      const notes: { time: number, index: number, notes: string[], dur: number }[] = [];
+      this.playback.clear();
       this.chords.forEach((chord, i) => {
-        notes.push({ time: t, index: i, notes: chord.notes, dur: chord.duration });
+        this.playback.add({ time: t, index: i, notes: chord.notes, dur: chord.duration });
         t += chord.duration;
       });
-      this.playback = new TonePart((time, event) => {
+      this.playback.callback = (time, event: PartEvent) => {
         this.synth.triggerAttackRelease(event.notes, event.dur, time);
-        this.playingChord = event.index;
-        if (event.index === notes.length - 1) {
-          Transport.scheduleOnce(this.stop, time);
-        }
+        this.playingChordIndex = event.index;
         updateState();
-      }, notes);
-      this.paused = false;
-      this.recording = false;
+      };
+      this.playback.loopEnd = t;
       this.playback.start(0);
+      Transport.start();
+      updateState();
     }
-    updateState();
   }
 
   pause = () => {
-    this.paused = true;
-    this.recording = false;
     Transport.pause();
     updateState();
   }
 
   stop = () => {
-    this.playingChord = undefined;
-    this.paused = false;
-    this.recording = false;
-    this.playback?.stop();
-    Transport.stop();
+    this.playback.stop();
+    Transport.stop()
     updateState();
   }
 
   toggleRecord = () => {
     this.recording = !this.recording;
+    updateState();
+  }
+
+  toggleLoop = () => {
+    this.playback.loop = !this.playback.loop;
     updateState();
   }
 

@@ -8,7 +8,6 @@ import { Chord, Part } from './State';
 interface Props {
   part: Part
   index: number
-  playing?: boolean
   chord: Chord
   octaves: string[][]
 }
@@ -56,7 +55,7 @@ function chordContains(chord: Chord, baseNote: string): string | undefined {
 }
 
 export default function ChordElement(props: Props) {
-  const { playing, chord, octaves, part, index } = props;
+  const { chord, octaves, part, index } = props;
   const ref = useRef(null);
   chord.ref = ref;
   const mouseClick = (event: React.SyntheticEvent) => {
@@ -64,7 +63,7 @@ export default function ChordElement(props: Props) {
     part.toggleSelect(index);
   }
   return <Container
-    className={classNames({ playing: playing, selected: chord.selected })}
+    className={classNames({ playing: part.playingChordIndex === index, selected: chord.selected })}
     ref={ref}
     onClick={mouseClick}
   >
