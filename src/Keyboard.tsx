@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
+import { Paper } from '@material-ui/core';
 
-const KeyboardContainer = styled.div`
+const KeyboardContainer = styled(Paper)`
   display: flex;
   flex-direction: row;
   height: 200px;
-  border: 5px solid black;
-`;
-
-const Octave = styled.div`
-  display: flex;
-  flex-direction: row;
 `;
 
 interface ButtonProps {
@@ -23,7 +18,11 @@ const Whitekey = styled.div<ButtonProps>`
   width: 50px;
   background: ${props => props.pressed ? '#CCC' : 'white'};
   float: left;
+  border-top: 1px solid black;
   border-right: 1px solid black;
+  :first-child {
+    border-left: 1px solid black;
+  }
 `;
 
 const Blackkey = styled.div<ButtonProps>`
@@ -52,27 +51,25 @@ export default function Keyboard(props: Props) {
     event.stopPropagation();
     props.stopNote(note);
   };
-  return <KeyboardContainer>
-    {octaves.map((notes, i) => <Octave key={i}>
-      {notes.map((note, i) => {
-        let blackKey = null;
-        if (note[0] !== 'E' && note[0] !== 'B') {
-          const sharp = note[0] + '#' + note[1];
-          blackKey = <Blackkey
-            key={i}
-            pressed={keyPressed[sharp] !== undefined}
-            onMouseDown={mouseDown(sharp)}
-            onMouseUp={mouseUp(sharp)}
-          />;
-        }
-        return <Whitekey
-          key={i}
-          pressed={keyPressed[note] !== undefined}
-          onMouseDown={mouseDown(note)}
-          onMouseUp={mouseUp(note)}>
-          {blackKey}
-        </Whitekey>;
-      })}
-    </Octave>)}
+  return <KeyboardContainer elevation={3}>
+    {octaves.map((notes, i) => notes.map((note, j) => {
+      let blackKey = null;
+      if (note[0] !== 'E' && note[0] !== 'B') {
+        const sharp = note[0] + '#' + note[1];
+        blackKey = <Blackkey
+          key={`blackkey-${i}-${j}`}
+          pressed={keyPressed[sharp] !== undefined}
+          onMouseDown={mouseDown(sharp)}
+          onMouseUp={mouseUp(sharp)}
+        />;
+      }
+      return <Whitekey
+        key={`whitekey-${i}-${j}`}
+        pressed={keyPressed[note] !== undefined}
+        onMouseDown={mouseDown(note)}
+        onMouseUp={mouseUp(note)}>
+        {blackKey}
+      </Whitekey>;
+    })).flat()}
   </KeyboardContainer>;
 }

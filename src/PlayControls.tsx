@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { FaPlay, FaPause, FaStop, FaCircle, FaRedo } from 'react-icons/fa';
 
 interface Props {

@@ -1,26 +1,29 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { Paper } from '@material-ui/core';
 
 import { Transport } from 'tone';
 
-import { Part } from './State';
+import State from './State';
 import ChordElement from './Chord';
 import PlayControls from './PlayControls';
+import { FaTimes } from 'react-icons/fa';
 
-const Container = styled.div`
+const Container = styled(Paper)`
   width: 90%;
+  min-height: 220px;
   margin: 16px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid black;
 `
 
 const Staff = styled.div`
   display: flex;
   flex-direction: row;
   margin: 16px;
-  padding: 8px;
+  padding-top: 36px;
+  padding-bottom: 8px;
   flex: 1;
   overflow: scroll;
   &::-webkit-scrollbar {
@@ -35,13 +38,34 @@ const Bar = styled.div`
   align-items: flex-end;
 `
 
+const Controls = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  & > :first-child {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  & > :last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
 interface Props {
-  part: Part
-  octaves: string[][]
+  state: State
+  index: number
 }
 
 export default function PartElement(props: Props) {
-  const { octaves, part } = props;
+  const { state, index } = props;
+  const { octaves } = props.state;
+  const part = props.state.parts[props.index];
   const { chords } = part;
   useEffect(() => {
     if (chords.length > 0) {
@@ -52,7 +76,15 @@ export default function PartElement(props: Props) {
       chords[index].ref?.current?.scrollIntoView();
     }
   });
-  return <Container>
+  const onSelect = (event: React.SyntheticEvent) => {
+    event.stopPropagation();
+    state.selectPart(index);
+  }
+  const onRemove = (event: React.SyntheticEvent) => {
+    event.stopPropagation();
+    state.removePart(index);
+  }
+  return <Container elevation={state.currentPart === index ? 10 : 1} onClick={onSelect}>
     <Staff>
       <Bar>
         {chords.map((chord, i) => <ChordElement
@@ -64,16 +96,19 @@ export default function PartElement(props: Props) {
         />)}
       </Bar>
     </Staff>
-    <PlayControls
-      playing={Transport.state === 'started' && part.playback.state === 'started'}
-      paused={Transport.state === 'paused'}
-      recording={part.recording}
-      loop={typeof part.playback.loop === 'number' ? part.playback.loop !== 0 : part.playback.loop}
-      onPlay={part.play}
-      onPause={part.pause}
-      onStop={part.stop}
-      toggleRecord={part.toggleRecord}
-      toggleLoop={part.toggleLoop}
-    />
+    <Controls>
+      <FaTimes onClick={onRemove} />
+      <PlayControls
+        playing={Transport.state === 'started' && part.playback.state === 'started'}
+        paused={Transport.state === 'paused'}
+        recording={part.recording}
+        loop={typeof part.playback.loop === 'number' ? part.playback.loop !== 0 : part.playback.loop}
+        onPlay={part.play}
+        onPause={part.pause}
+        onStop={part.stop}
+        toggleRecord={part.toggleRecord}
+        toggleLoop={part.toggleLoop}
+      />
+    </Controls>
   </Container>;
 }

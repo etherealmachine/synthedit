@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PolySynth, Synth, Transport, Part as TonePart } from 'tone';
+import { Part as TonePart, PolySynth, Synth, Time, Transport } from 'tone';
 
 export const notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 
@@ -43,7 +43,7 @@ export class Part {
         updateState();
       };
       this.playback.loopEnd = t;
-      this.playback.start(0);
+      this.playback.start(Transport.seconds);
       Transport.start();
       updateState();
     }
@@ -56,7 +56,6 @@ export class Part {
 
   stop = () => {
     this.playback.stop();
-    Transport.stop()
     updateState();
   }
 
@@ -71,8 +70,10 @@ export class Part {
   }
 
   toggleSelect = (chordIndex: number) => {
-    this.chords.forEach(chord => {
-      chord.selected = false;
+    this.chords.forEach((chord, i) => {
+      if (i !== chordIndex) {
+        chord.selected = false;
+      }
     });
     this.chords[chordIndex].selected = !this.chords[chordIndex].selected;
     updateState();
@@ -178,10 +179,21 @@ export default class State {
     if (event.key === 'Backspace') {
       this.parts.forEach(part => {
         const selected = part.chords.findIndex(chord => chord.selected);
-        part.chords.splice(selected, 1);
+        if (selected !== -1) {
+          part.chords.splice(selected, 1);
+        }
       });
       updateState();
       return;
+    }
+    if (event.key === 'ArrowUp') {
+      this.increasePitch();
+    } else if (event.key === 'ArrowDown') {
+      this.decreasePitch();
+    } else if (event.key === 'ArrowLeft') {
+      this.shorten();
+    } else if (event.key === 'ArrowRight') {
+      this.lengthen();
     }
     for (let octave of Object.entries(keyBindings)) {
       const i = octave[1].indexOf(event.key.toLowerCase());
@@ -208,6 +220,64 @@ export default class State {
     }
     updateState();
   }
+
+  increasePitch = () => {
+    this.parts.forEach(part => {
+      const selected = part.chords.findIndex(chord => chord.selected);
+      if (selected !== -1) {
+        part.chords[selected].notes = part.chords[selected].notes.map(higher);
+      }
+    });
+    updateState();
+  }
+
+  decreasePitch = () => {
+    this.parts.forEach(part => {
+      const selected = part.chords.findIndex(chord => chord.selected);
+      if (selected !== -1) {
+        part.chords[selected].notes = part.chords[selected].notes.map(lower);
+      }
+    });
+    updateState();
+  }
+
+  lengthen = () => {
+    this.parts.forEach(part => {
+      const selected = part.chords.findIndex(chord => chord.selected);
+      if (selected !== -1) {
+        part.chords[selected].duration = longer(part.chords[selected].duration);
+      }
+    });
+    updateState();
+  }
+
+  shorten = () => {
+    this.parts.forEach(part => {
+      const selected = part.chords.findIndex(chord => chord.selected);
+      if (selected !== -1) {
+        part.chords[selected].duration = shorter(part.chords[selected].duration);
+      }
+    });
+    updateState();
+  }
+
+  addPart = () => {
+    this.parts.push(new Part());
+    updateState();
+  }
+
+  removePart = (i: number) => {
+    this.parts.splice(i, 1);
+    updateState();
+  }
+
+  selectPart = (i: number) => {
+    if (i !== this.currentPart) {
+      this.parts[this.currentPart].recording = false;
+    }
+    this.currentPart = i;
+    updateState();
+  }
 }
 
 export const state = new State();
@@ -229,25 +299,56 @@ function updateState() {
   setState(state);
 }
 
-/*
-// 1n, 2.n, 2n, 4.n, ...
+function higher(note: string): string {
+  const octave = parseInt(note[note.length - 1]);
+  const noteIndex = notes.indexOf(note[0]);
+  if (noteIndex === notes.length - 1) {
+    if (octave >= 6) {
+      return note;
+    }
+    return notes[0] + (octave + 1);
+  }
+  if (note[1] !== "#" && note[0] !== 'E' && note[0] !== 'B') {
+    return note[0] + '#' + octave;
+  }
+  return notes[noteIndex + 1] + octave;
+}
+
+function lower(note: string): string {
+  const octave = parseInt(note[note.length - 1]);
+  const noteIndex = notes.indexOf(note[0]);
+  if (noteIndex === 0) {
+    if (octave <= 4) {
+      return note;
+    }
+    return notes[notes.length - 1] + (octave - 1);
+  }
+  if (note[1] !== "#" && notes[noteIndex - 1] !== 'E' && note[noteIndex - 1] !== 'B') {
+    return notes[noteIndex - 1] + '#' + octave;
+  }
+  return notes[noteIndex - 1] + octave;
+}
+
+// 1n., 1n, 1t, 2n., 2n, 2t, 4n., ...
 function shorter(duration: number): number {
   const d = Time(duration).toNotation();
   const t = parseInt(d);
-  if (d.includes('.')) {
+  if (d.includes('t')) {
+    return Time((t * 2).toString() + 'n.').toSeconds();
+  } else if (d.includes('.')) {
     return Time(t.toString() + 'n').toSeconds();
   }
-  return Time((t * 2).toString() + 'n.').toSeconds();
+  return Time(t.toString() + 't').toSeconds();
 }
 
-// 8n, 8.n, 4n, 4.n, 2n, 2.n, ...
+// 8t, 8n, 8n., 4t, 4n, 4n., 2t, 2n, 2n., ...
 function longer(duration: number): number {
   const d = Time(duration).toNotation();
   const t = parseInt(d);
   if (d.includes('.')) {
-    return Time((t / 2).toString() + 'n').toSeconds();
+    return Time((t / 2).toString() + 't').toSeconds();
+  } else if (d.includes('t')) {
+    return Time(t.toString() + 'n').toSeconds();
   }
   return Time(t.toString() + 'n.').toSeconds();
 }
-
-*/

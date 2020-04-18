@@ -178,6 +178,18 @@ const Dot = styled.span`
   background: black;
 `;
 
+const Triple = styled.span`
+  display: block;
+  position: relative;
+  top: -2px;
+  left: 20px;
+  width: 4px;
+  height: 4px;
+  &:after {
+    content: 't';
+  }
+`;
+
 interface NoteElementProps {
   note: string,
   duration: number,
@@ -189,6 +201,7 @@ export function NoteElement(props: NoteElementProps): JSX.Element {
     {React.createElement(NotesBySubdivision[parseInt(subdivision)], {})}
     {props.note.includes('#') && <Sharp />}
     {subdivision.includes('.') && <Dot />}
+    {subdivision.includes('t') && <Triple />}
   </div>
 }
 
