@@ -84,7 +84,7 @@ export default function PartElement(props: Props) {
     event.stopPropagation();
     state.removePart(index);
   }
-  const onInstrumentChange = (event: React.ChangeEvent<{ name?: string; value: unknown; }>) => {
+  const onInstrumentChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     event.stopPropagation();
     part.setInstrument(event.target.value as string);
   }

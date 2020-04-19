@@ -1,6 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { Paper } from '@material-ui/core';
+
+import { notes } from './State';
 
 const KeyboardContainer = styled(Paper)`
   display: flex;
@@ -35,7 +37,7 @@ const Blackkey = styled.div<ButtonProps>`
 `;
 
 interface Props {
-  octaves: string[][]
+  octaves: number[]
   keyPressed: { [key: string]: Date }
   startNote(note: string): void
   stopNote(note: string): void
@@ -52,7 +54,8 @@ export default function Keyboard(props: Props) {
     props.stopNote(note);
   };
   return <KeyboardContainer elevation={3}>
-    {octaves.map((notes, i) => notes.map((note, j) => {
+    {octaves.map((octave, i) => notes.map((note, j) => {
+      note = note + octave;
       let blackKey = null;
       if (note[0] !== 'E' && note[0] !== 'B') {
         const sharp = note[0] + '#' + note[1];

@@ -3,13 +3,13 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 
 import { NoteElement, RestElement } from './Notation';
-import { Chord, Part } from './State';
+import { Chord, Part, notes } from './State';
 
 interface Props {
   part: Part
   index: number
   chord: Chord
-  octaves: string[][]
+  octaves: number[]
 }
 
 const Container = styled.div`
@@ -67,7 +67,7 @@ export default function ChordElement(props: Props) {
     ref={ref}
     onClick={mouseClick}
   >
-    {octaves.flat().reverse().map((baseNote, j) => {
+    {octaves.map(octave => notes.map(note => note + octave)).flat().reverse().map((baseNote, j) => {
       const note = chordContains(chord, baseNote);
       if (j % 2 === 0) {
         return <Line key={j}>

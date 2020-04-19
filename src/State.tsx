@@ -6,11 +6,7 @@ import Samples from './Samples';
 
 export const notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 
-export const keyBindings = {
-  4: "zxcvbnm",
-  5: "asdfghj",
-  6: "qwertyu",
-}
+export const keyBindings = ["zxcvbnm", "asdfghj", "qwertyu"];
 
 export const samples = new Samples()
 
@@ -127,8 +123,7 @@ export class Chord {
 }
 
 export default class State {
-  instrument: Sampler | PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
-  octaves: string[][]
+  octaves = [4, 5, 6]
   parts: Part[] = [
     new Part(),
   ]
@@ -138,11 +133,6 @@ export default class State {
   restDuration: number = 0
 
   constructor() {
-    this.octaves = [
-      notes.map(note => note + 4),
-      notes.map(note => note + 5),
-      notes.map(note => note + 6),
-    ];
     const parts = window.localStorage.getItem('parts');
     this.inflate(parts);
   }
@@ -164,7 +154,7 @@ export default class State {
   }
 
   startNote = (note: string) => {
-    this.instrument.triggerAttack([note]);
+    this.parts[this.currentPart].instrument.triggerAttack([note]);
     this.keyPressed[note] = new Date();
     if (this.lastRelease) {
       this.restDuration = (new Date().getTime() - this.lastRelease.getTime()) / 1000.0;
@@ -176,7 +166,7 @@ export default class State {
 
   stopNote = (note: string) => {
     if (this.keyPressed[note] === undefined) return;
-    this.instrument.triggerRelease(Object.keys(this.keyPressed));
+    this.parts[this.currentPart].instrument.triggerRelease(Object.keys(this.keyPressed));
     const curr = new Date();
     const duration = (curr.getTime() - this.keyPressed[note].getTime()) / 1000.0;
     const part = this.parts[this.currentPart];
@@ -218,29 +208,31 @@ export default class State {
     } else if (event.key === 'ArrowRight') {
       this.lengthen();
     }
-    for (let octave of Object.entries(keyBindings)) {
-      const i = octave[1].indexOf(event.key.toLowerCase());
+    keyBindings.forEach((binding, octaveOffset) => {
+      const i = binding.indexOf(event.key.toLowerCase());
       if (i >= 0) {
         let note = notes[i];
         if (note !== 'E' && note !== 'B' && event.shiftKey) note += '#';
-        note += parseInt(octave[0]);
+        const octave = this.octaves[0] + octaveOffset;
+        note += octave;
         if (this.keyPressed[note]) return;
         this.startNote(note);
       }
-    }
+    });
     updateState();
   }
 
   keyUp = (event: React.KeyboardEvent) => {
-    for (let octave of Object.entries(keyBindings)) {
-      const i = octave[1].indexOf(event.key.toLowerCase());
+    keyBindings.forEach((binding, octaveOffset) => {
+      const i = binding.indexOf(event.key.toLowerCase());
       if (i >= 0) {
         let note = notes[i];
         if (note !== 'E' && note !== 'B' && event.shiftKey) note += '#';
-        note += parseInt(octave[0]);
+        const octave = this.octaves[0] + octaveOffset;
+        note += octave;
         this.stopNote(note);
       }
-    }
+    });
     updateState();
   }
 
@@ -290,8 +282,10 @@ export default class State {
   }
 
   removePart = (i: number) => {
-    this.parts.splice(i, 1);
-    updateState();
+    if (this.parts.length >= 2) {
+      this.parts.splice(i, 1);
+      updateState();
+    }
   }
 
   selectPart = (i: number) => {
@@ -299,6 +293,11 @@ export default class State {
       this.parts[this.currentPart].recording = false;
     }
     this.currentPart = i;
+    updateState();
+  }
+
+  setOctave = (octave: number) => {
+    this.octaves = [octave, octave + 1, octave + 2];
     updateState();
   }
 }

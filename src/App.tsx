@@ -3,6 +3,7 @@ import './App.css';
 import styled from 'styled-components';
 import { Fab } from '@material-ui/core';
 import { FaPlus } from 'react-icons/fa';
+import TextField from '@material-ui/core/TextField';
 
 import { Transport } from 'tone';
 
@@ -35,6 +36,10 @@ export default class App extends React.Component<{}, State> {
     Transport.start();
   }
 
+  onOctaveChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.state.setOctave(parseInt(event.target.value));
+  }
+
   render() {
     return (
       <Container onKeyDown={this.state.keyDown} onKeyUp={this.state.keyUp} tabIndex={-1}>
@@ -42,6 +47,12 @@ export default class App extends React.Component<{}, State> {
         {this.state.parts.map((part, i) => <PartElement key={i} state={this.state} index={i} />)}
         <KeyboardContainer>
           <Keyboard octaves={this.state.octaves} keyPressed={this.state.keyPressed} startNote={this.state.startNote} stopNote={this.state.stopNote} />
+          <TextField
+            value={this.state.octaves[0]}
+            onChange={this.onOctaveChange}
+            inputProps={{ min: 0, max: 10 }}
+            type="number"
+          />
         </KeyboardContainer>
       </Container >
     );
