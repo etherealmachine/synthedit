@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Paper } from '@material-ui/core';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
-import State from './State';
+import State, { samples } from './State';
 import ChordElement from './Chord';
 import PlayControls from './PlayControls';
 import { FaTimes } from 'react-icons/fa';
@@ -82,7 +84,18 @@ export default function PartElement(props: Props) {
     event.stopPropagation();
     state.removePart(index);
   }
+  const onInstrumentChange = (event: React.ChangeEvent<{ name?: string; value: unknown; }>) => {
+    event.stopPropagation();
+    part.setInstrument(event.target.value as string);
+  }
   return <Container elevation={state.currentPart === index ? 10 : 1} onClick={onSelect}>
+    <Select value={part.instrumentName} onChange={onInstrumentChange}>
+      {
+        Object.keys(samples.instruments).map((name: string, i: number) => {
+          return <MenuItem key={i} value={name}>{name.toUpperCase()}</MenuItem>;
+        })
+      }
+    </Select>
     <Staff>
       <Bar>
         {chords.map((chord, i) => <ChordElement

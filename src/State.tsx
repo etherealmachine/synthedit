@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Part as TonePart, PolySynth, Synth, Time, Transport } from 'tone';
+import { Part as TonePart, PolySynth, Sampler, Synth, Time, Transport } from 'tone';
+
+import Samples from './Samples';
 
 export const notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 
@@ -10,6 +12,8 @@ export const keyBindings = {
   6: "qwertyu",
 }
 
+export const samples = new Samples()
+
 interface PartEvent {
   time: number
   index: number
@@ -18,9 +22,10 @@ interface PartEvent {
 }
 
 export class Part {
+  instrumentName: string = 'default'
   chords: Chord[] = []
   recording: boolean = false
-  synth: PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
+  instrument: Sampler | PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
   playback: TonePart = new TonePart<PartEvent>()
   playingChordIndex?: number
 
@@ -38,7 +43,7 @@ export class Part {
         t += chord.duration;
       });
       this.playback.callback = (time, event: PartEvent) => {
-        this.synth.triggerAttackRelease(event.notes, event.dur, time);
+        this.instrument.triggerAttackRelease(event.notes, event.dur, time);
         this.playingChordIndex = event.index;
         if (event.index === this.playback.length - 1) {
           Transport.scheduleOnce(this.stop, t);
@@ -90,6 +95,13 @@ export class Part {
     }, 0);
   }
 
+  async setInstrument(name: string) {
+    this.instrumentName = name;
+    this.instrument = await samples.instrument(name);
+    this.instrument.toDestination();
+    updateState();
+  }
+
   toJSON() {
     return { chords: this.chords };
   }
@@ -115,7 +127,7 @@ export class Chord {
 }
 
 export default class State {
-  synth: PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
+  instrument: Sampler | PolySynth = new PolySynth({ maxPolyphony: 10, voice: Synth }).toDestination()
   octaves: string[][]
   parts: Part[] = [
     new Part(),
@@ -152,7 +164,7 @@ export default class State {
   }
 
   startNote = (note: string) => {
-    this.synth.triggerAttack([note]);
+    this.instrument.triggerAttack([note]);
     this.keyPressed[note] = new Date();
     if (this.lastRelease) {
       this.restDuration = (new Date().getTime() - this.lastRelease.getTime()) / 1000.0;
@@ -164,7 +176,7 @@ export default class State {
 
   stopNote = (note: string) => {
     if (this.keyPressed[note] === undefined) return;
-    this.synth.triggerRelease(Object.keys(this.keyPressed));
+    this.instrument.triggerRelease(Object.keys(this.keyPressed));
     const curr = new Date();
     const duration = (curr.getTime() - this.keyPressed[note].getTime()) / 1000.0;
     const part = this.parts[this.currentPart];
