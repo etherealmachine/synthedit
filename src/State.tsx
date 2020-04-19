@@ -25,8 +25,8 @@ export class Part {
   playingChordIndex?: number
 
   play = () => {
-    if (Transport.state === 'paused') {
-      Transport.start();
+    if (this.playback.state === 'stopped' && this.playingChordIndex !== undefined) {
+      this.playback.start(undefined, this.currentTime());
       updateState();
     } else {
       this.playback.stop();
@@ -40,22 +40,26 @@ export class Part {
       this.playback.callback = (time, event: PartEvent) => {
         this.synth.triggerAttackRelease(event.notes, event.dur, time);
         this.playingChordIndex = event.index;
+        if (event.index === this.playback.length - 1) {
+          Transport.scheduleOnce(this.stop, t);
+        }
         updateState();
       };
       this.playback.loopEnd = t;
-      this.playback.start(Transport.seconds);
-      Transport.start();
+      this.playback.start();
       updateState();
     }
   }
 
   pause = () => {
-    Transport.pause();
+    this.playback.stop();
     updateState();
   }
 
   stop = () => {
     this.playback.stop();
+    this.playback.dispose();
+    this.playingChordIndex = undefined;
     updateState();
   }
 
@@ -77,6 +81,13 @@ export class Part {
     });
     this.chords[chordIndex].selected = !this.chords[chordIndex].selected;
     updateState();
+  }
+
+  currentTime = () => {
+    return this.chords.reduce((t, chord, i) => {
+      if (this.playingChordIndex !== undefined && i <= this.playingChordIndex) return t + chord.duration;
+      return t;
+    }, 0);
   }
 
   toJSON() {
@@ -179,7 +190,7 @@ export default class State {
     if (event.key === 'Backspace') {
       this.parts.forEach(part => {
         const selected = part.chords.findIndex(chord => chord.selected);
-        if (selected !== -1) {
+        if (selected !== -1 || part.recording) {
           part.chords.splice(selected, 1);
         }
       });

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { Fab } from '@material-ui/core';
 import { FaPlus } from 'react-icons/fa';
 
+import { Transport } from 'tone';
+
 import State, { state, bindSetState } from './State';
 import PartElement from './Part';
 import Keyboard from './Keyboard';
@@ -30,6 +32,7 @@ export default class App extends React.Component<{}, State> {
     super(props);
     this.state = state;
     bindSetState(this.setState.bind(this));
+    Transport.start();
   }
 
   render() {

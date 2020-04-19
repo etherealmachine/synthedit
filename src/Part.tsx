@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Paper } from '@material-ui/core';
 
-import { Transport } from 'tone';
-
 import State from './State';
 import ChordElement from './Chord';
 import PlayControls from './PlayControls';
@@ -99,8 +97,8 @@ export default function PartElement(props: Props) {
     <Controls>
       <FaTimes onClick={onRemove} />
       <PlayControls
-        playing={Transport.state === 'started' && part.playback.state === 'started'}
-        paused={Transport.state === 'paused'}
+        playing={part.playback.state === 'started'}
+        paused={part.playback.state === 'stopped' && part.playingChordIndex !== undefined}
         recording={part.recording}
         loop={typeof part.playback.loop === 'number' ? part.playback.loop !== 0 : part.playback.loop}
         onPlay={part.play}
