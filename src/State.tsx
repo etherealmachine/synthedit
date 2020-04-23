@@ -207,6 +207,10 @@ export default class State {
       this.shorten();
     } else if (event.key === 'ArrowRight') {
       this.lengthen();
+    } else if (event.key === '-') {
+      this.insertRestLeft();
+    } else if (event.key === '=') {
+      this.insertRestRight();
     }
     keyBindings.forEach((binding, octaveOffset) => {
       const i = binding.indexOf(event.key.toLowerCase());
@@ -271,6 +275,26 @@ export default class State {
       const selected = part.chords.findIndex(chord => chord.selected);
       if (selected !== -1) {
         part.chords[selected].duration = shorter(part.chords[selected].duration);
+      }
+    });
+    updateState();
+  }
+
+  insertRestLeft = () => {
+    this.parts.forEach(part => {
+      const selected = part.chords.findIndex(chord => chord.selected);
+      if (selected !== -1) {
+        part.chords.splice(selected, 0, new Chord([], 1));
+      }
+    });
+    updateState();
+  }
+
+  insertRestRight = () => {
+    this.parts.forEach(part => {
+      const selected = part.chords.findIndex(chord => chord.selected);
+      if (selected !== -1) {
+        part.chords.splice(selected + 1, 0, new Chord([], 1));
       }
     });
     updateState();
