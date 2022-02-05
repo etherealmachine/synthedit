@@ -10,7 +10,7 @@ export default class Samples {
       this.cache[name] = new Sampler(
         this.instruments[name],
         () => resolve(this.cache[name]),
-        `${process.env.PUBLIC_URL}samples/${encodeURIComponent(name)}/`);
+        `/samples/${encodeURIComponent(name)}/`);
     });
   }
 
