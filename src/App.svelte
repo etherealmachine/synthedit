@@ -3,49 +3,84 @@
 	import Samples from "./Samples";
 
 	const octaves = [4, 5, 6];
-	const notes = ["C", "D", "E", "F", "G", "A", "B"];
+	const tones = ["C", "D", "E", "F", "G", "A", "B"];
+	const keyBindings = ["zxcvbnm", "asdfghj", "qwertyu"];
+	const notesPlaying: { [key: string]: Date } = {};
 
 	const samples = new Samples();
 
 	let instrument: Sampler | undefined;
-	samples.instrument("cello").then((sampler) => {
-		console.log("loaded");
+	samples.instrument("piano").then((sampler) => {
 		instrument = sampler;
 		instrument.toDestination();
 	});
 
-	function start(note: string, octave: number, sharp?: boolean) {
+	function note(tone: string, octave: number, sharp?: boolean): string {
+		return `${tone}${
+			tone !== "E" && tone !== "B" && sharp ? "#" : ""
+		}${octave}`;
+	}
+
+	function onKeyDown(event: KeyboardEvent) {
+		keyBindings.forEach((binding, octaveOffset) => {
+			const i = binding.indexOf(event.key.toLowerCase());
+			if (i >= 0) {
+				const tone = tones[i];
+				const octave = octaves[0] + octaveOffset;
+				const n = note(tone, octave, event.shiftKey);
+				if (notesPlaying[n]) return;
+				notesPlaying[n] = new Date();
+				instrument.triggerAttack([n]);
+			}
+		});
+	}
+
+	function onKeyUp(event: KeyboardEvent) {
+		keyBindings.forEach((binding, octaveOffset) => {
+			const i = binding.indexOf(event.key.toLowerCase());
+			if (i >= 0) {
+				const tone = tones[i];
+				const octave = octaves[0] + octaveOffset;
+				const n = note(tone, octave, event.shiftKey);
+				notesPlaying[n] = undefined;
+				instrument.triggerRelease([n]);
+			}
+		});
+	}
+
+	function start(note: string) {
 		return (event: MouseEvent) => {
-			console.log(`${note}${sharp ? "#" : ""}${octave}`);
-			instrument.triggerAttack([`${note}${sharp ? "#" : ""}${octave}`]);
+			instrument.triggerAttack([note]);
 			event.stopPropagation();
 		};
 	}
 
-	function stop(note: string, octave: number, sharp?: boolean) {
+	function stop(note: string) {
 		return (event: MouseEvent) => {
-			instrument.triggerRelease([`${note}${sharp ? "#" : ""}${octave}`]);
+			instrument.triggerRelease([note]);
 			event.stopPropagation();
 		};
 	}
 </script>
 
 <main>
-	<div class="keyboard">
+	<div class="keyboard" on:keydown={onKeyDown} on:keyup={onKeyUp}>
 		{#each octaves as octave}
-			{#each notes as note}
-				{#if note !== "E" && note !== "B"}
+			{#each tones as tone}
+				<div class="key">
+					{#if tone !== "E" && tone !== "B"}
+						<button
+							on:mousedown={start(note(tone, octave, true))}
+							on:mouseup={stop(note(tone, octave, true))}
+							class="blackkey"
+						/>
+					{/if}
 					<button
-						on:mousedown={start(note, octave, true)}
-						on:mouseup={stop(note, octave, true)}
-						class="blackkey"
+						on:mousedown={start(note(tone, octave))}
+						on:mouseup={stop(note(tone, octave))}
+						class="whitekey"
 					/>
-				{/if}
-				<button
-					on:mousedown={start(note, octave)}
-					on:mouseup={stop(note, octave)}
-					class="whitekey"
-				/>
+				</div>
 			{/each}
 		{/each}
 	</div>
@@ -62,34 +97,30 @@
 	}
 
 	.keyboard {
-		position: relative;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: row;
 		height: 200px;
-		width: 100%;
+	}
+
+	.key {
+		position: relative;
 	}
 
 	.whitekey {
-		position: relative;
 		height: 100%;
-		width: 50px;
+		min-width: 50px;
 		background: "white";
-		float: left;
-		border-top: 1px solid black;
-		border-right: 1px solid black;
-	}
-
-	.whitekey:first-child {
-		border-left: 1px solid black;
+		border: 1px solid black;
 	}
 
 	.blackkey {
-		position: relative;
+		position: absolute;
 		height: 65%;
-		width: 55%;
+		min-width: 30px;
 		z-index: 1;
 		background: #444;
-		left: 68%;
+		left: 35px;
+		top: 0px;
 	}
 </style>
